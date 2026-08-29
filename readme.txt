@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.0.2 =
+* Corrección: el editor y el conversor cargaban dos veces el core de hierojax (hierojax.js + mdcconversion.js), lo que rompía la conversión MdC. Ahora solo se carga mdcconversion.js (incluye renderer y parser).
 
 = 1.0.1 =
 * El conversor del panel arranca con un ejemplo de MdC y vista previa generada.

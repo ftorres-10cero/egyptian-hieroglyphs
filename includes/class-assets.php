@@ -34,11 +34,15 @@ class Assets {
 			true
 		);
 
-		// Conversor MdC -> Unicode (solo editor).
+		// Conversor MdC -> Unicode (solo editor/admin).
+		// IMPORTANTE: mdcconversion.js ya incluye el core completo de hierojax
+		// (renderer + parser). No debe cargarse junto a hierojax.js en la misma
+		// página: ambos declaran clases globales (`Shapes`, `Group`, ...) y el
+		// segundo script lanza "Identifier has already been declared".
 		wp_register_script(
 			'ftorres-hiero-mdc',
 			FT_HIERO_PLUGIN_URL . 'assets/mdcconversion.js',
-			array( 'ftorres-hiero-runtime' ),
+			array(),
 			FT_HIERO_VERSION,
 			true
 		);
@@ -76,7 +80,7 @@ class Assets {
 
 		$deps = array_merge(
 			$asset['dependencies'],
-			array( 'ftorres-hiero-runtime', 'ftorres-hiero-mdc' )
+			array( 'ftorres-hiero-mdc' )
 		);
 
 		wp_enqueue_script(

@@ -51,17 +51,17 @@ class AdminTool {
 			return;
 		}
 
-		if ( ! wp_script_is( 'ftorres-hiero-runtime', 'registered' ) ) {
+		if ( ! wp_script_is( 'ftorres-hiero-mdc', 'registered' ) ) {
 			Assets::register();
 		}
 
-		wp_enqueue_script( 'ftorres-hiero-runtime' );
+		// mdcconversion.js incluye renderer + parser; nunca junto a hierojax.js.
 		wp_enqueue_script( 'ftorres-hiero-mdc' );
 		wp_enqueue_style( 'ftorres-hiero-css' );
 		wp_enqueue_script(
 			'ftorres-hiero-admin-converter',
 			FT_HIERO_PLUGIN_URL . 'assets/admin-converter.js',
-			array( 'ftorres-hiero-runtime', 'ftorres-hiero-mdc' ),
+			array( 'ftorres-hiero-mdc' ),
 			FT_HIERO_VERSION,
 			true
 		);
