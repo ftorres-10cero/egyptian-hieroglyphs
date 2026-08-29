@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +43,13 @@ Es un estándar de codificación de jeroglíficos egipcios basado en la lista de
 
 = ¿Cómo escribo un cartucho? =
 
-La conversión automática de esta versión no conserva los corchetes de cartucho. Activa "Editar la codificación Unicode directamente" en el panel Avanzado del bloque y usa los caracteres `[` … `]` (o `⟨` … `⟩`) alrededor de la codificación del nombre.
+Usa la sintaxis de cerramiento del conversor: `<` … `>`. Ejemplos:
+
+* `<- mn-xpr-ra ->` → cartucho de Menkheperre (𓍹…𓍺)
+* `<- ra-ms-sw ->` → cartucho de Ramsés
+* `<S- anx ->` → anillo shen
+
+Los corchetes `[& … &]` son signos de corchete literales, no cartuchos.
 
 = ¿El shortcode acepta MdC? =
 
@@ -64,6 +70,9 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.0.3 =
+* Ejemplos completos con cartuchos: sintaxis `<…>` documentada en el bloque, el conversor y el readme.
 
 = 1.0.2 =
 * Corrección: el editor y el conversor cargaban dos veces el core de hierojax (hierojax.js + mdcconversion.js), lo que rompía la conversión MdC. Ahora solo se carga mdcconversion.js (incluye renderer y parser).

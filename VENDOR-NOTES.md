@@ -53,13 +53,15 @@ sed -i "s|'url(NewGardiner.otf)'|(window.ftorresHieroFontUrl || 'url(NewGardiner
 
 ## Quirks conocidos del conversor MdC→Unicode (upstream)
 
-- **Cartuchos/cerramientos:** el `toString()` de `MdcFragment` de
-  `mdcconversion.js` elimina los caracteres de corchete de los cerramientos
-  (`[& … &]`, `[{ … }]`, `[[ … ]]`, etc.) cuando no pueden fusionarse con el
-  grupo contiguo. El resultado se queda sin el corchete renderizable.
-  **Solución en el plugin:** el bloque permite editar directamente el campo
-  "Unicode (avanzado)" para pegar la codificación exacta (p. ej. generada con
-  el editor gráfico de hierojax o con JSesh) cuando se necesiten cartuchos.
+- **Cartuchos y cerramientos:** la sintaxis de cerramiento de este conversor usa
+  **`<` … `>`** (con códigos opcionales `S/F/H`, `b/m/e`, `0-3` y guiones),
+  no `[& … &]`. Ejemplos:
+  - `<- mn-xpr-ra ->` → cartucho con el nombre de Menkheperre (𓍹…𓍺)
+  - `<S- anx ->` → anillo shen
+  - `<H- nTr:r ->` → cartucho de variante H
+  Los corchetes `[& … &]`, `[{ … }]`, `[[ … ]]`, etc. son **signos de corchete
+  literales** (no cerramientos) y se representan como caracteres de corchete en
+  la codificación Unicode. Para cerramientos siempre hay que usar `<…>`.
 - **Signos no mapeados a Unicode:** códigos MdC desconocidos o signos que
   Unicode aún no ha codificado producen U+FFFD (�) en la salida. El editor del
   bloque avisa si la conversión contiene U+FFFD.

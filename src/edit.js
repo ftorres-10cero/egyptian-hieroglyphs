@@ -230,7 +230,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<TextareaControl
 						label={ __( 'Texto en notación MdC', 'egyptian-hieroglyphs' ) }
 						help={ __(
-							'Ejemplo: "ra:Z1*t:Z1" o "Htp-di-nswt". Signos separados con ":" (vertical) y "*" (horizontal).',
+							'Signos: ":" (vertical), "*" (horizontal), "-" (yuxtaposición). Cartuchos con "<" y ">" (ej.: <- mn-xpr-ra ->).',
 							'egyptian-hieroglyphs'
 						) }
 						value={ mdc }

@@ -21,10 +21,24 @@ Built on [HieroJax](https://nederhof.github.io/hierojax/) (GPL-3.0) and the [New
 Insert the block and type MdC text, for example:
 
 ```
-nTr:r        (god sign 𓊹 over r 𓂋, vertical quadrat)
-ra:Z1*t:Z1   (sun + Z1, horizontal group + Z1)
-Htp-di-nswt  (funerary formula)
+nTr:r            god sign 𓊹 over r 𓂋 (vertical quadrat)
+ra:Z1*t:Z1       sun + Z1, horizontal group + Z1
+Htp-di-nswt      funerary formula (juxtaposed words)
+<- mn-xpr-ra ->  royal cartouche: Menkheperre (𓍹…𓍺)
+<- ra-ms-sw ->   royal cartouche: Rameses
 ```
+
+**MdC syntax summary:**
+
+| Sintaxis | Significado | Ejemplo |
+|---|---|---|
+| `:` | agrupa signos en vertical (cuadratura) | `nTr:r` → 𓊹𓐰𓂋 |
+| `*` | agrupa signos en horizontal | `ra:Z1*t:Z1` → 𓇳𓐰𓏤𓐱𓏏𓐰𓏤 |
+| `-` | yuxtapone signos en la línea | `Htp-di-nswt` |
+| `<` `>` | **cartucho/cerramiento** | `<- mn-xpr-ra ->` → 𓍹𓐼𓏠𓆣𓇳𓐽𓍺 |
+| `<S- … ->` | anillo shen | `<S- anx ->` |
+| `<H- … ->` | cartucho (variante H) | `<H- nTr:r ->` |
+| `[& … &]` | corchetes literales (no cartucho) | `[&nTr&]` |
 
 ### Shortcode
 
