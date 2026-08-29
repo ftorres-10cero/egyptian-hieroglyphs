@@ -23,3 +23,9 @@ Thumbs.db
 # PHPCS local (requiere extensiones xml del sistema)
 /.phpcs-tools
 *.zip
+
+# temporales de pruebas
+*.html.tmp
+up*.html
+post-page*.html
+plugins*.html
