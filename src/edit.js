@@ -9,6 +9,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useEffect, useRef, useState } from '@wordpress/element';
+import apiFetch from '@wordpress/api-fetch';
 import {
 	BaseControl,
 	ColorPalette,
@@ -41,6 +42,33 @@ const ALIGN_OPTIONS = [
 	{ label: __( 'Derecha', 'egyptian-hieroglyphs' ), value: 'right' },
 ];
 
+const FALLBACK_DEFAULTS = { fontSize: 36, color: '' };
+
+let siteDefaultsPromise = null;
+
+/**
+ * Valores por defecto del plugin (Ajustes -> Jeroglíficos (MdC)).
+ *
+ * @return {Promise<{fontSize: number, color: string}>}
+ */
+function getSiteDefaults() {
+	if ( ! siteDefaultsPromise ) {
+		siteDefaultsPromise = apiFetch( { path: '/wp/v2/settings' } )
+			.then( ( settings ) => ( {
+				fontSize:
+					Number( settings.ft_hiero_default_font_size ) > 0
+						? Number( settings.ft_hiero_default_font_size )
+						: FALLBACK_DEFAULTS.fontSize,
+				color:
+					typeof settings.ft_hiero_default_color === 'string'
+						? settings.ft_hiero_default_color
+						: FALLBACK_DEFAULTS.color,
+			} ) )
+			.catch( () => ( { ...FALLBACK_DEFAULTS } ) );
+	}
+	return siteDefaultsPromise;
+}
+
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		mdc,
@@ -64,6 +92,34 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps( {
 		style: { textAlign },
 	} );
+
+	// Aplica los valores por defecto del plugin al insertar el bloque
+	// (solo si el bloque no tiene un valor explícito guardado).
+	useEffect( () => {
+		const updates = {};
+		if ( fontSize === undefined || fontSize === null ) {
+			updates.fontSize = FALLBACK_DEFAULTS.fontSize;
+		}
+		if ( color === undefined || color === null ) {
+			updates.color = FALLBACK_DEFAULTS.color;
+		}
+		if ( Object.keys( updates ).length ) {
+			setAttributes( updates );
+		}
+		getSiteDefaults().then( ( defaults ) => {
+			const withDefaults = {};
+			if ( fontSize === undefined || fontSize === null ) {
+				withDefaults.fontSize = defaults.fontSize;
+			}
+			if ( color === undefined || color === null ) {
+				withDefaults.color = defaults.color;
+			}
+			if ( Object.keys( withDefaults ).length ) {
+				setAttributes( withDefaults );
+			}
+		} );
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [] );
 
 	// Conversión automática MdC -> Unicode (con debounce) salvo en modo "fuente".
 	useEffect( () => {
@@ -123,7 +179,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				>
 					<RangeControl
 						label={ __( 'Tamaño de los signos', 'egyptian-hieroglyphs' ) }
-						value={ fontSize }
+						value={ fontSize ?? FALLBACK_DEFAULTS.fontSize }
 						onChange={ ( value ) => setAttributes( { fontSize: value } ) }
 						min={ 12 }
 						max={ 96 }

@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "egyptian-hieroglyphs/hiero",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"title": "Jeroglíficos egipcios (MdC)",
 	"category": "widgets",
 	"icon": "translation",
@@ -26,16 +26,14 @@
 			"default": ""
 		},
 		"fontSize": {
-			"type": "number",
-			"default": 36
+			"type": "number"
 		},
 		"textAlign": {
 			"type": "string",
 			"default": "left"
 		},
 		"color": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"dir": {
 			"type": "string",

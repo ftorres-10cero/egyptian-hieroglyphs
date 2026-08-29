@@ -8,6 +8,10 @@
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
+// Fallback si el bloque se guarda sin valores explícitos
+// (los valores por defecto del plugin se aplican en el editor).
+const FALLBACK_FONT_SIZE = 36;
+
 export default function save( { attributes } ) {
 	const {
 		unicode,
@@ -34,12 +38,12 @@ export default function save( { attributes } ) {
 		className: 'hierojax',
 		'data-type': 'svg',
 		...( dir === 'hrl' ? { 'data-dir': 'hrl' } : {} ),
-		'data-sep': String( sep ),
-		'data-linesize': String( linesize ),
-		'data-shadepattern': shade,
+		'data-sep': String( sep ?? 0.1 ),
+		'data-linesize': String( linesize ?? 1 ),
+		'data-shadepattern': shade ?? 'uniform',
 		...( separated ? { 'data-separated': 'true' } : {} ),
 		style: {
-			fontSize: `${ fontSize }px`,
+			fontSize: `${ fontSize ?? FALLBACK_FONT_SIZE }px`,
 			...( color ? { color } : {} ),
 		},
 	};

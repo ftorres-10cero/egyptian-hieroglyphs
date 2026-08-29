@@ -138,20 +138,18 @@ class Assets {
 	 * @return string HTML renderizado.
 	 */
 	public static function render_shortcode( $atts, $content = null ) {
-		$atts = shortcode_atts(
-			array(
-				'fontsize'  => 36,
-				'align'     => 'left',
-				'color'     => '',
-				'dir'       => 'ltr',
-				'sep'       => 0.1,
-				'shade'     => 'uniform',
-				'linesize'  => 1,
-				'separated' => false,
-			),
-			$atts,
-			'hiero'
+		$defaults = array(
+			'fontsize'  => Settings::default_font_size(),
+			'align'     => 'left',
+			'color'     => Settings::default_color(),
+			'dir'       => 'ltr',
+			'sep'       => 0.1,
+			'shade'     => 'uniform',
+			'linesize'  => 1,
+			'separated' => false,
 		);
+
+		$atts = shortcode_atts( $defaults, $atts, 'hiero' );
 
 		$content = trim( (string) $content );
 		if ( '' === $content ) {

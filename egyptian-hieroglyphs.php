@@ -11,7 +11,7 @@
  * Plugin Name:       Egyptian Hieroglyphs (MdC)
  * Plugin URI:        https://www.ftorres.es
  * Description:       Renderiza jeroglíficos egipcios desde transliteración en notación Manuel de Codage (MdC) como SVG, mediante HieroJax y la fuente NewGardiner. Incluye un bloque de Gutenberg y un shortcode.
- * Version:           1.0.3
+ * Version:           1.1.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            ftorres.es
@@ -24,13 +24,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FT_HIERO_VERSION', '1.0.3' );
+define( 'FT_HIERO_VERSION', '1.1.0' );
 define( 'FT_HIERO_PLUGIN_FILE', __FILE__ );
 define( 'FT_HIERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FT_HIERO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once FT_HIERO_PLUGIN_DIR . 'includes/class-assets.php';
 require_once FT_HIERO_PLUGIN_DIR . 'includes/class-admin-tool.php';
+require_once FT_HIERO_PLUGIN_DIR . 'includes/class-settings.php';
 
 /**
  * Registra scripts/estilos del plugin (handles) en init.
@@ -94,3 +95,8 @@ add_action( 'init', 'ft_hiero_register_shortcode' );
  * Activa la herramienta de conversión del panel de administración.
  */
 EgyptianHieroglyphs\AdminTool::init();
+
+/**
+ * Activa la página de ajustes (tamaño y color por defecto).
+ */
+EgyptianHieroglyphs\Settings::init();
