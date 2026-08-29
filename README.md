@@ -14,6 +14,15 @@ Built on [HieroJax](https://nederhof.github.io/hierojax/) (GPL-3.0) and the [New
 - Assets are only loaded on pages that contain hieroglyphs; the 1.2 MB MdC parser is loaded **only in the editor**.
 - Signs render as SVG: sharp at any size and copyable/selectable.
 
+## Ajustes por defecto
+
+**Ajustes → Jeroglíficos (MdC)** permite definir el **tamaño** (px) y el **color**
+por defecto de los signos. Se aplican a:
+
+- Los **bloques nuevos** que insertes (cada bloque puede personalizarlos después
+  desde su panel de opciones — el cambio no afecta a los bloques ya guardados).
+- El **shortcode** `[hiero]` cuando no se pasan `fontsize`/`color`.
+
 ## Usage
 
 ### Block
