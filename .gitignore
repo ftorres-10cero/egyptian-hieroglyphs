@@ -31,3 +31,5 @@ post-page*.html
 plugins*.html
 .shots/
 .hd/
+.shots-local/
+.hd/
