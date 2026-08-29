@@ -30,6 +30,8 @@ class Settings {
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_menu' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
+		// Las peticiones REST no lanzan admin_init; necesario para /wp/v2/settings.
+		add_action( 'rest_api_init', array( __CLASS__, 'register_settings' ) );
 	}
 
 	/**

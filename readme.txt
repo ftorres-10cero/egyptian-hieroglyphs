@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.1.1 =
+* Corrección: las opciones por defecto se registran también para REST (/wp/v2/settings), necesario para que el editor de bloques las lea.
 
 = 1.1.0 =
 * Ajustes del plugin (Ajustes → Jeroglíficos (MdC)): tamaño y color por defecto para bloques nuevos y shortcode; cada bloque se sigue personalizando individualmente.
