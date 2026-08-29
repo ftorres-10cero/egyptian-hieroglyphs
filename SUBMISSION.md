@@ -29,6 +29,14 @@ Hacerlas con el plugin instalado en ftorres.es (o en un WP de pruebas):
 2. **Opciones del bloque**: panel lateral con tamaño, dirección (hrl), color y sombreado.
 3. **Herramienta de conversión**: Herramientas → Conversor MdC con la vista previa SVG y el Unicode generado.
 
+## 6. Estado actual (preparación completada)
+
+- **Auditoría de estándares WPCS (manual)**: sin salidas sin escapar, guardas `ABSPATH` en todos los ficheros, funciones con prefijo `ft_hiero_`, cadenas con i18n, sin funciones obsoletas ni SQL directo. (PHPCS no se pudo ejecutar localmente: faltan las extensiones PHP xmlwriter/simplexml; los revisores de WP.org lo ejecutan en su infraestructura.)
+- **Capturas**: 3 listas en `screenshots/` (render frontend con cartuchos, editor Gutenberg, herramienta de conversión).
+- **Demo pública**: post de ejemplo con 35 casos (incluidos cartuchos) en https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/
+- **Importación SVN**: script `svn-import.sh` listo (slugs/capturas/trunk/tags).
+
+Pendiente solo de la cuenta en wordpress.org y de la aprobación del envío inicial.
 ## 5. Recordatorios
 
 - El nombre/slug del directorio será `egyptian-hieroglyphs` (verificar disponibilidad al enviar; si está ocupado, se puede cambiar el slug — el texto `egyptian-hieroglyphs/hiero` del bloque no depende del slug).
