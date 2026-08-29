@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.0.0 =
+* Primera versión en producción: instalada y verificada en ftorres.es (bloque + shortcode + render SVG).
 
 = 0.1.0 =
 * Primera versión: bloque Gutenberg, shortcode [hiero], herramienta de conversión, i18n, licencias.
