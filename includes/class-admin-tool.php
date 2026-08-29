@@ -85,8 +85,7 @@ class AdminTool {
 
 			<div id="ft-hiero-converter">
 				<h2><?php esc_html_e( 'Texto en MdC', 'egyptian-hieroglyphs' ); ?></h2>
-				<textarea id="ft-hiero-input" rows="6" class="large-text code" spellcheck="false"
-					placeholder="nTr:r&#10;Htp-di-nswt Wsjr&#10;ra:Z1*t:Z1"></textarea>
+				<textarea id="ft-hiero-input" rows="6" class="large-text code" spellcheck="false">nTr:r&#10;Htp-di-nswt Wsjr&#10;ra:Z1*t:Z1</textarea>
 				<p>
 					<button type="button" id="ft-hiero-convert" class="button button-primary">
 						<?php esc_html_e( 'Convertir', 'egyptian-hieroglyphs' ); ?>
