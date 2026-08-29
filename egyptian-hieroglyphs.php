@@ -75,7 +75,7 @@ add_action( 'enqueue_block_editor_assets', 'ft_hiero_enqueue_editor_assets' );
  * @return string Contenido sin modificar.
  */
 function ft_hiero_maybe_enqueue_frontend( $block_content, $block ) {
-	if ( isset( $block['blockName'] ) && 'ftorres/hiero' === $block['blockName'] ) {
+	if ( isset( $block['blockName'] ) && 'egyptian-hieroglyphs/hiero' === $block['blockName'] ) {
 		EgyptianHieroglyphs\Assets::enqueue_frontend();
 	}
 	return $block_content;
