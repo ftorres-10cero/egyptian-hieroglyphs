@@ -61,8 +61,10 @@
 			errors.hidden = false;
 		}
 		if ( /\uFFFD/.test( joined ) ) {
-			warnings.textContent =
-				'La conversión contiene signos no disponibles en Unicode (�). Revisa los códigos MdC.';
+			warnings.textContent = wp.i18n.__(
+				'La conversión contiene signos no disponibles en Unicode (�). Revisa los códigos MdC.',
+				'egyptian-hieroglyphs'
+			);
 			warnings.hidden = false;
 		}
 
@@ -90,9 +92,13 @@
 	convertBtn.addEventListener( 'click', convert );
 
 	copyBtn.addEventListener( 'click', function () {
+		var label = wp.i18n.__(
+			'Copiar al portapapeles',
+			'egyptian-hieroglyphs'
+		);
 		var done = function () {
 			copyBtn.textContent = '\u2713';
-			window.setTimeout( function () { copyBtn.textContent = 'Copiar'; }, 1500 );
+			window.setTimeout( function () { copyBtn.textContent = label; }, 1500 );
 		};
 		if ( navigator.clipboard && navigator.clipboard.writeText ) {
 			navigator.clipboard.writeText( output.value ).then( done ).catch( function () {

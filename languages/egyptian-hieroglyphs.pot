@@ -1,0 +1,275 @@
+# Copyright (C) 2026 ftorres.es
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.1.1\n"
+"Report-Msgid-Bugs-To: https://www.ftorres.es\n"
+"POT-Creation-Date: 2026-08-29 19:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: xgettext\n"
+"X-Domain: egyptian-hieroglyphs\n"
+
+
+msgid "Agrupa signos en horizontal"
+msgstr ""
+
+msgid "Agrupa signos en vertical (cuadratura)"
+msgstr ""
+
+msgid "Alineación"
+msgstr ""
+
+msgid "Alineación del bloque."
+msgstr ""
+
+msgid "Altura de línea"
+msgstr ""
+
+msgid "Altura de línea (multiplicador)."
+msgstr ""
+
+msgid "Atributo"
+msgstr ""
+
+msgid "Avanzado"
+msgstr ""
+
+msgid "Ayuda"
+msgstr ""
+
+msgid "Cartucho / cerramiento"
+msgstr ""
+
+msgid "Cartuchos"
+msgstr ""
+
+msgid "Centro"
+msgstr ""
+
+msgid "Codificación Unicode"
+msgstr ""
+
+msgid "Codificación Unicode (avanzado)"
+msgstr ""
+
+msgid "Codificación Unicode generada"
+msgstr ""
+
+msgid "Color de los signos"
+msgstr ""
+
+msgid "Color de los signos (vacío = hereda el tema)."
+msgstr ""
+
+msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
+msgstr ""
+
+msgid "Consejos y preguntas frecuentes"
+msgstr ""
+
+msgid "Conversor MdC"
+msgstr ""
+
+msgid "Conversor MdC (jeroglíficos)"
+msgstr ""
+
+msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
+msgstr ""
+
+msgid "Convertir"
+msgstr ""
+
+msgid "Copiar al portapapeles"
+msgstr ""
+
+msgid "Corchetes literales (no cartucho)"
+msgstr ""
+
+msgid "Créditos"
+msgstr ""
+
+msgid "Derecha"
+msgstr ""
+
+msgid "Derecha → izquierda (jeroglífico)"
+msgstr ""
+
+msgid "Descripción"
+msgstr ""
+
+msgid "Dirección"
+msgstr ""
+
+msgid "Dirección: izquierda→derecha o derecha→izquierda."
+msgstr ""
+
+msgid "Editar la codificación Unicode directamente"
+msgstr ""
+
+msgid "Ejemplo"
+msgstr ""
+
+msgid "Ejemplos completos"
+msgstr ""
+
+msgid "El bloque se personaliza por cada inserción desde su panel de opciones; los valores por defecto de esta página solo afectan a bloques nuevos y al shortcode."
+msgstr ""
+
+msgid "El egipcio clásico se lee de derecha a izquierda."
+msgstr ""
+
+msgid "El shortcode se usa en el editor clásico y acepta la codificación Unicode jeroglífica (una línea por fragmento):"
+msgstr ""
+
+msgid "Escribe la codificación jeroglífica Unicode directamente (caracteres U+13000+ y controles de cuadratura)."
+msgstr ""
+
+msgid "Escribe una frase en notación MdC (una línea por fragmento) y conviértela a la codificación Unicode que renderiza hierojax. Usa el resultado en el shortcode [hiero] o como referencia para el bloque."
+msgstr ""
+
+msgid "Este plugin renderiza jeroglíficos egipcios a partir de texto escrito en Manuel de Codage (MdC), el estándar usado por egiptólogos para codificar jeroglíficos. Escribe el MdC en el bloque \"Jeroglíficos egipcios (MdC)\" del editor y la vista previa se genera al instante como SVG."
+msgstr ""
+
+msgid "Herramientas → Conversor MdC"
+msgstr ""
+
+msgid "Izquierda"
+msgstr ""
+
+msgid "Izquierda → derecha"
+msgstr ""
+
+msgid "Jeroglíficos Egipcios"
+msgstr ""
+
+msgid "Jeroglíficos egipcios (MdC)"
+msgstr ""
+
+msgid "Jeroglíficos egipcios (MdC) — ajustes"
+msgstr ""
+
+msgid "La conversión contiene signos no disponibles en Unicode (�). Revisa los códigos MdC."
+msgstr ""
+
+msgid "La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no permitió incluirla (límite de subida), el plugin la carga automáticamente desde la CDN oficial de HieroJax (%s)."
+msgstr ""
+
+msgid "La vista previa aparecerá aquí. Escribe una frase en MdC arriba."
+msgstr ""
+
+msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
+msgstr ""
+
+msgid "Los scripts y la fuente solo se cargan en páginas que contienen jeroglíficos, para no ralentizar el resto del sitio."
+msgstr ""
+
+msgid "Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr = dios, ra = sol) y se combinan con separadores para formar cuadraturas, grupos y palabras."
+msgstr ""
+
+msgid "Marca el texto en rojo (papiros)"
+msgstr ""
+
+msgid "Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
+msgstr ""
+
+msgid "Opciones de visualización"
+msgstr ""
+
+msgid "Patrón de sombreado de los signos dañados."
+msgstr ""
+
+msgid "Permitir saltos de línea en fragmentos largos."
+msgstr ""
+
+msgid "Permitir saltos de línea largos"
+msgstr ""
+
+msgid "Primeros pasos"
+msgstr ""
+
+msgid "Rayado (hatching)"
+msgstr ""
+
+msgid "Resultado"
+msgstr ""
+
+msgid "Separa palabras"
+msgstr ""
+
+msgid "Separación entre signos"
+msgstr ""
+
+msgid "Separación entre signos."
+msgstr ""
+
+msgid "Shortcode [hiero]"
+msgstr ""
+
+msgid "Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta %s para convertir MdC a Unicode con un clic y copiarlo."
+msgstr ""
+
+msgid "Si un código MdC no está aún codificado en Unicode, la vista previa muestra el carácter � y el editor avisa. Revisa el código o usa la codificación Unicode manual."
+msgstr ""
+
+msgid "Significado"
+msgstr ""
+
+msgid "Signos: \":\" (vertical), \"*\" (horizontal), \"-\" (yuxtaposición). Cartuchos con \"<\" y \">\" (ej.: <- mn-xpr-ra ->)."
+msgstr ""
+
+msgid "Sintaxis"
+msgstr ""
+
+msgid "Sintaxis de MdC"
+msgstr ""
+
+msgid "Sombreado"
+msgstr ""
+
+msgid "Tamaño de los signos"
+msgstr ""
+
+msgid "Tamaño de los signos (por defecto: el de los ajustes)."
+msgstr ""
+
+msgid "Tamaño en píxeles de la altura de los signos (8–200)."
+msgstr ""
+
+msgid "Texto MdC"
+msgstr ""
+
+msgid "Texto en MdC"
+msgstr ""
+
+msgid "Texto en notación MdC"
+msgstr ""
+
+msgid "Uniforme"
+msgstr ""
+
+msgid "Valores"
+msgstr ""
+
+msgid "Valores por defecto aplicados a los bloques nuevos y al shortcode [hiero]. Cada bloque puede personalizar tamaño y color individualmente."
+msgstr ""
+
+msgid "Ver codificación Unicode"
+msgstr ""
+
+msgid "Vista previa"
+msgstr ""
+
+msgid "Yuxtapone signos en la misma línea"
+msgstr ""
+
+msgid "espacio"
+msgstr ""
+
+msgid "Útil para cartuchos u otros detalles que la conversión automática no conserva."
+msgstr ""
