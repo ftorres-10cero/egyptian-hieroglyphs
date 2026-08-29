@@ -25,5 +25,16 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^34.2.0",
 		"jsdom": "^30.0.1"
-	}
+	},
+	"files": [
+		"assets",
+		"build",
+		"includes",
+		"licenses",
+		"languages",
+		"egyptian-hieroglyphs.php",
+		"readme.txt",
+		"README.md",
+		"VENDOR-NOTES.md"
+	]
 }
