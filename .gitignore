@@ -30,3 +30,4 @@ up*.html
 post-page*.html
 plugins*.html
 .shots/
+.hd/
