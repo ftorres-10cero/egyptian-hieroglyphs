@@ -199,12 +199,20 @@ class Assets {
 	/**
 	 * Script inline que fija la URL absoluta de la fuente NewGardiner.
 	 *
+	 * Usa la fuente empaquetada si existe; si no (p. ej. instalaciones que no
+	 * pudieron incluir el .otf por límites de subida), cae a la copia oficial
+	 * en la página de proyecto de HieroJax.
+	 *
 	 * @return string
 	 */
 	private static function font_url_inline_script() {
-		$font_url = esc_url_raw(
-			plugins_url( 'assets/fonts/NewGardiner.otf', FT_HIERO_PLUGIN_FILE )
-		);
+		if ( file_exists( FT_HIERO_PLUGIN_DIR . 'assets/fonts/NewGardiner.otf' ) ) {
+			$font_url = esc_url_raw(
+				plugins_url( 'assets/fonts/NewGardiner.otf', FT_HIERO_PLUGIN_FILE )
+			);
+		} else {
+			$font_url = 'https://nederhof.github.io/hierojax/NewGardiner.otf';
+		}
 		return 'window.ftorresHieroFontUrl = ' . wp_json_encode( 'url(' . $font_url . ')' ) . ';';
 	}
 
