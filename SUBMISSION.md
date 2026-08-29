@@ -32,5 +32,5 @@ Hacerlas con el plugin instalado en ftorres.es (o en un WP de pruebas):
 ## 5. Recordatorios
 
 - El nombre/slug del directorio será `egyptian-hieroglyphs` (verificar disponibilidad al enviar; si está ocupado, se puede cambiar el slug — el texto `ftorres/hiero` del bloque no depende del slug).
-- La versión de `readme.txt` (Stable tag) debe coincidir con la del plugin: `1.0.0`.
+- La versión de `readme.txt` (Stable tag) debe coincidir con la del plugin: `0.1.0`.
 - Actualizar `Tested up to` con la última versión de WordPress antes de cada envío.
