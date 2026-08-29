@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ftorres/hiero",
+	"version": "1.0.0",
+	"title": "Jeroglíficos egipcios (MdC)",
+	"category": "widgets",
+	"icon": "translation",
+	"description": "Renderiza jeroglíficos egipcios desde texto en notación Manuel de Codage (MdC), usando HieroJax y la fuente NewGardiner.",
+	"keywords": [
+		"jeroglífico",
+		"egipcio",
+		"egiptología",
+		"hieroglyph",
+		"mdc",
+		"transliteración"
+	],
+	"textdomain": "egyptian-hieroglyphs",
+	"attributes": {
+		"mdc": {
+			"type": "string",
+			"default": ""
+		},
+		"unicode": {
+			"type": "string",
+			"default": ""
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 36
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"color": {
+			"type": "string",
+			"default": ""
+		},
+		"dir": {
+			"type": "string",
+			"default": "ltr"
+		},
+		"sep": {
+			"type": "number",
+			"default": 0.1
+		},
+		"shade": {
+			"type": "string",
+			"default": "uniform"
+		},
+		"linesize": {
+			"type": "number",
+			"default": 1
+		},
+		"separated": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSource": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"reusable": true
+	}
+}

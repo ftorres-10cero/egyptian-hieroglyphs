@@ -1,0 +1,12 @@
+# Source files (not shipped in the plugin zip)
+/node_modules
+/src
+/package.json
+/package-lock.json
+.gitignore
+.distignore
+
+
+# WP.org generated
+
+/.phpcs-tools

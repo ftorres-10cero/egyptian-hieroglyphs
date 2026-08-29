@@ -1,0 +1,26 @@
+/**
+ * Estilos compartidos (editor + frontend) del bloque.
+ */
+
+.ftorres-hiero {
+	// El contenedor hereda la alineación de texto (left/center/right).
+}
+
+.ftorres-hiero .hierojax {
+	// hierojax define display:inline-block; aquí solo ajustamos el margen.
+	margin: 0.1em 0.05em;
+}
+
+.ftorres-hiero-preview {
+	min-height: 4em;
+	padding: 1em;
+	border: 1px dashed #bdbdbd;
+	background: #fafafa;
+	margin-top: 0.75em;
+}
+
+.ftorres-hiero-placeholder {
+	color: #757575;
+	font-style: italic;
+	margin: 0;
+}

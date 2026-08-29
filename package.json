@@ -1,0 +1,29 @@
+{
+	"name": "egyptian-hieroglyphs",
+	"version": "1.0.0",
+	"description": "WordPress plugin to render Egyptian hieroglyphs from Manuel de Codage (MdC) transliteration, with a Gutenberg block and a shortcode.",
+	"author": "ftorres.es",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"hieroglyphs",
+		"mdc",
+		"egyptian"
+	],
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"test": "node tests/mdc-conversion.js && node tests/frontend-smoke.js"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^34.2.0",
+		"jsdom": "^30.0.1"
+	}
+}
