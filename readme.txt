@@ -1,6 +1,6 @@
 === Egyptian Hieroglyphs (MdC) ===
 Contributors: ftorres
-Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
+Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode, wordpress, plugin
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
