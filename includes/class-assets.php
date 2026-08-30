@@ -97,6 +97,19 @@ class Assets {
 			array( 'ftorres-hiero-css' ),
 			$asset['version']
 		);
+
+		// Procesa los spans .hierojax del contenido (p. ej. en el bloque Classic),
+		// para que los jeroglíficos se vean bien también en el editor.
+		wp_add_inline_script(
+			'ftorres-hiero-block',
+			'window.addEventListener("DOMContentLoaded",function(){' .
+				'var f=function(){if(typeof hierojax!=="undefined"){' .
+					'var p=false;document.querySelectorAll(".hierojax").forEach(function(s){if(!s.querySelector("svg")){p=true;}});' .
+					'if(p){hierojax.processFragments();}' .
+				'}};f();setTimeout(f,1500);setTimeout(f,4000);' .
+			'});',
+			'after'
+		);
 	}
 
 	/**
