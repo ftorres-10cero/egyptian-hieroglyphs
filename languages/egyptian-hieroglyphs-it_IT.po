@@ -1,299 +1,301 @@
+# Translation of Egyptian Hieroglyphs (MdC) to italiano.
 # Copyright (C) 2026 ftorres.es
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
 "Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.3.1\n"
 "Report-Msgid-Bugs-To: https://www.ftorres.es\n"
-"POT-Creation-Date: 2026-08-30 12:40+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2026-08-30 12:50+0200\n"
+"PO-Revision-Date: 2026-08-30 12:50+0200\n"
+"Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
+"Language-Team: Italian (Italy) <it@li.org>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: xgettext\n"
+"X-Generator: Poedit 3.x\n"
 "X-Domain: egyptian-hieroglyphs\n"
 
 
 msgid "Agrupa signos en horizontal"
-msgstr ""
+msgstr "Raggruppa i segni orizzontalmente"
 
 msgid "Alineación"
-msgstr ""
+msgstr "Allineamento"
 
 msgid "Alineación del bloque."
-msgstr ""
+msgstr "Allineamento del blocco."
 
 msgid "Altura de línea"
-msgstr ""
+msgstr "Altezza della riga"
 
 msgid "Altura de línea (multiplicador)."
-msgstr ""
+msgstr "Altezza della riga (moltiplicatore)."
 
 msgid "Anillo shen"
-msgstr ""
+msgstr "Anello shen"
 
 msgid "Apila signos en vertical (cuadratura)"
-msgstr ""
+msgstr "Impila i segni verticalmente (quadrato)"
 
 msgid "Atributo"
-msgstr ""
+msgstr "Attributo"
 
 msgid "Avanzado"
-msgstr ""
+msgstr "Avanzate"
 
 msgid "Ayuda"
-msgstr ""
+msgstr "Aiuto"
 
 msgid "Cartucho / cerramiento"
-msgstr ""
+msgstr "Cartiglio / contenitore"
 
 msgid "Cartuchos"
-msgstr ""
+msgstr "Cartigli"
 
 msgid "Centro"
-msgstr ""
+msgstr "Centro"
 
 msgid "Codificación Unicode"
-msgstr ""
+msgstr "Codifica Unicode"
 
 msgid "Codificación Unicode (avanzado)"
-msgstr ""
+msgstr "Codifica Unicode (avanzata)"
 
 msgid "Codificación Unicode generada"
-msgstr ""
+msgstr "Codifica Unicode generata"
 
 msgid "Color de los signos"
-msgstr ""
+msgstr "Colore dei segni"
 
 msgid "Color de los signos (vacío = hereda el tema)."
-msgstr ""
+msgstr "Colore dei segni (vuoto = eredita il tema)."
 
 msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
-msgstr ""
+msgstr "Colore in formato esadecimale. Vuoto = eredita il colore del tema."
 
 msgid "Consejos y preguntas frecuentes"
-msgstr ""
+msgstr "Consigli e domande frequenti"
 
 msgid "Conversor MdC"
-msgstr ""
+msgstr "Convertitore MdC"
 
 msgid "Conversor MdC (jeroglíficos)"
-msgstr ""
+msgstr "Convertitore MdC (geroglifici)"
 
 msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
-msgstr ""
+msgstr "Convertitore da Manuel de Codage (MdC) a Unicode geroglifico"
 
 msgid "Convertir"
-msgstr ""
+msgstr "Converti"
 
 msgid "Copiar al portapapeles"
-msgstr ""
+msgstr "Copia negli appunti"
 
 msgid "Corchetes literales (no es un cartucho)"
-msgstr ""
+msgstr "Parentesi letterali (non un cartiglio)"
 
 msgid "Créditos"
-msgstr ""
+msgstr "Crediti"
 
 msgid "Código de un signo (lista de Gardiner). Sin separador, los signos se suceden en la línea."
-msgstr ""
+msgstr "Codice di un segno (lista di Gardiner). Senza separatore, i segni si susseguono sulla riga."
 
 msgid "Códigos de signos (nTr, ra, anx…) con separadores: \":\" (vertical), \"*\" (horizontal), \"-\" (yuxtaposición). Cartuchos con \"<\" y \">\" (ej.: <- mn-xpr-ra ->). Guía completa en Ajustes → Jeroglíficos Egipcios."
-msgstr ""
+msgstr "Codici di segni (nTr, ra, anx…) con separatori: \":\" (verticale), \"*\" (orizzontale), \"-\" (giustapposizione). Cartigli con \"<\" e \">\" (es.: <- mn-xpr-ra ->). Guida completa in Impostazioni → Geroglifici Egizi."
 
 msgid "Cómo escribir jeroglíficos"
-msgstr ""
+msgstr "Come scrivere i geroglifici"
 
 msgid "Derecha"
-msgstr ""
+msgstr "Destra"
 
 msgid "Derecha → izquierda (jeroglífico)"
-msgstr ""
+msgstr "Destra → sinistra (geroglifico)"
 
 msgid "Descripción"
-msgstr ""
+msgstr "Descrizione"
 
 msgid "Dirección"
-msgstr ""
+msgstr "Direzione"
 
 msgid "Dirección: izquierda→derecha o derecha→izquierda."
-msgstr ""
+msgstr "Direzione: sinistra→destra o destra→sinistra."
 
 msgid "Editar la codificación Unicode directamente"
-msgstr ""
+msgstr "Modifica direttamente la codifica Unicode"
 
 msgid "Ejemplo"
-msgstr ""
+msgstr "Esempio"
 
 msgid "Ejemplos completos"
-msgstr ""
+msgstr "Esempi completi"
 
 msgid "El bloque se personaliza por cada inserción desde su panel de opciones; los valores por defecto de esta página solo afectan a bloques nuevos y al shortcode."
-msgstr ""
+msgstr "Ogni blocco si personalizza singolarmente dal suo pannello di opzioni; i valori predefiniti di questa pagina valgono solo per i nuovi blocchi e per lo shortcode."
 
 msgid "El egipcio clásico se lee de derecha a izquierda."
-msgstr ""
+msgstr "L'egiziano classico si legge da destra a sinistra."
 
 msgid "El shortcode se usa en el editor clásico y acepta la codificación Unicode jeroglífica (una línea por fragmento):"
-msgstr ""
+msgstr "Lo shortcode si usa nell'editor classico e accetta la codifica Unicode geroglifica (una riga per frammento):"
 
 msgid "En el editor de entradas, añade el bloque «%s»."
-msgstr ""
+msgstr "Nell'editor dei post, aggiungi il blocco «%s»."
 
 msgid "Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, combinándolos con los separadores de la referencia siguiente."
-msgstr ""
+msgstr "Inserisci nel campo «Testo in notazione MdC» i codici dei segni, combinandoli con i separatori del riferimento seguente."
 
 msgid "Escribe la codificación jeroglífica Unicode directamente (caracteres U+13000+ y controles de cuadratura)."
-msgstr ""
+msgstr "Inserisci direttamente la codifica Unicode geroglifica (caratteri U+13000+ e controlli di quadrato)."
 
 msgid "Escribe una frase en notación MdC (una línea por fragmento) y conviértela a la codificación Unicode que renderiza hierojax. Usa el resultado en el shortcode [hiero] o como referencia para el bloque."
-msgstr ""
+msgstr "Inserisci una frase in notazione MdC (una riga per frammento) e convertila nella codifica Unicode renderizzata da hierojax. Usa il risultato nello shortcode [hiero] o come riferimento per il blocco."
 
 msgid "Herramientas → Conversor MdC"
-msgstr ""
+msgstr "Strumenti → Convertitore MdC"
 
 msgid "Izquierda"
-msgstr ""
+msgstr "Sinistra"
 
 msgid "Izquierda → derecha"
-msgstr ""
+msgstr "Sinistra → destra"
 
 msgid "Jeroglíficos Egipcios"
-msgstr ""
+msgstr "Geroglifici Egizi"
 
 msgid "Jeroglíficos egipcios (MdC)"
-msgstr ""
+msgstr "Geroglifici egizi (MdC)"
 
 msgid "Jeroglíficos egipcios (MdC) — ajustes"
-msgstr ""
+msgstr "Geroglifici egizi (MdC) — impostazioni"
 
 msgid "La conversión contiene signos no disponibles en Unicode (�). Revisa los códigos MdC."
-msgstr ""
+msgstr "La conversione contiene segni non disponibili in Unicode (�). Controlla i codici MdC."
 
 msgid "La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no permitió incluirla (límite de subida), el plugin la carga automáticamente desde la CDN oficial de HieroJax (%s)."
-msgstr ""
+msgstr "Il font NewGardiner viene servito dal plugin stesso. Se l'hosting non ha permesso di includerlo (limite di upload), il plugin lo carica automaticamente dalla CDN ufficiale di HieroJax (%s)."
 
 msgid "La vista previa aparecerá aquí. Escribe una frase en MdC arriba."
-msgstr ""
+msgstr "L'anteprima apparirà qui. Inserisci sopra una frase in MdC."
 
 msgid "La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado."
-msgstr ""
+msgstr "L'anteprima viene generata all'istante. Nel pannello laterale del blocco regola dimensione, colore, direzione, spaziatura e tratteggio."
 
 msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
-msgstr ""
+msgstr "I cartigli (nomi reali dentro un ovale) si scrivono con %1$s. Esempio: %2$s renderizza %3$s. Usa %4$s per l'anello shen."
 
 msgid "Los scripts y la fuente solo se cargan en páginas que contienen jeroglíficos, para no ralentizar el resto del sitio."
-msgstr ""
+msgstr "Script e font vengono caricati solo nelle pagine che contengono geroglifici, per non rallentare il resto del sito."
 
 msgid "Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr = dios, ra = sol) y se combinan con separadores para formar cuadraturas, grupos y palabras."
-msgstr ""
+msgstr "I segni seguono la lista di Gardiner: ognuno ha un codice (es. nTr = dio, ra = sole) e si combina con separatori per formare quadrati, gruppi e parole."
 
 msgid "Marca el texto en rojo (papiros)"
-msgstr ""
+msgstr "Marca il testo in rosso (papiri)"
 
 msgid "Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
-msgstr ""
+msgstr "Motore di rendering e convertitore: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). Entrambi di Mark-Jan Nederhof (Università di St Andrews)."
 
 msgid "Opciones de visualización"
-msgstr ""
+msgstr "Opzioni di visualizzazione"
 
 msgid "Patrón de sombreado de los signos dañados."
-msgstr ""
+msgstr "Motivo di tratteggio per i segni danneggiati."
 
 msgid "Permitir saltos de línea en fragmentos largos."
-msgstr ""
+msgstr "Consenti interruzioni di riga nei frammenti lunghi."
 
 msgid "Permitir saltos de línea largos"
-msgstr ""
+msgstr "Consenti interruzioni di riga lunghe"
 
 msgid "Publica la entrada: los jeroglíficos se renderizan como SVG nítido, ampliable y copiable para tus lectores."
-msgstr ""
+msgstr "Pubblica il post: i geroglifici vengono renderizzati come SVG nitido, ingrandibile e copiabile per i tuoi lettori."
 
 msgid "Qué hace"
-msgstr ""
+msgstr "Cosa fa"
 
 msgid "Rayado (hatching)"
-msgstr ""
+msgstr "Tratteggio (hatching)"
 
 msgid "Referencia de la sintaxis (tags)"
-msgstr ""
+msgstr "Riferimento della sintassi (tag)"
 
 msgid "Resultado"
-msgstr ""
+msgstr "Risultato"
 
 msgid "Rotaciones y transposiciones del signo siguiente"
-msgstr ""
+msgstr "Rotazioni e trasposizioni del segno successivo"
 
 msgid "Separa palabras"
-msgstr ""
+msgstr "Separa le parole"
 
 msgid "Separación entre signos"
-msgstr ""
+msgstr "Spaziatura dei segni"
 
 msgid "Separación entre signos."
-msgstr ""
+msgstr "Spaziatura dei segni."
 
 msgid "Shortcode [hiero]"
-msgstr ""
+msgstr "Shortcode [hiero]"
 
 msgid "Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta %s para convertir MdC a Unicode con un clic y copiarlo."
-msgstr ""
+msgstr "Se non ricordi la codifica Unicode di un frammento, usa lo strumento %s per convertire il MdC in Unicode con un clic e copiarlo."
 
 msgid "Si un código MdC no está aún codificado en Unicode, la vista previa muestra el carácter � y el editor avisa. Revisa el código o usa la codificación Unicode manual."
-msgstr ""
+msgstr "Se un codice MdC non è ancora codificato in Unicode, l'anteprima mostra il carattere � e l'editor avvisa. Controlla il codice o usa la codifica Unicode manuale."
 
 msgid "Sombreado"
-msgstr ""
+msgstr "Tratteggio"
 
 msgid "Superpone un signo sobre otro"
-msgstr ""
+msgstr "Sovrappone un segno su un altro"
 
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 msgid "Tamaño de los signos"
-msgstr ""
+msgstr "Dimensione dei segni"
 
 msgid "Tamaño de los signos (por defecto: el de los ajustes)."
-msgstr ""
+msgstr "Dimensione dei segni (predefinita: quella delle impostazioni)."
 
 msgid "Tamaño en píxeles de la altura de los signos (8–200)."
-msgstr ""
+msgstr "Altezza dei segni in pixel (8–200)."
 
 msgid "Termina el fragmento actual"
-msgstr ""
+msgstr "Termina il frammento corrente"
 
 msgid "Texto MdC"
-msgstr ""
+msgstr "Testo MdC"
 
 msgid "Texto en MdC"
-msgstr ""
+msgstr "Testo in MdC"
 
 msgid "Texto en notación MdC"
-msgstr ""
+msgstr "Testo in notazione MdC"
 
 msgid "Uniforme"
-msgstr ""
+msgstr "Uniforme"
 
 msgid "Valores"
-msgstr ""
+msgstr "Valori"
 
 msgid "Valores por defecto aplicados a los bloques nuevos y al shortcode [hiero]. Cada bloque puede personalizar tamaño y color individualmente."
-msgstr ""
+msgstr "Valori predefiniti applicati ai nuovi blocchi e allo shortcode [hiero]. Ogni blocco può personalizzare dimensione e colore singolarmente."
 
 msgid "Ver codificación Unicode"
-msgstr ""
+msgstr "Vedi codifica Unicode"
 
 msgid "Vista previa"
-msgstr ""
+msgstr "Anteprima"
 
 msgid "Yuxtapone signos en la misma línea"
-msgstr ""
+msgstr "Giustappone i segni sulla stessa riga"
 
 msgid "espacio"
-msgstr ""
+msgstr "spazio"
 
 msgid "Útil para cartuchos u otros detalles que la conversión automática no conserva."
-msgstr ""
+msgstr "Utile per cartigli o altri dettagli che la conversione automatica non conserva."

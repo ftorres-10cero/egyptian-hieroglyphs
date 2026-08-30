@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-30 12:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/class-admin-tool.php:36
+msgid "Conversor MdC (jeroglíficos)"
+msgstr ""
+
+#: includes/class-admin-tool.php:37
+msgid "Conversor MdC"
+msgstr ""
+
+#: includes/class-admin-tool.php:76
+msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
+msgstr ""
+
+#: includes/class-admin-tool.php:80
+msgid ""
+"Escribe una frase en notación MdC (una línea por fragmento) y conviértela a "
+"la codificación Unicode que renderiza hierojax. Usa el resultado en el "
+"shortcode [hiero] o como referencia para el bloque."
+msgstr ""
+
+#: includes/class-admin-tool.php:87
+msgid "Texto en MdC"
+msgstr ""
+
+#: includes/class-admin-tool.php:91
+msgid "Convertir"
+msgstr ""
+
+#: includes/class-admin-tool.php:98
+msgid "Vista previa"
+msgstr ""
+
+#: includes/class-admin-tool.php:101
+msgid "Codificación Unicode"
+msgstr ""
+
+#: includes/class-admin-tool.php:105
+msgid "Copiar al portapapeles"
+msgstr ""
+
+#: includes/class-settings.php:67
+msgid "Jeroglíficos egipcios (MdC)"
+msgstr ""
+
+#: includes/class-settings.php:68
+msgid "Jeroglíficos Egipcios"
+msgstr ""
+
+#: includes/class-settings.php:150
+msgid "Jeroglíficos egipcios (MdC) — ajustes"
+msgstr ""
+
+#: includes/class-settings.php:154
+msgid ""
+"Valores por defecto aplicados a los bloques nuevos y al shortcode [hiero]. "
+"Cada bloque puede personalizar tamaño y color individualmente."
+msgstr ""
+
+#: includes/class-settings.php:165
+msgid "Tamaño de los signos"
+msgstr ""
+
+#: includes/class-settings.php:174
+msgid "Tamaño en píxeles de la altura de los signos (8–200)."
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Color de los signos"
+msgstr ""
+
+#: includes/class-settings.php:191
+msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
+msgstr ""
+
+#: includes/class-settings.php:212
+msgid "Ayuda"
+msgstr ""
+
+#: includes/class-settings.php:214
+msgid "Cómo escribir jeroglíficos"
+msgstr ""
+
+#: includes/class-settings.php:220
+#, php-format
+msgid "En el editor de entradas, añade el bloque «%s»."
+msgstr ""
+
+#: includes/class-settings.php:228
+msgid ""
+"Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, "
+"combinándolos con los separadores de la referencia siguiente."
+msgstr ""
+
+#: includes/class-settings.php:236
+msgid ""
+"La vista previa se genera al instante. En el panel lateral del bloque ajusta "
+"tamaño, color, dirección, separación y sombreado."
+msgstr ""
+
+#: includes/class-settings.php:244
+msgid ""
+"Publica la entrada: los jeroglíficos se renderizan como SVG nítido, "
+"ampliable y copiable para tus lectores."
+msgstr ""
+
+#: includes/class-settings.php:253
+msgid ""
+"Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr "
+"= dios, ra = sol) y se combinan con separadores para formar cuadraturas, "
+"grupos y palabras."
+msgstr ""
+
+#: includes/class-settings.php:259
+msgid "Referencia de la sintaxis (tags)"
+msgstr ""
+
+#: includes/class-settings.php:263
+msgid "Tag"
+msgstr ""
+
+#: includes/class-settings.php:264
+msgid "Qué hace"
+msgstr ""
+
+#: includes/class-settings.php:265
+msgid "Ejemplo"
+msgstr ""
+
+#: includes/class-settings.php:271
+msgid ""
+"Código de un signo (lista de Gardiner). Sin separador, los signos se suceden "
+"en la línea."
+msgstr ""
+
+#: includes/class-settings.php:276
+msgid "Apila signos en vertical (cuadratura)"
+msgstr ""
+
+#: includes/class-settings.php:281
+msgid "Agrupa signos en horizontal"
+msgstr ""
+
+#: includes/class-settings.php:286
+msgid "Yuxtapone signos en la misma línea"
+msgstr ""
+
+#: includes/class-settings.php:290
+msgid "espacio"
+msgstr ""
+
+#: includes/class-settings.php:291
+msgid "Separa palabras"
+msgstr ""
+
+#: includes/class-settings.php:296
+msgid "Termina el fragmento actual"
+msgstr ""
+
+#: includes/class-settings.php:301
+msgid "Cartucho / cerramiento"
+msgstr ""
+
+#: includes/class-settings.php:306
+msgid "Anillo shen"
+msgstr ""
+
+#: includes/class-settings.php:311
+msgid "Superpone un signo sobre otro"
+msgstr ""
+
+#: includes/class-settings.php:316
+msgid "Rotaciones y transposiciones del signo siguiente"
+msgstr ""
+
+#: includes/class-settings.php:321
+msgid "Marca el texto en rojo (papiros)"
+msgstr ""
+
+#: includes/class-settings.php:326
+msgid "Corchetes literales (no es un cartucho)"
+msgstr ""
+
+#: includes/class-settings.php:332
+msgid "Cartuchos"
+msgstr ""
+
+#: includes/class-settings.php:337
+#, php-format
+msgid ""
+"Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. "
+"Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
+msgstr ""
+
+#: includes/class-settings.php:346
+msgid "Ejemplos completos"
+msgstr ""
+
+#: includes/class-settings.php:350
+msgid "Texto MdC"
+msgstr ""
+
+#: includes/class-settings.php:351
+msgid "Resultado"
+msgstr ""
+
+#: includes/class-settings.php:367
+#, php-format
+msgid ""
+"Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta "
+"%s para convertir MdC a Unicode con un clic y copiarlo."
+msgstr ""
+
+#: includes/class-settings.php:368
+msgid "Herramientas → Conversor MdC"
+msgstr ""
+
+#: includes/class-settings.php:373
+msgid "Shortcode [hiero]"
+msgstr ""
+
+#: includes/class-settings.php:377
+msgid ""
+"El shortcode se usa en el editor clásico y acepta la codificación Unicode "
+"jeroglífica (una línea por fragmento):"
+msgstr ""
+
+#: includes/class-settings.php:386
+msgid "Atributo"
+msgstr ""
+
+#: includes/class-settings.php:387
+msgid "Valores"
+msgstr ""
+
+#: includes/class-settings.php:388
+msgid "Descripción"
+msgstr ""
+
+#: includes/class-settings.php:392
+msgid "Tamaño de los signos (por defecto: el de los ajustes)."
+msgstr ""
+
+#: includes/class-settings.php:393
+msgid "Color de los signos (vacío = hereda el tema)."
+msgstr ""
+
+#: includes/class-settings.php:394
+msgid "Alineación del bloque."
+msgstr ""
+
+#: includes/class-settings.php:395
+msgid "Dirección: izquierda→derecha o derecha→izquierda."
+msgstr ""
+
+#: includes/class-settings.php:396
+msgid "Separación entre signos."
+msgstr ""
+
+#: includes/class-settings.php:397
+msgid "Patrón de sombreado de los signos dañados."
+msgstr ""
+
+#: includes/class-settings.php:398
+msgid "Altura de línea (multiplicador)."
+msgstr ""
+
+#: includes/class-settings.php:399
+msgid "Permitir saltos de línea en fragmentos largos."
+msgstr ""
+
+#: includes/class-settings.php:403
+msgid "Consejos y preguntas frecuentes"
+msgstr ""
+
+#: includes/class-settings.php:409
+#, php-format
+msgid ""
+"La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no "
+"permitió incluirla (límite de subida), el plugin la carga automáticamente "
+"desde la CDN oficial de HieroJax (%s)."
+msgstr ""
+
+#: includes/class-settings.php:417
+msgid ""
+"Si un código MdC no está aún codificado en Unicode, la vista previa muestra "
+"el carácter � y el editor avisa. Revisa el código o usa la codificación "
+"Unicode manual."
+msgstr ""
+
+#: includes/class-settings.php:425
+msgid ""
+"Los scripts y la fuente solo se cargan en páginas que contienen "
+"jeroglíficos, para no ralentizar el resto del sitio."
+msgstr ""
+
+#: includes/class-settings.php:434
+msgid ""
+"El bloque se personaliza por cada inserción desde su panel de opciones; los "
+"valores por defecto de esta página solo afectan a bloques nuevos y al "
+"shortcode."
+msgstr ""
+
+#: includes/class-settings.php:441
+msgid "Créditos"
+msgstr ""
+
+#: includes/class-settings.php:446
+#, php-format
+msgid ""
+"Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). "
+"Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
+msgstr ""
