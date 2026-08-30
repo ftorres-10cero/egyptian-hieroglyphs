@@ -9,9 +9,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Egyptian Hieroglyphs (MdC)
- * Plugin URI:        https://www.ftorres.es
+ * Plugin URI:        https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/
  * Description:       Renderiza jeroglíficos egipcios desde transliteración en notación Manuel de Codage (MdC) como SVG, mediante HieroJax y la fuente NewGardiner. Incluye un bloque de Gutenberg y un shortcode.
- * Version:           1.5.6
+ * Version:           1.5.7
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            ftorres.es
@@ -24,7 +24,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FT_HIERO_VERSION', '1.5.6' );
+define( 'FT_HIERO_VERSION', '1.5.7' );
 define( 'FT_HIERO_PLUGIN_FILE', __FILE__ );
 define( 'FT_HIERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FT_HIERO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -130,3 +130,32 @@ add_action( 'init', 'ft_hiero_register_shortcode' );
  * Activa la página de ajustes (tamaño y color por defecto).
  */
 EgyptianHieroglyphs\Settings::init();
+
+/**
+ * Añade enlaces de acción en la lista de plugins:
+ * "Configuración" (ajustes del plugin) y "Página web" (artículo del plugin).
+ *
+ * @param array $links Enlaces por defecto.
+ * @return array
+ */
+function ft_hiero_plugin_action_links( $links ) {
+	$settings = sprintf(
+		'<a href="%s">%s</a>',
+		esc_url( admin_url( 'options-general.php?page=ftorres-hiero-settings' ) ),
+		esc_html__( 'Configuración', 'egyptian-hieroglyphs' )
+	);
+	$website  = sprintf(
+		'<a href="%s" target="_blank" rel="noopener">%s</a>',
+		esc_url( 'https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/' ),
+		esc_html__( 'Página web', 'egyptian-hieroglyphs' )
+	);
+
+	array_unshift( $links, $settings );
+	$links[] = $website;
+
+	return $links;
+}
+add_filter(
+	'plugin_action_links_' . plugin_basename( __FILE__ ),
+	'ft_hiero_plugin_action_links'
+);

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 15:23+0200\n"
+"POT-Creation-Date: 2026-08-30 15:25+0200\n"
 "PO-Revision-Date: 2026-08-30 13:15+0200\n"
 "Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
 "Language-Team: Italian (Italy) <it@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.x\n"
 "X-Domain: egyptian-hieroglyphs\n"
+
+#: egyptian-hieroglyphs.php:145
+msgid "Configuración"
+msgstr "Impostazioni"
+
+#: egyptian-hieroglyphs.php:150
+msgid "Página web"
+msgstr "Sito web"
 
 #: includes/class-admin-tool.php:66
 msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"

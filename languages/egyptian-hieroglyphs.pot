@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 15:23+0200\n"
+"POT-Creation-Date: 2026-08-30 15:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: egyptian-hieroglyphs.php:145
+msgid "Configuración"
+msgstr ""
+
+#: egyptian-hieroglyphs.php:150
+msgid "Página web"
+msgstr ""
 
 #: includes/class-admin-tool.php:66
 msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
