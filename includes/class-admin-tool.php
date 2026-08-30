@@ -20,15 +20,32 @@ class AdminTool {
 	const MENU_SLUG = 'ftorres-hiero-converter';
 
 	/**
-	 * Registra los assets de la página del conversor.
+	 * Registra la página del conversor y sus assets.
 	 *
-	 * Nota: el menú "Herramientas → Conversor MdC" se eliminó a petición del
-	 * usuario; la conversión MdC se realiza desde el constructor de la página
-	 * de ajustes. Esta clase se conserva por compatibilidad (el archivo sigue
-	 * cargándose), pero ya no registra ninguna página de administración.
+	 * La página se registra como "oculta": es accesible por URL directa
+	 * (tools.php?page=ftorres-hiero-converter) pero NO aparece en el menú
+	 * Herramientas (el acceso directo se retiró a petición del usuario).
 	 */
 	public static function init() {
+		add_action( 'admin_menu', array( __CLASS__, 'add_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_assets' ) );
+	}
+
+	/**
+	 * Añade la página al menú Herramientas como página oculta.
+	 *
+	 * Con parent "null" la página no genera ítem de menú; se llega a ella por
+	 * URL directa. La capacidad mínima es edit_posts (como el resto de tools).
+	 */
+	public static function add_menu() {
+		add_submenu_page(
+			'null', /* parent oculto: sin ítem en el menú */
+			__( 'Conversor MdC (jeroglíficos)', 'egyptian-hieroglyphs' ),
+			__( 'Conversor MdC', 'egyptian-hieroglyphs' ),
+			'edit_posts',
+			self::MENU_SLUG,
+			array( __CLASS__, 'render_page' )
+		);
 	}
 
 	/**
@@ -37,7 +54,8 @@ class AdminTool {
 	 * @param string $hook Hook actual de la pantalla admin.
 	 */
 	public static function enqueue_assets( $hook ) {
-		if ( 'tools_page_' . self::MENU_SLUG !== $hook ) {
+		// Página oculta (parent "null"): el hook pasa a ser admin_page_*.
+		if ( 'admin_page_' . self::MENU_SLUG !== $hook ) {
 			return;
 		}
 

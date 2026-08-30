@@ -50,10 +50,13 @@ class Settings {
 			Assets::register();
 		}
 		wp_enqueue_style( 'ftorres-hiero-css' );
-		// Renderiza los ejemplos de la ayuda como SVG (igual que el conversor).
-		wp_enqueue_script( 'ftorres-hiero-runtime' );
+		// Constructor de textos MdC + ejemplos de la ayuda.
+		// IMPORTANTE: se carga SOLO mdcconversion.js (incluye el renderer
+		// completo de hierojax + el parser). Nunca junto a hierojax.js:
+		// ambos declaran las mismas clases globales y el segundo falla.
+		wp_enqueue_script( 'ftorres-hiero-mdc' );
 		wp_add_inline_script(
-			'ftorres-hiero-runtime',
+			'ftorres-hiero-mdc',
 			'window.addEventListener("DOMContentLoaded",function(){if(typeof hierojax!=="undefined"){hierojax.processFragments();}});',
 			'after'
 		);
