@@ -34,6 +34,14 @@ const DIR_OPTIONS = [
 		label: __( 'Derecha → izquierda (jeroglífico)', 'egyptian-hieroglyphs' ),
 		value: 'hrl',
 	},
+	{
+		label: __( 'Vertical (arriba → abajo)', 'egyptian-hieroglyphs' ),
+		value: 'vlr',
+	},
+	{
+		label: __( 'Vertical (abajo → arriba)', 'egyptian-hieroglyphs' ),
+		value: 'vrl',
+	},
 ];
 
 const ALIGN_OPTIONS = [
@@ -194,7 +202,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<SelectControl
 						label={ __( 'Dirección', 'egyptian-hieroglyphs' ) }
 						help={ __(
-							'El egipcio clásico se lee de derecha a izquierda.',
+							'El egipcio clásico se lee de derecha a izquierda; la dirección vertical (vlr) hace que los cartuchos se dibujen en vertical.',
 							'egyptian-hieroglyphs'
 						) }
 						value={ dir }

@@ -37,7 +37,7 @@ export default function save( { attributes } ) {
 	const spanProps = {
 		className: 'hierojax',
 		'data-type': 'svg',
-		...( dir === 'hrl' ? { 'data-dir': 'hrl' } : {} ),
+		...( dir && dir !== 'ltr' ? { 'data-dir': dir } : {} ),
 		'data-sep': String( sep ?? 0.1 ),
 		'data-linesize': String( linesize ?? 1 ),
 		'data-shadepattern': shade ?? 'uniform',
