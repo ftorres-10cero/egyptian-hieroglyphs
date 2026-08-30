@@ -1,0 +1,36 @@
+/* Constructor de textos MdC — paleta de signos de la página de ajustes. */
+.ft-hiero-composer { max-width: 860px; margin: 1em 0; }
+.ft-hiero-composer .composer-toolbar { margin: .6em 0; }
+.ft-hiero-composer .composer-toolbar .button { margin: 0 4px 6px 0; }
+.ft-hiero-composer .composer-layout { display: flex; gap: 14px; flex-wrap: wrap; }
+.ft-hiero-composer .composer-palette {
+	flex: 1 1 340px; min-width: 300px;
+	border: 1px solid #c3c4c7; border-radius: 4px; background: #fff; padding: 10px;
+}
+.ft-hiero-composer .composer-palette select, 
+.ft-hiero-composer .composer-palette input[type="search"] { width: 100%; margin-bottom: 8px; }
+.ft-hiero-composer .sign-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+	gap: 6px; max-height: 320px; overflow-y: auto; padding-top: 2px;
+}
+.ft-hiero-composer .ft-hiero-sign {
+	display: flex; flex-direction: column; align-items: center; justify-content: center;
+	min-height: 58px; padding: 4px 2px; cursor: pointer;
+}
+.ft-hiero-composer .ft-hiero-sign-glyph { font-size: 26px; line-height: 1.2; }
+.ft-hiero-composer .ft-hiero-sign-code {
+	font-size: 10px; color: #555; margin-top: 2px; word-break: break-all;
+}
+.ft-hiero-composer .composer-workspace { flex: 1 1 340px; min-width: 300px; }
+.ft-hiero-composer textarea {
+	width: 100%; min-height: 110px; font-family: Consolas, Monaco, monospace;
+	font-size: 14px; padding: 8px;
+}
+.ft-hiero-composer .preview-box {
+	border: 1px dashed #bdbdbd; background: #fafafa; border-radius: 4px;
+	min-height: 90px; padding: 12px; margin-top: 10px; line-height: 1.9;
+	overflow-x: auto;
+}
+.ft-hiero-composer .preview-box .hierojax { vertical-align: middle; }
+.ft-hiero-composer .composer-actions { margin-top: 10px; }
+.ft-hiero-composer .composer-actions .button { margin: 0 6px 6px 0; }

@@ -37,7 +37,8 @@ class Settings {
 	}
 
 	/**
-	 * Encola la fuente y el estilo de los ejemplos solo en la página de ajustes.
+	 * Encola la fuente, el estilo y la herramienta de composición solo en la
+	 * página de ajustes.
 	 *
 	 * @param string $hook Hook de la pantalla admin.
 	 */
@@ -55,6 +56,36 @@ class Settings {
 			'ftorres-hiero-runtime',
 			'window.addEventListener("DOMContentLoaded",function(){if(typeof hierojax!=="undefined"){hierojax.processFragments();}});',
 			'after'
+		);
+
+		// Constructor de textos MdC: conversor + catálogo de signos + UI.
+		wp_enqueue_script( 'ftorres-hiero-mdc' );
+		wp_enqueue_style(
+			'ftorres-hiero-composer',
+			FT_HIERO_PLUGIN_URL . 'assets/admin-composer.css',
+			array(),
+			FT_HIERO_VERSION
+		);
+		wp_enqueue_script(
+			'ftorres-hiero-composer',
+			FT_HIERO_PLUGIN_URL . 'assets/admin-composer.js',
+			array( 'ftorres-hiero-mdc' ),
+			FT_HIERO_VERSION,
+			true
+		);
+
+		$catalog_path = FT_HIERO_PLUGIN_DIR . 'assets/sign-catalog.json';
+		$catalog      = file_exists( $catalog_path ) ? file_get_contents( $catalog_path ) : '[]';
+		$i18n         = array(
+			'noSigns'         => __( 'Sin signos en esta categoría.', 'egyptian-hieroglyphs' ),
+			'previewHint'     => __( 'La vista previa aparecerá aquí…', 'egyptian-hieroglyphs' ),
+			'converterMissing' => __( 'El conversor MdC no está disponible.', 'egyptian-hieroglyphs' ),
+		);
+		wp_add_inline_script(
+			'ftorres-hiero-composer',
+			'window.ftHieroSigns = ' . $catalog . ';' .
+			'window.ftHieroI18n = ' . wp_json_encode( $i18n ) . ';',
+			'before'
 		);
 	}
 
@@ -198,7 +229,66 @@ class Settings {
 
 			<hr />
 
+			<?php self::render_composer(); ?>
+
+			<hr />
+
 			<?php self::render_help(); ?>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Constructor de textos MdC: paleta de signos + botones de estructura.
+	 */
+	public static function render_composer() {
+		$td = 'egyptian-hieroglyphs';
+		?>
+		<h2><?php esc_html_e( 'Constructor de textos MdC', $td ); ?></h2>
+		<p>
+			<?php
+			esc_html_e(
+				'Elige los signos de la paleta (lista de Gardiner) y usa los botones para insertar cartuchos, cuadraturas, grupos y separadores. El texto resultante se puede usar directamente en el bloque o en el shortcode [hiero].',
+				$td
+			);
+			?>
+		</p>
+
+		<div class="ft-hiero-composer">
+			<div class="composer-toolbar">
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche" title="<?php esc_attr_e( 'Inserta un cartucho vacío', $td ); ?>"><?php esc_html_e( 'Cartucho', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-open" title="<?php esc_attr_e( 'Abre un cartucho', $td ); ?>"><?php esc_html_e( 'Abrir cartucho', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-close" title="<?php esc_attr_e( 'Cierra un cartucho', $td ); ?>"><?php esc_html_e( 'Cerrar cartucho', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-shen" title="<?php esc_attr_e( 'Inserta un anillo shen', $td ); ?>"><?php esc_html_e( 'Shen', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-quadrat" title="<?php esc_attr_e( 'Cuadratura vertical (apila signos)', $td ); ?>"><?php esc_html_e( 'Cuadratura «:»', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-group" title="<?php esc_attr_e( 'Grupo horizontal', $td ); ?>"><?php esc_html_e( 'Grupo «*»', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-juxtapose" title="<?php esc_attr_e( 'Yuxtapone signos', $td ); ?>"><?php esc_html_e( 'Yuxta «-»', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-space" title="<?php esc_attr_e( 'Separa palabras', $td ); ?>"><?php esc_html_e( 'Espacio', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-fragment" title="<?php esc_attr_e( 'Termina el fragmento actual', $td ); ?>"><?php esc_html_e( 'Fin fragm. «!»', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-red" title="<?php esc_attr_e( 'Marca el texto en rojo', $td ); ?>"><?php esc_html_e( 'Rojo «\\red»', $td ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-newline" title="<?php esc_attr_e( 'Nueva línea (fragmento)', $td ); ?>"><?php esc_html_e( 'Nueva línea', $td ); ?></button>
+			</div>
+
+			<div class="composer-layout">
+				<div class="composer-palette">
+					<select id="ft-hiero-composer-cats"></select>
+					<input type="search" id="ft-hiero-composer-search"
+						placeholder="<?php esc_attr_e( 'Buscar código o transliteración…', $td ); ?>" />
+					<div class="sign-grid" id="ft-hiero-composer-grid"></div>
+				</div>
+
+				<div class="composer-workspace">
+					<label for="ft-hiero-composer-mdc"><strong><?php esc_html_e( 'Texto en notación MdC', $td ); ?></strong></label>
+					<textarea id="ft-hiero-composer-mdc" rows="5"
+						placeholder="<?php esc_attr_e( 'nTr anx', $td ); ?>"></textarea>
+					<div class="composer-actions">
+						<button type="button" class="button" id="ft-hiero-copy-mdc"><?php esc_html_e( 'Copiar MdC', $td ); ?></button>
+						<button type="button" class="button" id="ft-hiero-copy-uni"><?php esc_html_e( 'Copiar Unicode', $td ); ?></button>
+						<button type="button" class="button" id="ft-hiero-composer-clear"><?php esc_html_e( 'Limpiar', $td ); ?></button>
+					</div>
+					<div class="preview-box" id="ft-hiero-composer-preview"></div>
+				</div>
+			</div>
 		</div>
 		<?php
 	}
@@ -481,12 +571,13 @@ class Settings {
 		<p>
 			<?php
 			esc_html_e(
-				'El shortcode se usa en el editor clásico y acepta la codificación Unicode jeroglífica (una línea por fragmento):',
+				'El shortcode se usa en el editor clásico. Acepta la transliteración MdC directamente (se convierte al vuelo) o la codificación Unicode jeroglífica, y se integra en el texto sin romperlo:',
 				$td
 			);
 			?>
 		</p>
-		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">[hiero fontsize="42" align="center"]<span class="hierojax" style="font-size:24px;">𓂋𓄿𓐰𓏤</span>[/hiero]</pre>
+		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">El rey [hiero]ra-ms-sw[/hiero] erigió un templo.   ← MdC, se convierte solo</pre>
+		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">[hiero fontsize="42" align="center" color="#8B0000"]anx[/hiero]</pre>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
