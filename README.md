@@ -25,29 +25,41 @@ por defecto de los signos. Se aplican a:
 
 ## Usage
 
-### Block
+### How to write hieroglyphs (step by step)
 
-Insert the block and type MdC text, for example:
+1. In the post editor, add the **"Egyptian Hieroglyphs (MdC)"** block.
+2. In the **"MdC notation"** box, type the sign codes (Gardiner list) combined with the separators below — the preview renders instantly.
+3. In the block sidebar adjust size, color, direction, separation and shading.
+4. Publish: readers see crisp, selectable SVG.
+
+Example text you can type:
 
 ```
 nTr:r            god sign 𓊹 over r 𓂋 (vertical quadrat)
 ra:Z1*t:Z1       sun + Z1, horizontal group + Z1
-Htp-di-nswt      funerary formula (juxtaposed words)
 <- mn-xpr-ra ->  royal cartouche: Menkheperre (𓍹…𓍺)
 <- ra-ms-sw ->   royal cartouche: Rameses
 ```
 
-**MdC syntax summary:**
+**MdC syntax reference (the "tags"):**
 
-| Sintaxis | Significado | Ejemplo |
+| Tag | What it does | Example |
 |---|---|---|
-| `:` | agrupa signos en vertical (cuadratura) | `nTr:r` → 𓊹𓐰𓂋 |
-| `*` | agrupa signos en horizontal | `ra:Z1*t:Z1` → 𓇳𓐰𓏤𓐱𓏏𓐰𓏤 |
-| `-` | yuxtapone signos en la línea | `Htp-di-nswt` |
-| `<` `>` | **cartucho/cerramiento** | `<- mn-xpr-ra ->` → 𓍹𓐼𓏠𓆣𓇳𓐽𓍺 |
-| `<S- … ->` | anillo shen | `<S- anx ->` |
-| `<H- … ->` | cartucho (variante H) | `<H- nTr:r ->` |
-| `[& … &]` | corchetes literales (no cartucho) | `[&nTr&]` |
+| `A1`, `nTr`, `ra`… | sign code (Gardiner list); signs follow each other | `nTr anx` |
+| `:` | stacks signs vertically (quadrat) | `nTr:r` → 𓊹𓐰𓂋 |
+| `*` | groups signs horizontally | `ra:Z1*t:Z1` → 𓇳𓐰𓏤𓐱𓏏𓐰𓏤 |
+| `-` | juxtaposes signs on the line | `Htp-di` |
+| space | separates words | `nTr anx` |
+| `!` | ends the current fragment | `nTr:r!anx` |
+| `<` `>` | **cartouche / enclosure** | `<- mn-xpr-ra ->` → 𓍹𓐼𓏠𓆣𓇳𓐽𓍺 |
+| `<S- … ->` | shen ring | `<S- anx ->` |
+| `<H- … ->` | cartouche (H variant) | `<H- nTr:r ->` |
+| `&` | overlays one sign on another | `A1&A2` |
+| `\r1`, `\r2`, `\t1`… | rotations/transpositions of the next sign | `\r2-nTr` |
+| `\red` | marks the text red (papyri) | `\red-anx` |
+| `[& … &]` | literal brackets (not a cartouche) | `[&nTr&]` |
+
+The full guide (with cartouche section, complete examples and shortcode reference) is in the plugin settings: **Settings → Egyptian Hieroglyphs**. A live demo with all 35 examples is at the test article.
 
 ### Shortcode
 

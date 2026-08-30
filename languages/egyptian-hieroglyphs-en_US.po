@@ -3,10 +3,10 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.1.1\n"
+"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.3.0\n"
 "Report-Msgid-Bugs-To: https://www.ftorres.es\n"
-"POT-Creation-Date: 2026-08-29 19:20+0200\n"
-"PO-Revision-Date: 2026-08-29 19:20+0200\n"
+"POT-Creation-Date: 2026-08-29 19:55+0200\n"
+"PO-Revision-Date: 2026-08-29 19:55+0200\n"
 "Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
 "Language-Team: English (United States) <en@li.org>\n"
 "Language: en_US\n"
@@ -21,9 +21,6 @@ msgstr ""
 msgid "Agrupa signos en horizontal"
 msgstr "Groups signs horizontally"
 
-msgid "Agrupa signos en vertical (cuadratura)"
-msgstr "Stacks signs vertically (quadrat)"
-
 msgid "Alineación"
 msgstr "Alignment"
 
@@ -35,6 +32,12 @@ msgstr "Line height"
 
 msgid "Altura de línea (multiplicador)."
 msgstr "Line height (multiplier)."
+
+msgid "Anillo shen"
+msgstr "Shen ring"
+
+msgid "Apila signos en vertical (cuadratura)"
+msgstr "Stacks signs vertically (quadrat)"
 
 msgid "Atributo"
 msgstr "Attribute"
@@ -90,11 +93,20 @@ msgstr "Convert"
 msgid "Copiar al portapapeles"
 msgstr "Copy to clipboard"
 
-msgid "Corchetes literales (no cartucho)"
+msgid "Corchetes literales (no es un cartucho)"
 msgstr "Literal brackets (not a cartouche)"
 
 msgid "Créditos"
 msgstr "Credits"
+
+msgid "Código de un signo (lista de Gardiner). Sin separador, los signos se suceden en la línea."
+msgstr "Code of a sign (Gardiner list). Without a separator, signs follow each other on the line."
+
+msgid "Códigos de signos (nTr, ra, anx…) con separadores: \":\" (vertical), \"*\" (horizontal), \"-\" (yuxtaposición). Cartuchos con \"<\" y \">\" (ej.: <- mn-xpr-ra ->). Guía completa en Ajustes → Jeroglíficos Egipcios."
+msgstr "Sign codes (nTr, ra, anx…) with separators: \":\" (vertical), \"*\" (horizontal), \"-\" (juxtaposition). Cartouches with \"<\" and \">\" (e.g. <- mn-xpr-ra ->). Full guide in Settings → Egyptian Hieroglyphs."
+
+msgid "Cómo escribir jeroglíficos"
+msgstr "How to write hieroglyphs"
 
 msgid "Derecha"
 msgstr "Right"
@@ -129,14 +141,17 @@ msgstr "Classical Egyptian reads right to left."
 msgid "El shortcode se usa en el editor clásico y acepta la codificación Unicode jeroglífica (una línea por fragmento):"
 msgstr "The shortcode is used in the classic editor and accepts the hieroglyphic Unicode encoding (one fragment per line):"
 
+msgid "En el editor de entradas, añade el bloque «%s»."
+msgstr "In the post editor, add the \"%s\" block."
+
+msgid "Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, combinándolos con los separadores de la referencia siguiente."
+msgstr "Type the sign codes in the \"MdC notation\" box, combining them with the separators from the reference below."
+
 msgid "Escribe la codificación jeroglífica Unicode directamente (caracteres U+13000+ y controles de cuadratura)."
 msgstr "Type the hieroglyphic Unicode encoding directly (U+13000+ characters and quadrat controls)."
 
 msgid "Escribe una frase en notación MdC (una línea por fragmento) y conviértela a la codificación Unicode que renderiza hierojax. Usa el resultado en el shortcode [hiero] o como referencia para el bloque."
 msgstr "Type a phrase in MdC notation (one fragment per line) and convert it to the Unicode encoding rendered by hierojax. Use the result in the [hiero] shortcode or as a reference for the block."
-
-msgid "Este plugin renderiza jeroglíficos egipcios a partir de texto escrito en Manuel de Codage (MdC), el estándar usado por egiptólogos para codificar jeroglíficos. Escribe el MdC en el bloque \"Jeroglíficos egipcios (MdC)\" del editor y la vista previa se genera al instante como SVG."
-msgstr "This plugin renders Egyptian hieroglyphs from Manuel de Codage (MdC) text, the standard used by Egyptologists to encode hieroglyphs. Type the MdC in the \"Egyptian Hieroglyphs (MdC)\" block and the preview renders instantly as SVG."
 
 msgid "Herramientas → Conversor MdC"
 msgstr "Tools → MdC Converter"
@@ -165,6 +180,9 @@ msgstr "The NewGardiner font is served from the plugin itself. If the host preve
 msgid "La vista previa aparecerá aquí. Escribe una frase en MdC arriba."
 msgstr "The preview will appear here. Type an MdC phrase above."
 
+msgid "La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado."
+msgstr "The preview renders instantly. In the block sidebar adjust size, color, direction, separation and shading."
+
 msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
 msgstr "Cartouches (royal names inside an oval) are written with %1$s. Example: %2$s renders %3$s. Use %4$s for the shen ring."
 
@@ -192,14 +210,23 @@ msgstr "Allow line breaks in long fragments."
 msgid "Permitir saltos de línea largos"
 msgstr "Allow long lines to break"
 
-msgid "Primeros pasos"
-msgstr "Getting started"
+msgid "Publica la entrada: los jeroglíficos se renderizan como SVG nítido, ampliable y copiable para tus lectores."
+msgstr "Publish the post: the hieroglyphs render as crisp, scalable, selectable SVG for your readers."
+
+msgid "Qué hace"
+msgstr "What it does"
 
 msgid "Rayado (hatching)"
 msgstr "Hatching"
 
+msgid "Referencia de la sintaxis (tags)"
+msgstr "Syntax reference (tags)"
+
 msgid "Resultado"
 msgstr "Result"
+
+msgid "Rotaciones y transposiciones del signo siguiente"
+msgstr "Rotations and transpositions of the next sign"
 
 msgid "Separa palabras"
 msgstr "Separates words"
@@ -219,20 +246,14 @@ msgstr "If you don't remember the Unicode encoding of a fragment, use the %s too
 msgid "Si un código MdC no está aún codificado en Unicode, la vista previa muestra el carácter � y el editor avisa. Revisa el código o usa la codificación Unicode manual."
 msgstr "If an MdC code is not yet encoded in Unicode, the preview shows the � character and the editor warns. Check the code or use the manual Unicode encoding."
 
-msgid "Significado"
-msgstr "Meaning"
-
-msgid "Signos: \":\" (vertical), \"*\" (horizontal), \"-\" (yuxtaposición). Cartuchos con \"<\" y \">\" (ej.: <- mn-xpr-ra ->)."
-msgstr "Signs: \":\" (vertical), \"*\" (horizontal), \"-\" (juxtaposition). Cartouches with \"<\" and \">\" (e.g. <- mn-xpr-ra ->)."
-
-msgid "Sintaxis"
-msgstr "Syntax"
-
-msgid "Sintaxis de MdC"
-msgstr "MdC syntax"
-
 msgid "Sombreado"
 msgstr "Shading"
+
+msgid "Superpone un signo sobre otro"
+msgstr "Overlays one sign on another"
+
+msgid "Tag"
+msgstr "Tag"
 
 msgid "Tamaño de los signos"
 msgstr "Sign size"
@@ -242,6 +263,9 @@ msgstr "Sign size (default: the one from settings)."
 
 msgid "Tamaño en píxeles de la altura de los signos (8–200)."
 msgstr "Height of the signs in pixels (8–200)."
+
+msgid "Termina el fragmento actual"
+msgstr "Ends the current fragment"
 
 msgid "Texto MdC"
 msgstr "MdC text"

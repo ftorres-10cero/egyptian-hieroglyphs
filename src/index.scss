@@ -1,3 +1,12 @@
 /**
  * Estilos solo del editor.
  */
+
+// Los textareas de codificación Unicode muestran los jeroglíficos con la
+// fuente NewGardiner (cargada por hierojax.css en el editor).
+.ft-hiero-unicode-input .components-textarea-control__input {
+	font-family: 'Hieroglyphic', serif;
+	font-size: 18px;
+	line-height: 1.4;
+}
+

@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,10 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.3.0 =
+* Ayuda ampliada: guía paso a paso «Cómo escribir jeroglíficos» y referencia completa de la sintaxis (tags).
+* El editor muestra los textareas de codificación Unicode con la fuente NewGardiner.
 
 = 1.2.1 =
 * Corrección: los ejemplos de jeroglíficos de la ayuda (Ajustes → Jeroglíficos Egipcios) ahora cargan la fuente NewGardiner y se muestran correctamente.

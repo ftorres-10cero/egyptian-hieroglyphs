@@ -208,15 +208,42 @@ class Settings {
 		?>
 		<h2><?php esc_html_e( 'Ayuda', $td ); ?></h2>
 
-		<h3><?php esc_html_e( 'Primeros pasos', $td ); ?></h3>
-		<p>
-			<?php
-			esc_html_e(
-				'Este plugin renderiza jeroglíficos egipcios a partir de texto escrito en Manuel de Codage (MdC), el estándar usado por egiptólogos para codificar jeroglíficos. Escribe el MdC en el bloque "Jeroglíficos egipcios (MdC)" del editor y la vista previa se genera al instante como SVG.',
-				$td
-			);
-			?>
-		</p>
+		<h3><?php esc_html_e( 'Cómo escribir jeroglíficos', $td ); ?></h3>
+		<ol style="max-width:760px; list-style: decimal; padding-left: 1.6em;">
+			<li>
+				<?php
+				printf(
+					/* translators: %s is the block name. */
+					esc_html__( 'En el editor de entradas, añade el bloque «%s».', $td ),
+					'<strong>Jeroglíficos egipcios (MdC)</strong>'
+				);
+				?>
+			</li>
+			<li>
+				<?php
+				esc_html_e(
+					'Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, combinándolos con los separadores de la referencia siguiente.',
+					$td
+				);
+				?>
+			</li>
+			<li>
+				<?php
+				esc_html_e(
+					'La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado.',
+					$td
+				);
+				?>
+			</li>
+			<li>
+				<?php
+				esc_html_e(
+					'Publica la entrada: los jeroglíficos se renderizan como SVG nítido, ampliable y copiable para tus lectores.',
+					$td
+				);
+				?>
+			</li>
+		</ol>
 		<p>
 			<?php
 			esc_html_e(
@@ -226,19 +253,24 @@ class Settings {
 			?>
 		</p>
 
-		<h3><?php esc_html_e( 'Sintaxis de MdC', $td ); ?></h3>
+		<h3><?php esc_html_e( 'Referencia de la sintaxis (tags)', $td ); ?></h3>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
-					<th><?php esc_html_e( 'Sintaxis', $td ); ?></th>
-					<th><?php esc_html_e( 'Significado', $td ); ?></th>
+					<th><?php esc_html_e( 'Tag', $td ); ?></th>
+					<th><?php esc_html_e( 'Qué hace', $td ); ?></th>
 					<th><?php esc_html_e( 'Ejemplo', $td ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
+					<td><code>A1</code>, <code>nTr</code>, <code>ra</code>…</td>
+					<td><?php esc_html_e( 'Código de un signo (lista de Gardiner). Sin separador, los signos se suceden en la línea.', $td ); ?></td>
+					<td><code>nTr anx</code></td>
+				</tr>
+				<tr>
 					<td><code>:</code></td>
-					<td><?php esc_html_e( 'Agrupa signos en vertical (cuadratura)', $td ); ?></td>
+					<td><?php esc_html_e( 'Apila signos en vertical (cuadratura)', $td ); ?></td>
 					<td><code>nTr:r</code></td>
 				</tr>
 				<tr>
@@ -249,7 +281,17 @@ class Settings {
 				<tr>
 					<td><code>-</code></td>
 					<td><?php esc_html_e( 'Yuxtapone signos en la misma línea', $td ); ?></td>
-					<td><code>Htp-di-nswt</code></td>
+					<td><code>Htp-di</code></td>
+				</tr>
+				<tr>
+					<td><?php esc_html_e( 'espacio', $td ); ?></td>
+					<td><?php esc_html_e( 'Separa palabras', $td ); ?></td>
+					<td><code>nTr anx</code></td>
+				</tr>
+				<tr>
+					<td><code>!</code></td>
+					<td><?php esc_html_e( 'Termina el fragmento actual', $td ); ?></td>
+					<td><code>nTr:r!anx</code></td>
 				</tr>
 				<tr>
 					<td><code>&lt;</code> … <code>&gt;</code></td>
@@ -257,19 +299,29 @@ class Settings {
 					<td><code>&lt;- mn-xpr-ra -&gt;</code></td>
 				</tr>
 				<tr>
-					<td><code>[&amp; … &amp;]</code></td>
-					<td><?php esc_html_e( 'Corchetes literales (no cartucho)', $td ); ?></td>
-					<td><code>[&amp;nTr&amp;]</code></td>
+					<td><code>&lt;S- … -&gt;</code></td>
+					<td><?php esc_html_e( 'Anillo shen', $td ); ?></td>
+					<td><code>&lt;S- anx -&gt;</code></td>
 				</tr>
 				<tr>
-					<td><?php esc_html_e( 'espacio', $td ); ?></td>
-					<td><?php esc_html_e( 'Separa palabras', $td ); ?></td>
-					<td><code>Htp-di-nswt Wsjr</code></td>
+					<td><code>&amp;</code></td>
+					<td><?php esc_html_e( 'Superpone un signo sobre otro', $td ); ?></td>
+					<td><code>A1&amp;A2</code></td>
+				</tr>
+				<tr>
+					<td><code>\r1</code>, <code>\r2</code>, <code>\t1</code>…</td>
+					<td><?php esc_html_e( 'Rotaciones y transposiciones del signo siguiente', $td ); ?></td>
+					<td><code>\r2-nTr</code></td>
 				</tr>
 				<tr>
 					<td><code>\red</code></td>
 					<td><?php esc_html_e( 'Marca el texto en rojo (papiros)', $td ); ?></td>
 					<td><code>\red-anx</code></td>
+				</tr>
+				<tr>
+					<td><code>[&amp; … &amp;]</code></td>
+					<td><?php esc_html_e( 'Corchetes literales (no es un cartucho)', $td ); ?></td>
+					<td><code>[&amp;nTr&amp;]</code></td>
 				</tr>
 			</tbody>
 		</table>

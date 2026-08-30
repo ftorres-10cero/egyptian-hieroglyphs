@@ -261,6 +261,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 					{ showUnicode && (
 						<TextareaControl
+							className="ft-hiero-unicode-input"
 							label={ __( 'Codificación Unicode generada', 'egyptian-hieroglyphs' ) }
 							readOnly
 							value={ unicode }
@@ -273,6 +274,7 @@ export default function Edit( { attributes, setAttributes } ) {
 			<div { ...blockProps }>
 				{ showSource ? (
 					<TextareaControl
+						className="ft-hiero-unicode-input"
 						label={ __( 'Codificación Unicode (avanzado)', 'egyptian-hieroglyphs' ) }
 						help={ __(
 							'Escribe la codificación jeroglífica Unicode directamente (caracteres U+13000+ y controles de cuadratura).',
@@ -286,7 +288,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<TextareaControl
 						label={ __( 'Texto en notación MdC', 'egyptian-hieroglyphs' ) }
 						help={ __(
-							'Signos: ":" (vertical), "*" (horizontal), "-" (yuxtaposición). Cartuchos con "<" y ">" (ej.: <- mn-xpr-ra ->).',
+							'Códigos de signos (nTr, ra, anx…) con separadores: ":" (vertical), "*" (horizontal), "-" (yuxtaposición). Cartuchos con "<" y ">" (ej.: <- mn-xpr-ra ->). Guía completa en Ajustes → Jeroglíficos Egipcios.',
 							'egyptian-hieroglyphs'
 						) }
 						value={ mdc }
