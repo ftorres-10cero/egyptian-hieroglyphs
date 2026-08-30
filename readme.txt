@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 3. Herramienta de conversión MdC → Unicode.
 
 == Changelog ==
+
+= 1.5.2 =
+* Corrección: la URL de la fuente NewGardiner ahora se fija también en el editor y en el conversor (antes solo en el frontend), de modo que las vistas previas del admin renderizan SVG correctamente (rotaciones, cartuchos, sombreado).
 
 = 1.5.1 =
 * Los assets se cargan también cuando el contenido usa jeroglíficos sin el bloque (HTML con spans .hierojax).

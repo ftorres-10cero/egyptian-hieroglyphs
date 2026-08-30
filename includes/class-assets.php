@@ -61,6 +61,14 @@ class Assets {
 			self::font_url_inline_script(),
 			'before'
 		);
+		// El editor y el conversor cargan solo mdcconversion.js: la URL de la
+		// fuente también debe fijarse antes de ese script (si no, usa la URL
+		// relativa y la fuente no carga en el admin).
+		wp_add_inline_script(
+			'ftorres-hiero-mdc',
+			self::font_url_inline_script(),
+			'before'
+		);
 	}
 
 	/**
