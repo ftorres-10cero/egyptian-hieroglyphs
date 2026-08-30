@@ -5,7 +5,7 @@ El plugin está preparado para el [directorio de plugins de WordPress.org](https
 ## 1. Requisitos previos
 
 - Cuenta en [wordpress.org](https://login.wordpress.org/) (distinta de la del blog; es la cuenta del autor del plugin). El usuario de `readme.txt` (`Contributors: ftorres`) debe coincidir con tu nombre de usuario en wordpress.org.
-- El zip final: `egyptian-hieroglyphs.zip` (se genera con `npm run plugin-zip` o se descarga del release de GitHub).
+- El zip final: `egyptian-hieroglyphs.zip` (se genera con `npm run plugin-zip` o se descarga del release de GitHub). **Versión actual: 1.5.8.**
 
 ## 2. Envío
 
@@ -27,18 +27,20 @@ Hacerlas con el plugin instalado en ftorres.es (o en un WP de pruebas):
 
 1. **Bloque en el editor**: post con el bloque "Jeroglíficos egipcios (MdC)" y la vista previa en vivo (ej.: `Htp-di-nswt` y `nTr:r`).
 2. **Opciones del bloque**: panel lateral con tamaño, dirección (hrl), color y sombreado.
-3. **Herramienta de conversión**: Herramientas → Conversor MdC con la vista previa SVG y el Unicode generado.
+3. **Constructor de textos MdC**: Ajustes → Jeroglíficos Egipcios, con la paleta de signos y la vista previa (la antigua herramienta "Herramientas → Conversor MdC" se retiró del menú en 1.5.6; el conversor sigue accesible por URL directa `admin.php?page=ftorres-hiero-converter`).
 
 ## 6. Estado actual (preparación completada)
 
 - **Auditoría de estándares WPCS (manual)**: sin salidas sin escapar, guardas `ABSPATH` en todos los ficheros, funciones con prefijo `ft_hiero_`, cadenas con i18n, sin funciones obsoletas ni SQL directo. (PHPCS no se pudo ejecutar localmente: faltan las extensiones PHP xmlwriter/simplexml; los revisores de WP.org lo ejecutan en su infraestructura.)
 - **Capturas**: 3 listas en `screenshots/` (render frontend con cartuchos, editor Gutenberg, herramienta de conversión).
-- **Demo pública**: post de ejemplo con 35 casos (incluidos cartuchos) en https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/
-- **Importación SVN**: script `svn-import.sh` listo (slugs/capturas/trunk/tags).
+- **Demo pública**: post de ejemplo con todos los casos (signos, cuadraturas, cartuchos horizontales y verticales, rotaciones, shortcodes en textos y tabla completa de 316 signos) en https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/
+- **Importación SVN**: script `svn-import.sh` listo (slugs/capturas/trunk/tags), versión 1.5.8.
 
 Pendiente solo de la cuenta en wordpress.org y de la aprobación del envío inicial.
+
 ## 5. Recordatorios
 
 - El nombre/slug del directorio será `egyptian-hieroglyphs` (verificar disponibilidad al enviar; si está ocupado, se puede cambiar el slug — el texto `egyptian-hieroglyphs/hiero` del bloque no depende del slug).
-- La versión de `readme.txt` (Stable tag) debe coincidir con la del plugin: `1.0.0`.
+- La versión de `readme.txt` (Stable tag) debe coincidir con la del plugin: `1.5.8`.
 - Actualizar `Tested up to` con la última versión de WordPress antes de cada envío.
+- El zip actualizado se genera con `npm run plugin-zip` (ya incluye la 1.5.8 y los assets).

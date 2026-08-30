@@ -16,7 +16,7 @@
 set -euo pipefail
 
 SLUG="${SLUG:-egyptian-hieroglyphs}"
-VERSION="1.2.0"
+VERSION="1.5.8"
 PLUGIN_DIR="$(cd "$(dirname "$0")/.." && pwd)"   # raíz del plugin
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
