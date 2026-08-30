@@ -20,25 +20,15 @@ class AdminTool {
 	const MENU_SLUG = 'ftorres-hiero-converter';
 
 	/**
-	 * Registra la página y sus assets.
+	 * Registra los assets de la página del conversor.
+	 *
+	 * Nota: el menú "Herramientas → Conversor MdC" se eliminó a petición del
+	 * usuario; la conversión MdC se realiza desde el constructor de la página
+	 * de ajustes. Esta clase se conserva por compatibilidad (el archivo sigue
+	 * cargándose), pero ya no registra ninguna página de administración.
 	 */
 	public static function init() {
-		add_action( 'admin_menu', array( __CLASS__, 'add_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_assets' ) );
-	}
-
-	/**
-	 * Añade la página al menú Herramientas.
-	 */
-	public static function add_menu() {
-		add_submenu_page(
-			'tools.php',
-			__( 'Conversor MdC (jeroglíficos)', 'egyptian-hieroglyphs' ),
-			__( 'Conversor MdC', 'egyptian-hieroglyphs' ),
-			'edit_posts',
-			self::MENU_SLUG,
-			array( __CLASS__, 'render_page' )
-		);
 	}
 
 	/**

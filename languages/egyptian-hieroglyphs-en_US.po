@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 15:07+0200\n"
+"POT-Creation-Date: 2026-08-30 15:23+0200\n"
 "PO-Revision-Date: 2026-08-30 13:15+0200\n"
 "Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
 "Language-Team: English (United States) <en@li.org>\n"
@@ -17,19 +17,11 @@ msgstr ""
 "X-Generator: Poedit 3.x\n"
 "X-Domain: egyptian-hieroglyphs\n"
 
-#: includes/class-admin-tool.php:36
-msgid "Conversor MdC (jeroglíficos)"
-msgstr "MdC Converter (hieroglyphs)"
-
-#: includes/class-admin-tool.php:37
-msgid "Conversor MdC"
-msgstr "MdC Converter"
-
-#: includes/class-admin-tool.php:76
+#: includes/class-admin-tool.php:66
 msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
 msgstr "Manuel de Codage (MdC) to hieroglyphic Unicode converter"
 
-#: includes/class-admin-tool.php:80
+#: includes/class-admin-tool.php:70
 msgid ""
 "Escribe una frase en notación MdC (una línea por fragmento) y conviértela a "
 "la codificación Unicode que renderiza hierojax. Usa el resultado en el "
@@ -39,23 +31,23 @@ msgstr ""
 "Unicode encoding rendered by hierojax. Use the result in the [hiero] "
 "shortcode or as a reference for the block."
 
-#: includes/class-admin-tool.php:87
+#: includes/class-admin-tool.php:77
 msgid "Texto en MdC"
 msgstr "Text in MdC"
 
-#: includes/class-admin-tool.php:91
+#: includes/class-admin-tool.php:81
 msgid "Convertir"
 msgstr "Convert"
 
-#: includes/class-admin-tool.php:98
+#: includes/class-admin-tool.php:88
 msgid "Vista previa"
 msgstr "Preview"
 
-#: includes/class-admin-tool.php:101
+#: includes/class-admin-tool.php:91
 msgid "Codificación Unicode"
 msgstr "Unicode encoding"
 
-#: includes/class-admin-tool.php:105
+#: includes/class-admin-tool.php:95
 msgid "Copiar al portapapeles"
 msgstr "Copy to clipboard"
 
@@ -107,7 +99,7 @@ msgstr "Sign color"
 msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
 msgstr "Color in hexadecimal format. Empty = inherits the theme color."
 
-#: includes/class-settings.php:247
+#: includes/class-settings.php:247 includes/class-settings.php:565
 msgid "Constructor de textos MdC"
 msgstr "MdC text composer"
 
@@ -449,15 +441,9 @@ msgstr "MdC text"
 #: includes/class-settings.php:564
 #, php-format
 msgid ""
-"Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta "
-"%s para convertir MdC a Unicode con un clic y copiarlo."
+"Si no recuerdas la codificación Unicode de un fragmento, usa el %s de esta "
+"misma página para componer el texto y copiarlo."
 msgstr ""
-"If you don't remember the Unicode encoding of a fragment, use the %s tool to "
-"convert MdC to Unicode in one click and copy it."
-
-#: includes/class-settings.php:565
-msgid "Herramientas → Conversor MdC"
-msgstr "Tools → MdC Converter"
 
 #: includes/class-settings.php:570
 msgid "Shortcode [hiero]"
@@ -568,6 +554,23 @@ msgid ""
 msgstr ""
 "Rendering engine and converter: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). "
 "Both by Mark-Jan Nederhof (University of St Andrews)."
+
+#~ msgid "Conversor MdC (jeroglíficos)"
+#~ msgstr "MdC Converter (hieroglyphs)"
+
+#~ msgid "Conversor MdC"
+#~ msgstr "MdC Converter"
+
+#, php-format
+#~ msgid ""
+#~ "Si no recuerdas la codificación Unicode de un fragmento, usa la "
+#~ "herramienta %s para convertir MdC a Unicode con un clic y copiarlo."
+#~ msgstr ""
+#~ "If you don't remember the Unicode encoding of a fragment, use the %s tool "
+#~ "to convert MdC to Unicode in one click and copy it."
+
+#~ msgid "Herramientas → Conversor MdC"
+#~ msgstr "Tools → MdC Converter"
 
 #~ msgid "Alineación"
 #~ msgstr "Alignment"

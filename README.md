@@ -13,7 +13,7 @@ Built on [HieroJax](https://nederhof.github.io/hierojax/) (GPL-3.0) and the [New
 - Automatic **MdC → Unicode** conversion in the editor (quadrats with `:` and `*`, juxtaposition, lost signs, shading, red/black, enclosures, …).
 - Per-block options: sign size, alignment, color, direction (right-to-left for classical Egyptian), sign separation, shading, line height.
 - **`[hiero]` shortcode** for the classic editor: `[hiero]𓂋𓄿[/hiero]` (Unicode hieroglyphic encoding).
-- **Admin converter tool** (Tools → MdC Converter): one-click MdC → Unicode, copy to clipboard.
+- **MdC composer** (Settings → Egyptian Hieroglyphs): visual sign palette (Gardiner list) with buttons for cartouches, quadrats and groups, live preview and copy-to-clipboard.
 - Assets are only loaded on pages that contain hieroglyphs; the 1.2 MB MdC parser is loaded **only in the editor**.
 - Signs render as SVG: sharp at any size and copyable/selectable.
 

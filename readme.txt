@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ Escribe una frase en [Manuel de Codage (MdC)](https://es.wikipedia.org/wiki/Manu
 * Conversión automática **MdC → Unicode** en el editor (soporta cuadraturas con `:` y `*`, yuxtaposición, signos perdidos, sombreado, rojo/negro, etc.).
 * Opciones por bloque: tamaño de los signos, alineación, color, dirección (derecha→izquierda para egipcio clásico), separación entre signos, sombreado y altura de línea.
 * **Shortcode `[hiero]`** para el editor clásico: acepta transliteración MdC o codificación Unicode jeroglífica: `[hiero]ra-ms-sw[/hiero]` o `[hiero]𓂋𓄿[/hiero]`; se integra en el texto sin romperlo.
-* **Herramienta de conversión** en Herramientas → Conversor MdC: convierte MdC a Unicode con un clic y cópialo al portapapeles.
+* **Constructor de textos MdC** en Ajustes → Jeroglíficos Egipcios: paleta de signos (lista de Gardiner), botones para cartuchos, cuadraturas y grupos, con vista previa en vivo y copia del resultado.
 * Solo se cargan los scripts en páginas que contienen jeroglíficos; el parser MdC (1,2 MB) se carga únicamente en el editor.
 * Los signos se renderizan como SVG: nítidos a cualquier tamaño y copiables/pegables.
 
@@ -33,7 +33,7 @@ Escribe una frase en [Manuel de Codage (MdC)](https://es.wikipedia.org/wiki/Manu
 1. Sube la carpeta `egyptian-hieroglyphs` a `/wp-content/plugins/` (o instala el zip desde Plugins → Añadir nuevo).
 2. Activa el plugin.
 3. En el editor de una entrada, añade el bloque "Jeroglíficos egipcios (MdC)" y escribe tu texto en MdC.
-4. Para el editor clásico, usa `[hiero]` con codificación Unicode jeroglífica (genera el Unicode con Herramientas → Conversor MdC).
+4. Para el editor clásico, usa `[hiero]` con transliteración MdC o codificación Unicode jeroglífica (compón el texto con el Constructor de textos MdC de los ajustes).
 
 == Frequently Asked Questions ==
 
@@ -53,7 +53,7 @@ Los corchetes `[& … &]` son signos de corchete literales, no cartuchos.
 
 = ¿El shortcode acepta MdC? =
 
-No: el shortcode espera la codificación Unicode jeroglífica ya convertida. Usa el bloque (que convierte MdC automáticamente) o la herramienta Herramientas → Conversor MdC para obtener el Unicode.
+Sí: el shortcode acepta transliteración MdC directamente (la convierte al vuelo en el navegador) o codificación Unicode jeroglífica. Compón el texto con el Constructor de textos MdC de los ajustes.
 
 = ¿Por qué veo el carácter � en la vista previa? =
 

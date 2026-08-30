@@ -560,9 +560,9 @@ class Settings {
 		<p>
 			<?php
 			printf(
-				/* translators: %s is a tool menu name. */
-				esc_html__( 'Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta %s para convertir MdC a Unicode con un clic y copiarlo.', $td ),
-				'<strong>' . esc_html__( 'Herramientas → Conversor MdC', $td ) . '</strong>'
+				/* translators: %s is the composer tool name. */
+				esc_html__( 'Si no recuerdas la codificación Unicode de un fragmento, usa el %s de esta misma página para componer el texto y copiarlo.', $td ),
+				'<strong>' . esc_html__( 'Constructor de textos MdC', $td ) . '</strong>'
 			);
 			?>
 		</p>

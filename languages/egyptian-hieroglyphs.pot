@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 15:07+0200\n"
+"POT-Creation-Date: 2026-08-30 15:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,42 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/class-admin-tool.php:36
-msgid "Conversor MdC (jeroglíficos)"
-msgstr ""
-
-#: includes/class-admin-tool.php:37
-msgid "Conversor MdC"
-msgstr ""
-
-#: includes/class-admin-tool.php:76
+#: includes/class-admin-tool.php:66
 msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
 msgstr ""
 
-#: includes/class-admin-tool.php:80
+#: includes/class-admin-tool.php:70
 msgid ""
 "Escribe una frase en notación MdC (una línea por fragmento) y conviértela a "
 "la codificación Unicode que renderiza hierojax. Usa el resultado en el "
 "shortcode [hiero] o como referencia para el bloque."
 msgstr ""
 
-#: includes/class-admin-tool.php:87
+#: includes/class-admin-tool.php:77
 msgid "Texto en MdC"
 msgstr ""
 
-#: includes/class-admin-tool.php:91
+#: includes/class-admin-tool.php:81
 msgid "Convertir"
 msgstr ""
 
-#: includes/class-admin-tool.php:98
+#: includes/class-admin-tool.php:88
 msgid "Vista previa"
 msgstr ""
 
-#: includes/class-admin-tool.php:101
+#: includes/class-admin-tool.php:91
 msgid "Codificación Unicode"
 msgstr ""
 
-#: includes/class-admin-tool.php:105
+#: includes/class-admin-tool.php:95
 msgid "Copiar al portapapeles"
 msgstr ""
 
@@ -102,7 +94,7 @@ msgstr ""
 msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
 msgstr ""
 
-#: includes/class-settings.php:247
+#: includes/class-settings.php:247 includes/class-settings.php:565
 msgid "Constructor de textos MdC"
 msgstr ""
 
@@ -425,12 +417,8 @@ msgstr ""
 #: includes/class-settings.php:564
 #, php-format
 msgid ""
-"Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta "
-"%s para convertir MdC a Unicode con un clic y copiarlo."
-msgstr ""
-
-#: includes/class-settings.php:565
-msgid "Herramientas → Conversor MdC"
+"Si no recuerdas la codificación Unicode de un fragmento, usa el %s de esta "
+"misma página para componer el texto y copiarlo."
 msgstr ""
 
 #: includes/class-settings.php:570
