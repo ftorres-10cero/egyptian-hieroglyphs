@@ -11,7 +11,7 @@
  * Plugin Name:       Egyptian Hieroglyphs (MdC)
  * Plugin URI:        https://www.ftorres.es
  * Description:       Renderiza jeroglíficos egipcios desde transliteración en notación Manuel de Codage (MdC) como SVG, mediante HieroJax y la fuente NewGardiner. Incluye un bloque de Gutenberg y un shortcode.
- * Version:           1.5.3
+ * Version:           1.5.4
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            ftorres.es
@@ -24,7 +24,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FT_HIERO_VERSION', '1.5.3' );
+define( 'FT_HIERO_VERSION', '1.5.4' );
 define( 'FT_HIERO_PLUGIN_FILE', __FILE__ );
 define( 'FT_HIERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FT_HIERO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -85,15 +85,35 @@ add_filter( 'render_block', 'ft_hiero_maybe_enqueue_frontend', 10, 2 );
 
 /**
  * Encola los assets del frontend cuando el contenido de la entrada contiene
- * jeroglíficos aunque no usen el bloque (p. ej. HTML con spans .hierojax).
+ * jeroglíficos aunque no usen el bloque (p. ej. HTML con spans .hierojax,
+ * shortcode [hiero]).
  */
 function ft_hiero_maybe_enqueue_by_content() {
 	if ( ! is_singular() ) {
 		return;
 	}
 	$post = get_post();
-	if ( $post && false !== strpos( (string) $post->post_content, 'hierojax' ) ) {
-		EgyptianHieroglyphs\Assets::enqueue_frontend();
+	if ( ! $post ) {
+		return;
+	}
+	$content = (string) $post->post_content;
+
+	// ¿Hay shortcode [hiero] con transliteración MdC? El shortcode convierte
+	// el MdC en el cliente, así que necesita mdcconversion.js. Se detecta
+	// mirando SOLO el interior de los tags [hiero]...[/hiero] (no todo el
+	// post, que puede contener Unicode jeroglífico en otras partes).
+	$needs_mdc = false;
+	if ( preg_match_all( '/\[hiero(?:\s[^\]]*)?\](.*?)\[\/hiero\]/s', $content, $matches ) ) {
+		foreach ( $matches[1] as $inner ) {
+			if ( ! preg_match( '/[\x{13000}-\x{134FF}]/u', (string) $inner ) ) {
+				$needs_mdc = true;
+				break;
+			}
+		}
+	}
+
+	if ( $needs_mdc || false !== strpos( $content, 'hierojax' ) || false !== strpos( $content, 'data-mdc' ) ) {
+		EgyptianHieroglyphs\Assets::enqueue_frontend( $needs_mdc );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ft_hiero_maybe_enqueue_by_content', 20 );

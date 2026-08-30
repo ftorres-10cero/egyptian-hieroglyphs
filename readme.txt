@@ -4,7 +4,7 @@ Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ Escribe una frase en [Manuel de Codage (MdC)](https://es.wikipedia.org/wiki/Manu
 * **Bloque de Gutenberg** "Jeroglíficos egipcios (MdC)" con vista previa en vivo mientras escribes el MdC.
 * Conversión automática **MdC → Unicode** en el editor (soporta cuadraturas con `:` y `*`, yuxtaposición, signos perdidos, sombreado, rojo/negro, etc.).
 * Opciones por bloque: tamaño de los signos, alineación, color, dirección (derecha→izquierda para egipcio clásico), separación entre signos, sombreado y altura de línea.
-* **Shortcode `[hiero]`** para el editor clásico: `[hiero]𓂋𓄿[/hiero]` (codificación Unicode jeroglífica).
+* **Shortcode `[hiero]`** para el editor clásico: acepta transliteración MdC o codificación Unicode jeroglífica: `[hiero]ra-ms-sw[/hiero]` o `[hiero]𓂋𓄿[/hiero]`; se integra en el texto sin romperlo.
 * **Herramienta de conversión** en Herramientas → Conversor MdC: convierte MdC a Unicode con un clic y cópialo al portapapeles.
 * Solo se cargan los scripts en páginas que contienen jeroglíficos; el parser MdC (1,2 MB) se carga únicamente en el editor.
 * Los signos se renderizan como SVG: nítidos a cualquier tamaño y copiables/pegables.

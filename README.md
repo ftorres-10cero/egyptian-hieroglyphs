@@ -64,13 +64,15 @@ The full guide (with cartouche section, complete examples and shortcode referenc
 
 ### Shortcode
 
-The shortcode takes the **Unicode hieroglyphic encoding** (one fragment per line). Generate it with Tools → MdC Converter or with the block's "View Unicode encoding" option:
+The shortcode accepts both the **Unicode hieroglyphic encoding** and plain **MdC transliteration** (it is converted automatically in the browser), so you can write:
 
 ```
-[hiero fontsize="42" align="center"]𓂋𓄿𓐰𓏤[/hiero]
+El rey [hiero]ra-ms-sw[/hiero] erigió un templo.   ← MdC, converted on the fly
+[hiero]𓂋𓄿𓐰𓏤[/hiero]                             ← or Unicode directly
+[hiero fontsize="42" color="#8B0000"]anx[/hiero]   ← with attributes
 ```
 
-Shortcode attributes: `fontsize` (8–200), `align` (left|center|right), `color` (hex), `dir` (ltr|hrl), `sep` (0–0.5), `shade` (uniform|hatching), `linesize` (0.5–3), `separated` (true|false).
+The hieroglyphs are rendered inline (they do not break the surrounding text). Shortcode attributes: `fontsize` (8–200), `align` (left|center|right), `color` (hex), `dir` (ltr|hrl), `sep` (0–0.5), `shade` (uniform|hatching), `linesize` (0.5–3), `separated` (true|false).
 
 ## Development
 

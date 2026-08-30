@@ -58,4 +58,24 @@ for ( const [ input, expected ] of cases ) {
 assert.throws( () => mdc.parse( '[ra\n' ), 'El MdC inválido debe lanzar error' );
 console.log( '✓ El MdC inválido lanza error de sintaxis' );
 
-console.log( 'PRUEBAS DE CONVERSIÓN MdC: OK' );
+// Frases usadas por el shortcode [hiero] (transliteración MdC -> Unicode).
+// Nota: mn-xpr-ra y nb-mAat-ra incluyen signos no mapeados a Unicode en
+// algunos entornos; aquí solo validamos las frases estables del artículo.
+const shortcode_cases = [
+	[ 'ra-ms-sw', '𓇳𓄟𓇓' ],
+	[ 'nTr anx', '𓊹𓋹' ],
+	[ 'anx', '𓋹' ],
+	[ 'nTr aA', '𓊹𓉻' ],
+];
+
+for ( const [ input, expected ] of shortcode_cases ) {
+	const out = convert( input );
+	assert.strictEqual(
+		out,
+		expected,
+		`Shortcode MdC "${ input }" debe convertir a ${ JSON.stringify( expected ) }, se obtuvo ${ JSON.stringify( out ) }`
+	);
+	console.log( `✓ [hiero]${ input }[/hiero] -> ${ JSON.stringify( out ) }` );
+}
+
+console.log( 'PRUEBAS DE CONVERSIÓN MdC (incluye shortcode): OK' );

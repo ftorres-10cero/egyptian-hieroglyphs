@@ -122,8 +122,12 @@ class Assets {
 
 	/**
 	 * Encola los assets del frontend (solo cuando hay contenido jeroglífico).
+	 *
+	 * @param bool $needs_mdc Si se necesitan shortcodes con transliteración MdC
+	 *                        (se carga mdcconversion.js, que ya incluye el
+	 *                        renderer completo de hierojax).
 	 */
-	public static function enqueue_frontend() {
+	public static function enqueue_frontend( $needs_mdc = false ) {
 		if ( self::$frontend_enqueued ) {
 			return;
 		}
@@ -133,7 +137,23 @@ class Assets {
 			self::register();
 		}
 
-		wp_enqueue_script( 'ftorres-hiero-runtime' );
+		if ( $needs_mdc ) {
+			// mdcconversion.js incluye renderer + parser; nunca junto a hierojax.js.
+			wp_enqueue_script( 'ftorres-hiero-mdc' );
+			wp_add_inline_script(
+				'ftorres-hiero-mdc',
+				self::frontend_process_script( true ),
+				'after'
+			);
+		} else {
+			wp_enqueue_script( 'ftorres-hiero-runtime' );
+			wp_add_inline_script(
+				'ftorres-hiero-runtime',
+				self::frontend_process_script( false ),
+				'after'
+			);
+		}
+
 		wp_enqueue_style( 'ftorres-hiero-css' );
 		wp_enqueue_style(
 			'ftorres-hiero-block-style',
@@ -141,18 +161,19 @@ class Assets {
 			array(),
 			FT_HIERO_VERSION
 		);
-
-		wp_add_inline_script(
-			'ftorres-hiero-runtime',
-			self::frontend_process_script(),
-			'after'
-		);
 	}
 
 	/**
-	 * Shortcode [hiero]...[/hiero]: contenido en codificación Unicode
-	 * (una línea por fragmento). El texto MdC se convierte con el bloque o con
-	 * la herramienta del administrador.
+	 * Shortcode [hiero]...[/hiero].
+	 *
+	 * Acepta dos formatos de contenido:
+	 *  - Codificación Unicode jeroglífica (caracteres U+13000+), una línea por
+	 *    fragmento — se renderiza directamente.
+	 *  - Transliteración MdC (nTr, ra-ms-sw, <- mn-xpr-ra -> …) — se convierte
+	 *    a Unicode en el cliente (requiere mdcconversion.js en el frontend).
+	 *
+	 * El resultado se envuelve en un <span> inline para integrarse en el texto
+	 * (no rompe el párrafo como un <div>).
 	 *
 	 * @param array|string $atts    Atributos del shortcode.
 	 * @param string|null  $content Contenido encerrado.
@@ -176,8 +197,6 @@ class Assets {
 		if ( '' === $content ) {
 			return '';
 		}
-
-		self::enqueue_frontend();
 
 		$fontsize  = max( 8, min( 200, absint( $atts['fontsize'] ) ) );
 		$align     = in_array( $atts['align'], array( 'left', 'center', 'right' ), true ) ? $atts['align'] : 'left';
@@ -205,18 +224,38 @@ class Assets {
 		}
 		$span_attrs .= ' style="' . esc_attr( $style ) . '"';
 
-		$lines = preg_split( '/\r\n|\r|\n/', $content );
-		$html  = '<div class="ftorres-hiero" style="text-align:' . esc_attr( $align ) . ';">';
+		$lines     = preg_split( '/\r\n|\r|\n/', $content );
+		$needs_mdc = false;
+		// Wrapper inline: se integra en la línea sin interrumpir el texto.
+		$html = '<span class="ftorres-hiero" style="display:inline-block;text-align:' . esc_attr( $align ) . ';">';
 		foreach ( $lines as $line ) {
 			$line = trim( $line );
 			if ( '' === $line ) {
 				continue;
 			}
-			$html .= '<span' . $span_attrs . '>' . esc_html( $line ) . '</span>';
+			if ( self::looks_like_unicode( $line ) ) {
+				$html .= '<span' . $span_attrs . '>' . esc_html( $line ) . '</span>';
+			} else {
+				// Transliteración MdC: se convierte en el cliente (data-mdc).
+				$needs_mdc = true;
+				$html     .= '<span' . $span_attrs . ' data-mdc="' . esc_attr( $line ) . '">' . esc_html( $line ) . '</span>';
+			}
 		}
-		$html .= '</div>';
+		$html .= '</span>';
+
+		self::enqueue_frontend( $needs_mdc );
 
 		return $html;
+	}
+
+	/**
+	 * ¿El texto es codificación Unicode jeroglífica (U+13000–U+134FF)?
+	 *
+	 * @param string $text
+	 * @return bool
+	 */
+	private static function looks_like_unicode( $text ) {
+		return (bool) preg_match( '/[\x{13000}-\x{134FF}]/u', $text );
 	}
 
 	/**
@@ -242,9 +281,28 @@ class Assets {
 	/**
 	 * Script inline que procesa los fragmentos hierojax al cargar la página.
 	 *
+	 * Si $with_mdc es true, primero convierte los spans con data-mdc
+	 * (transliteración MdC) a codificación Unicode usando mdcsyntax, y después
+	 * renderiza todos los fragmentos con hierojax.
+	 *
+	 * @param bool $with_mdc
 	 * @return string
 	 */
-	private static function frontend_process_script() {
+	private static function frontend_process_script( $with_mdc = false ) {
+		if ( $with_mdc ) {
+			return 'window.addEventListener("DOMContentLoaded",function(){' .
+				'if(typeof mdcsyntax!=="undefined"){' .
+					'document.querySelectorAll(".hierojax[data-mdc]").forEach(function(s){' .
+						'var mdc=s.getAttribute("data-mdc");if(!mdc)return;' .
+						'try{var parsed=mdcsyntax.parse(mdc+"\n");' .
+							'var parts=parsed&&parsed.parts?parsed.parts:[];' .
+							'var uni=parts.map(function(p){return p&&typeof p.cutByColor==="function"?p.cutByColor().map(function(f){return f.toString()}).join(""):String(p);}).join("");' .
+							'if(uni){s.textContent=uni;s.removeAttribute("data-mdc");}' .
+						'}catch(e){}});' .
+				'}' .
+				'if(typeof hierojax!=="undefined"){hierojax.processFragments();}' .
+			'});';
+		}
 		return 'window.addEventListener("DOMContentLoaded",function(){if(typeof hierojax!=="undefined"){hierojax.processFragments();}});';
 	}
 }
