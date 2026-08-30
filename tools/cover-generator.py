@@ -4,8 +4,11 @@
 
 Replica la plantilla de las portadas previas de ftorres.es (pfc-2003, deepseek,
 opencode, claude-code):
-- Polígono diagonal #231A46 de (0,0)-(458,0)-(167,500)-(0,500).
-- Fondo claro #F1F0F7 con texto transliterado pálido + bloques de jeroglíficos.
+- Fondo claro #F1F0F7 con texto transliterado pálido + bloques de jeroglíficos
+  y anillos decorativos — TODO se dibuja primero.
+- La sección diagonal oscura #231A46 (0,0)-(458,0)-(167,500)-(0,500) se dibuja
+  ENCIMA del fondo: es completamente opaca y NO deja ver textos ni jeroglíficos
+  de la zona clara a través de ella.
 - Icono: recuadro redondeado 260x260 en (560,110)-(820,370), fondo del color de
   marca, logo (W de WordPress blanca + escarabajo rojo encima) centrado.
 - Píldora inferior oscura (47,47,63) centrada en x=615 con ejemplo MdC.
@@ -20,6 +23,7 @@ BRAND = (124, 92, 231)        # #7C5CE7 púrpura de marca (estilo previos)
 RED = (198, 40, 40)           # #C62828
 RED_DARK = (139, 0, 0)        # #8B0000
 PALE = (120, 112, 150)        # texto transliterado del fondo
+GLYPH = (80, 70, 120)         # jeroglíficos del fondo
 PILL = (47, 47, 63)           # #2F2F3F píldora inferior
 LIB_BOLD = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
 LIB_REG = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
@@ -36,17 +40,29 @@ def font(path, size):
 
 
 # ---------------------------------------------------------------------------
-# 1) Sección diagonal oscura — misma geometría que las portadas previas
+# 1) FONDO CLARO: texto transliterado intercalado con bloques de jeroglíficos
 # ---------------------------------------------------------------------------
-poly = [(0, 0), (458, 0), (167, 500), (0, 500)]
-d.polygon(poly, fill=DARK)
+pale_font = font(LIB_ITAL, 16)
+glyph_font = font(NEWG, 30)
+# texto transliterado pálido (zona clara: derecha e inferior)
+for (y, txt) in [(90, "nTr anx ra"), (130, "Htp-di-nswt"), (170, "mn-xpr-ra"),
+                 (210, "ra-ms-sw"), (250, "sA-ra"), (300, "nTr-anx"),
+                 (390, "anx"), (420, "sA")]:
+    d.text((610, y), txt, font=pale_font, fill=PALE)
+# bloques de jeroglíficos intercalados (zona clara)
+for (x, y, txt) in [(610, 105, "nTr:r"), (700, 145, "ra:Z1"), (760, 185, "Htp-di"),
+                    (620, 225, "anx"), (700, 260, "mn-xpr"), (790, 300, "ra"),
+                    (630, 350, "<- ra ->"), (700, 395, "sA"), (780, 430, "anx"),
+                    (620, 460, "nTr")]:
+    d.text((x, y), txt, font=glyph_font, fill=GLYPH)
 
 # ---------------------------------------------------------------------------
-# 2) Decoración: anillo y puntos
+# 2) Anillos y puntos decorativos (debajo del polígono: el polígono los tapa
+#    dentro de su área, por lo que la sección diagonal queda limpia)
 # ---------------------------------------------------------------------------
 ring = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 rd = ImageDraw.Draw(ring)
-rd.ellipse((-150, 60, 260, 470), outline=(255, 255, 255, 60), width=3)
+rd.ellipse((-150, 60, 260, 470), outline=(255, 255, 255, 120), width=3)
 rd.ellipse((470, 330, 560, 420), outline=(35, 26, 70, 90), width=2)
 img = Image.alpha_composite(img.convert("RGBA"), ring).convert("RGB")
 d = ImageDraw.Draw(img)
@@ -55,21 +71,11 @@ for (px, py, r) in [(455, 90, 5), (500, 250, 3), (612, 300, 4), (810, 330, 3)]:
     d.ellipse((px - r, py - r, px + r, py + r), fill=PALE)
 
 # ---------------------------------------------------------------------------
-# 3) Fondo claro: texto transliterado intercalado con bloques de jeroglíficos
+# 3) SECCIÓN DIAGONAL OSCURA — se dibuja ENCIMA del fondo, opaca.
+#    Misma geometría que las portadas previas: (0,0)-(458,0)-(167,500)-(0,500)
 # ---------------------------------------------------------------------------
-pale_font = font(LIB_ITAL, 16)
-glyph_font = font(NEWG, 30)
-# texto pálido a lo largo de la zona clara (derecha e inferior)
-for (y, txt) in [(90, "nTr anx ra"), (130, "Htp-di-nswt"), (170, "mn-xpr-ra"),
-                 (210, "ra-ms-sw"), (250, "sA-ra"), (300, "nTr-anx"),
-                 (390, "anx"), (420, "sA")]:
-    d.text((610, y), txt, font=pale_font, fill=PALE)
-# bloques de jeroglíficos intercalados
-for (x, y, txt) in [(610, 105, "nTr:r"), (700, 145, "ra:Z1"), (760, 185, "Htp-di"),
-                    (620, 225, "anx"), (700, 260, "mn-xpr"), (790, 300, "ra"),
-                    (630, 350, "<- ra ->"), (700, 395, "sA"), (780, 430, "anx"),
-                    (620, 460, "nTr")]:
-    d.text((x, y), txt, font=glyph_font, fill=(80, 70, 120))
+poly = [(0, 0), (458, 0), (167, 500), (0, 500)]
+d.polygon(poly, fill=DARK)
 
 # ---------------------------------------------------------------------------
 # 4) Icono: recuadro redondeado con fondo de color (estilo de las portadas
