@@ -49,9 +49,12 @@ class Settings {
 			Assets::register();
 		}
 		wp_enqueue_style( 'ftorres-hiero-css' );
-		wp_add_inline_style(
-			'ftorres-hiero-css',
-			'.ft-hiero-help-glyph{font-family:"Hieroglyphic",serif;font-size:1.15em;}'
+		// Renderiza los ejemplos de la ayuda como SVG (igual que el conversor).
+		wp_enqueue_script( 'ftorres-hiero-runtime' );
+		wp_add_inline_script(
+			'ftorres-hiero-runtime',
+			'window.addEventListener("DOMContentLoaded",function(){if(typeof hierojax!=="undefined"){hierojax.processFragments();}});',
+			'after'
 		);
 	}
 
@@ -334,7 +337,7 @@ class Settings {
 				esc_html__( 'Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen.', $td ),
 				'<code>&lt;…&gt;</code>',
 				'<code>&lt;- mn-xpr-ra -&gt;</code>',
-				'<strong class="ft-hiero-help-glyph">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</strong>',
+				'<span class="hierojax" style="font-size:32px;">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span>',
 				'<code>&lt;S- anx -&gt;</code>'
 			);
 			?>
@@ -349,12 +352,12 @@ class Settings {
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td><code>nTr:r</code></td><td><span class="ft-hiero-help-glyph">𓊹𓐰𓂋</span></td></tr>
-				<tr><td><code>ra:Z1*t:Z1</code></td><td><span class="ft-hiero-help-glyph">𓇳𓐰𓏤𓐱𓏏𓐰𓏤</span></td></tr>
-				<tr><td><code>&lt;- mn-xpr-ra -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span></td></tr>
-				<tr><td><code>&lt;- ra-ms-sw -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓍹𓐼𓇳𓄟𓇓𓐽𓍺</span></td></tr>
-				<tr><td><code>&lt;S- anx -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓉘𓐼𓋹𓐽𓊂</span></td></tr>
-				<tr><td><code>i*w</code></td><td><span class="ft-hiero-help-glyph">𓇋𓐱𓅱</span></td></tr>
+				<tr><td><code>nTr:r</code></td><td><span class="hierojax" style="font-size:32px;">𓊹𓐰𓂋</span></td></tr>
+				<tr><td><code>ra:Z1*t:Z1</code></td><td><span class="hierojax" style="font-size:32px;">𓇳𓐰𓏤𓐱𓏏𓐰𓏤</span></td></tr>
+				<tr><td><code>&lt;- mn-xpr-ra -&gt;</code></td><td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span></td></tr>
+				<tr><td><code>&lt;- ra-ms-sw -&gt;</code></td><td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓇳𓄟𓇓𓐽𓍺</span></td></tr>
+				<tr><td><code>&lt;S- anx -&gt;</code></td><td><span class="hierojax" style="font-size:32px;">𓉘𓐼𓋹𓐽𓊂</span></td></tr>
+				<tr><td><code>i*w</code></td><td><span class="hierojax" style="font-size:32px;">𓇋𓐱𓅱</span></td></tr>
 			</tbody>
 		</table>
 		<p>
@@ -376,7 +379,7 @@ class Settings {
 			);
 			?>
 		</p>
-		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">[hiero fontsize="42" align="center"]𓂋𓄿𓐰𓏤[/hiero]</pre>
+		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">[hiero fontsize="42" align="center"]<span class="hierojax" style="font-size:24px;">𓂋𓄿𓐰𓏤</span>[/hiero]</pre>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
