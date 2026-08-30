@@ -10,18 +10,16 @@ Built on [HieroJax](https://nederhof.github.io/hierojax/) (GPL-3.0) and the [New
 - Automatic **MdC → Unicode** conversion in the editor (quadrats with `:` and `*`, juxtaposition, lost signs, shading, red/black, enclosures, …).
 - Per-block options: sign size, alignment, color, direction (right-to-left for classical Egyptian), sign separation, shading, line height.
 - **`[hiero]` shortcode** for the classic editor: `[hiero]𓂋𓄿[/hiero]` (Unicode hieroglyphic encoding).
-- **Admin converter tool** (Tools → Conversor MdC): one-click MdC → Unicode, copy to clipboard.
+- **Admin converter tool** (Tools → MdC Converter): one-click MdC → Unicode, copy to clipboard.
 - Assets are only loaded on pages that contain hieroglyphs; the 1.2 MB MdC parser is loaded **only in the editor**.
 - Signs render as SVG: sharp at any size and copyable/selectable.
 
-## Ajustes por defecto
+## Default settings
 
-**Ajustes → Jeroglíficos (MdC)** permite definir el **tamaño** (px) y el **color**
-por defecto de los signos. Se aplican a:
+**Settings → Egyptian Hieroglyphs (MdC)** lets you define the default **size** (px) and **color** of the signs. They apply to:
 
-- Los **bloques nuevos** que insertes (cada bloque puede personalizarlos después
-  desde su panel de opciones — el cambio no afecta a los bloques ya guardados).
-- El **shortcode** `[hiero]` cuando no se pasan `fontsize`/`color`.
+- **New blocks** you insert (each block can customize them afterwards from its options panel — the change does not affect already-saved blocks).
+- The **`[hiero]` shortcode** when no `fontsize`/`color` are given.
 
 ## Usage
 
@@ -63,7 +61,7 @@ The full guide (with cartouche section, complete examples and shortcode referenc
 
 ### Shortcode
 
-The shortcode takes the **Unicode hieroglyphic encoding** (one fragment per line). Generate it with Tools → Conversor MdC or with the block's "Ver codificación Unicode" option:
+The shortcode takes the **Unicode hieroglyphic encoding** (one fragment per line). Generate it with Tools → MdC Converter or with the block's "View Unicode encoding" option:
 
 ```
 [hiero fontsize="42" align="center"]𓂋𓄿𓐰𓏤[/hiero]
