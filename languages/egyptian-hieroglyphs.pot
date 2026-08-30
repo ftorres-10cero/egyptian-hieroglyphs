@@ -2,9 +2,8 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.3.1\n"
-"Report-Msgid-Bugs-To: https://www.ftorres.es\n"
-"POT-Creation-Date: 2026-08-30 12:40+0200\n"
+"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.5.0\n"
+"POT-Creation-Date: 2026-08-30 13:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,13 +45,40 @@ msgstr ""
 msgid "Ayuda"
 msgstr ""
 
+msgid "CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura"
+msgstr ""
+
 msgid "Cartucho / cerramiento"
 msgstr ""
 
-msgid "Cartuchos"
+msgid "Cartucho con b inicial"
+msgstr ""
+
+msgid "Cartucho con dos palabras yuxtapuestas"
+msgstr ""
+
+msgid "Cartucho con un nombre real (Menkheperre)"
+msgstr ""
+
+msgid "Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)"
+msgstr ""
+
+msgid "Cartucho con una cuadratura (más alto)"
+msgstr ""
+
+msgid "Cartucho simple"
+msgstr ""
+
+msgid "Cartucho, variante H"
+msgstr ""
+
+msgid "Cartuchos (todas las variantes)"
 msgstr ""
 
 msgid "Centro"
+msgstr ""
+
+msgid "Cerramiento amurallado"
 msgstr ""
 
 msgid "Codificación Unicode"
@@ -181,7 +207,7 @@ msgstr ""
 msgid "La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado."
 msgstr ""
 
-msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
+msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con los cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con \":\", el cartucho se vuelve vertical."
 msgstr ""
 
 msgid "Los scripts y la fuente solo se cargan en páginas que contienen jeroglíficos, para no ralentizar el resto del sitio."
@@ -190,13 +216,19 @@ msgstr ""
 msgid "Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr = dios, ra = sol) y se combinan con separadores para formar cuadraturas, grupos y palabras."
 msgstr ""
 
-msgid "Marca el texto en rojo (papiros)"
+msgid "Marca el texto en rojo (papiros; sufijo)"
 msgstr ""
 
 msgid "Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
 msgstr ""
 
 msgid "Opciones de visualización"
+msgstr ""
+
+msgid "Orientación, rotación y sombreado"
+msgstr ""
+
+msgid "Para cambiar la orientación de toda la línea usa la opción \"Dirección\" del bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear un signo concreto, los modificadores van DESPUÉS del signo (sufijo):"
 msgstr ""
 
 msgid "Patrón de sombreado de los signos dañados."
@@ -223,7 +255,13 @@ msgstr ""
 msgid "Resultado"
 msgstr ""
 
-msgid "Rotaciones y transposiciones del signo siguiente"
+msgid "Rota el signo anterior (sufijo tras el signo)"
+msgstr ""
+
+msgid "Rota el signo anterior (variantes de la fuente)"
+msgstr ""
+
+msgid "Rota el signo anterior 90°, 180° o 270°"
 msgstr ""
 
 msgid "Separa palabras"
@@ -247,6 +285,9 @@ msgstr ""
 msgid "Sombreado"
 msgstr ""
 
+msgid "Sombreado del signo anterior (1-4 = esquinas)"
+msgstr ""
+
 msgid "Superpone un signo sobre otro"
 msgstr ""
 
@@ -262,6 +303,9 @@ msgstr ""
 msgid "Tamaño en píxeles de la altura de los signos (8–200)."
 msgstr ""
 
+msgid "También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final del texto."
+msgstr ""
+
 msgid "Termina el fragmento actual"
 msgstr ""
 
@@ -272,6 +316,9 @@ msgid "Texto en MdC"
 msgstr ""
 
 msgid "Texto en notación MdC"
+msgstr ""
+
+msgid "Transposiciones horizontal, vertical y de reordenación"
 msgstr ""
 
 msgid "Uniforme"

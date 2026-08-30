@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 12:29+0200\n"
+"POT-Creation-Date: 2026-08-30 12:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,11 +132,13 @@ msgstr ""
 msgid "Referencia de la sintaxis (tags)"
 msgstr ""
 
-#: includes/class-settings.php:263
+#: includes/class-settings.php:263 includes/class-settings.php:344
+#: includes/class-settings.php:415
 msgid "Tag"
 msgstr ""
 
-#: includes/class-settings.php:264
+#: includes/class-settings.php:264 includes/class-settings.php:345
+#: includes/class-settings.php:416
 msgid "Qué hace"
 msgstr ""
 
@@ -178,7 +180,7 @@ msgstr ""
 msgid "Cartucho / cerramiento"
 msgstr ""
 
-#: includes/class-settings.php:306
+#: includes/class-settings.php:306 includes/class-settings.php:377
 msgid "Anillo shen"
 msgstr ""
 
@@ -187,11 +189,11 @@ msgid "Superpone un signo sobre otro"
 msgstr ""
 
 #: includes/class-settings.php:316
-msgid "Rotaciones y transposiciones del signo siguiente"
+msgid "Rota el signo anterior (sufijo tras el signo)"
 msgstr ""
 
 #: includes/class-settings.php:321
-msgid "Marca el texto en rojo (papiros)"
+msgid "Marca el texto en rojo (papiros; sufijo)"
 msgstr ""
 
 #: includes/class-settings.php:326
@@ -199,98 +201,170 @@ msgid "Corchetes literales (no es un cartucho)"
 msgstr ""
 
 #: includes/class-settings.php:332
-msgid "Cartuchos"
+msgid "Cartuchos (todas las variantes)"
 msgstr ""
 
-#: includes/class-settings.php:337
-#, php-format
+#: includes/class-settings.php:336
 msgid ""
-"Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. "
-"Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
+"Los cartuchos (nombres reales dentro de un óvalo) se escriben con los "
+"cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con \":"
+"\", el cartucho se vuelve vertical."
 msgstr ""
 
-#: includes/class-settings.php:346
-msgid "Ejemplos completos"
-msgstr ""
-
-#: includes/class-settings.php:350
-msgid "Texto MdC"
-msgstr ""
-
-#: includes/class-settings.php:351
+#: includes/class-settings.php:346 includes/class-settings.php:417
+#: includes/class-settings.php:458
 msgid "Resultado"
 msgstr ""
 
+#: includes/class-settings.php:352
+msgid "Cartucho simple"
+msgstr ""
+
+#: includes/class-settings.php:357
+msgid "Cartucho con un nombre real (Menkheperre)"
+msgstr ""
+
+#: includes/class-settings.php:362
+msgid "Cartucho con una cuadratura (más alto)"
+msgstr ""
+
 #: includes/class-settings.php:367
+msgid "CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura"
+msgstr ""
+
+#: includes/class-settings.php:372
+msgid "Cartucho con dos palabras yuxtapuestas"
+msgstr ""
+
+#: includes/class-settings.php:382
+msgid "Cerramiento amurallado"
+msgstr ""
+
+#: includes/class-settings.php:387
+msgid "Cartucho, variante H"
+msgstr ""
+
+#: includes/class-settings.php:392
+msgid ""
+"Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)"
+msgstr ""
+
+#: includes/class-settings.php:397
+msgid "Cartucho con b inicial"
+msgstr ""
+
+#: includes/class-settings.php:403
+msgid "Orientación, rotación y sombreado"
+msgstr ""
+
+#: includes/class-settings.php:407
+msgid ""
+"Para cambiar la orientación de toda la línea usa la opción \"Dirección\" del "
+"bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear "
+"un signo concreto, los modificadores van DESPUÉS del signo (sufijo):"
+msgstr ""
+
+#: includes/class-settings.php:423
+msgid "Rota el signo anterior (variantes de la fuente)"
+msgstr ""
+
+#: includes/class-settings.php:428
+msgid "Rota el signo anterior 90°, 180° o 270°"
+msgstr ""
+
+#: includes/class-settings.php:433
+msgid "Transposiciones horizontal, vertical y de reordenación"
+msgstr ""
+
+#: includes/class-settings.php:438
+msgid "Sombreado del signo anterior (1-4 = esquinas)"
+msgstr ""
+
+#: includes/class-settings.php:447
+#, php-format
+msgid ""
+"También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final "
+"del texto."
+msgstr ""
+
+#: includes/class-settings.php:453
+msgid "Ejemplos completos"
+msgstr ""
+
+#: includes/class-settings.php:457
+msgid "Texto MdC"
+msgstr ""
+
+#: includes/class-settings.php:474
 #, php-format
 msgid ""
 "Si no recuerdas la codificación Unicode de un fragmento, usa la herramienta "
 "%s para convertir MdC a Unicode con un clic y copiarlo."
 msgstr ""
 
-#: includes/class-settings.php:368
+#: includes/class-settings.php:475
 msgid "Herramientas → Conversor MdC"
 msgstr ""
 
-#: includes/class-settings.php:373
+#: includes/class-settings.php:480
 msgid "Shortcode [hiero]"
 msgstr ""
 
-#: includes/class-settings.php:377
+#: includes/class-settings.php:484
 msgid ""
 "El shortcode se usa en el editor clásico y acepta la codificación Unicode "
 "jeroglífica (una línea por fragmento):"
 msgstr ""
 
-#: includes/class-settings.php:386
+#: includes/class-settings.php:493
 msgid "Atributo"
 msgstr ""
 
-#: includes/class-settings.php:387
+#: includes/class-settings.php:494
 msgid "Valores"
 msgstr ""
 
-#: includes/class-settings.php:388
+#: includes/class-settings.php:495
 msgid "Descripción"
 msgstr ""
 
-#: includes/class-settings.php:392
+#: includes/class-settings.php:499
 msgid "Tamaño de los signos (por defecto: el de los ajustes)."
 msgstr ""
 
-#: includes/class-settings.php:393
+#: includes/class-settings.php:500
 msgid "Color de los signos (vacío = hereda el tema)."
 msgstr ""
 
-#: includes/class-settings.php:394
+#: includes/class-settings.php:501
 msgid "Alineación del bloque."
 msgstr ""
 
-#: includes/class-settings.php:395
+#: includes/class-settings.php:502
 msgid "Dirección: izquierda→derecha o derecha→izquierda."
 msgstr ""
 
-#: includes/class-settings.php:396
+#: includes/class-settings.php:503
 msgid "Separación entre signos."
 msgstr ""
 
-#: includes/class-settings.php:397
+#: includes/class-settings.php:504
 msgid "Patrón de sombreado de los signos dañados."
 msgstr ""
 
-#: includes/class-settings.php:398
+#: includes/class-settings.php:505
 msgid "Altura de línea (multiplicador)."
 msgstr ""
 
-#: includes/class-settings.php:399
+#: includes/class-settings.php:506
 msgid "Permitir saltos de línea en fragmentos largos."
 msgstr ""
 
-#: includes/class-settings.php:403
+#: includes/class-settings.php:510
 msgid "Consejos y preguntas frecuentes"
 msgstr ""
 
-#: includes/class-settings.php:409
+#: includes/class-settings.php:516
 #, php-format
 msgid ""
 "La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no "
@@ -298,31 +372,31 @@ msgid ""
 "desde la CDN oficial de HieroJax (%s)."
 msgstr ""
 
-#: includes/class-settings.php:417
+#: includes/class-settings.php:524
 msgid ""
 "Si un código MdC no está aún codificado en Unicode, la vista previa muestra "
 "el carácter � y el editor avisa. Revisa el código o usa la codificación "
 "Unicode manual."
 msgstr ""
 
-#: includes/class-settings.php:425
+#: includes/class-settings.php:532
 msgid ""
 "Los scripts y la fuente solo se cargan en páginas que contienen "
 "jeroglíficos, para no ralentizar el resto del sitio."
 msgstr ""
 
-#: includes/class-settings.php:434
+#: includes/class-settings.php:541
 msgid ""
 "El bloque se personaliza por cada inserción desde su panel de opciones; los "
 "valores por defecto de esta página solo afectan a bloques nuevos y al "
 "shortcode."
 msgstr ""
 
-#: includes/class-settings.php:441
+#: includes/class-settings.php:548
 msgid "Créditos"
 msgstr ""
 
-#: includes/class-settings.php:446
+#: includes/class-settings.php:553
 #, php-format
 msgid ""
 "Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). "

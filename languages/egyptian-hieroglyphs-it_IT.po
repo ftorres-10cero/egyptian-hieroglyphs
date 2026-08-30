@@ -1,12 +1,12 @@
-# Translation of Egyptian Hieroglyphs (MdC) to italiano.
+# Translation of Egyptian Hieroglyphs (MdC) to it_IT.
 # Copyright (C) 2026 ftorres.es
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.3.1\n"
+"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.5.0\n"
 "Report-Msgid-Bugs-To: https://www.ftorres.es\n"
-"POT-Creation-Date: 2026-08-30 12:50+0200\n"
-"PO-Revision-Date: 2026-08-30 12:50+0200\n"
+"POT-Creation-Date: 2026-08-30 13:15+0200\n"
+"PO-Revision-Date: 2026-08-30 13:15+0200\n"
 "Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
 "Language-Team: Italian (Italy) <it@li.org>\n"
 "Language: it_IT\n"
@@ -48,14 +48,41 @@ msgstr "Avanzate"
 msgid "Ayuda"
 msgstr "Aiuto"
 
+msgid "CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura"
+msgstr "CARTIGLIO VERTICALE: segni impilati; l'ovale cresce in altezza"
+
 msgid "Cartucho / cerramiento"
 msgstr "Cartiglio / contenitore"
 
-msgid "Cartuchos"
-msgstr "Cartigli"
+msgid "Cartucho con b inicial"
+msgstr "Cartiglio con b iniziale"
+
+msgid "Cartucho con dos palabras yuxtapuestas"
+msgstr "Cartiglio con due parole giustapposte"
+
+msgid "Cartucho con un nombre real (Menkheperre)"
+msgstr "Cartiglio con un nome reale (Menkheperre)"
+
+msgid "Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)"
+msgstr "Cartiglio con un segno iniziale dentro (complemento fonetico: s, b, h, 1…)"
+
+msgid "Cartucho con una cuadratura (más alto)"
+msgstr "Cartiglio con un quadrato (più alto)"
+
+msgid "Cartucho simple"
+msgstr "Cartiglio semplice"
+
+msgid "Cartucho, variante H"
+msgstr "Cartiglio, variante H"
+
+msgid "Cartuchos (todas las variantes)"
+msgstr "Cartigli (tutte le varianti)"
 
 msgid "Centro"
 msgstr "Centro"
+
+msgid "Cerramiento amurallado"
+msgstr "Contenitore fortificato"
 
 msgid "Codificación Unicode"
 msgstr "Codifica Unicode"
@@ -183,8 +210,8 @@ msgstr "L'anteprima apparirà qui. Inserisci sopra una frase in MdC."
 msgid "La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado."
 msgstr "L'anteprima viene generata all'istante. Nel pannello laterale del blocco regola dimensione, colore, direzione, spaziatura e tratteggio."
 
-msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen."
-msgstr "I cartigli (nomi reali dentro un ovale) si scrivono con %1$s. Esempio: %2$s renderizza %3$s. Usa %4$s per l'anello shen."
+msgid "Los cartuchos (nombres reales dentro de un óvalo) se escriben con los cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con \":\", el cartucho se vuelve vertical."
+msgstr "I cartigli (nomi reali dentro un ovale) si scrivono con i contenitori < e >. L'ovale si adatta al contenuto: se impili i segni con \":\", il cartiglio diventa verticale."
 
 msgid "Los scripts y la fuente solo se cargan en páginas que contienen jeroglíficos, para no ralentizar el resto del sitio."
 msgstr "Script e font vengono caricati solo nelle pagine che contengono geroglifici, per non rallentare il resto del sito."
@@ -192,14 +219,20 @@ msgstr "Script e font vengono caricati solo nelle pagine che contengono geroglif
 msgid "Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr = dios, ra = sol) y se combinan con separadores para formar cuadraturas, grupos y palabras."
 msgstr "I segni seguono la lista di Gardiner: ognuno ha un codice (es. nTr = dio, ra = sole) e si combina con separatori per formare quadrati, gruppi e parole."
 
-msgid "Marca el texto en rojo (papiros)"
-msgstr "Marca il testo in rosso (papiri)"
+msgid "Marca el texto en rojo (papiros; sufijo)"
+msgstr "Marca il testo in rosso (papiri; suffisso)"
 
 msgid "Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
 msgstr "Motore di rendering e convertitore: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). Entrambi di Mark-Jan Nederhof (Università di St Andrews)."
 
 msgid "Opciones de visualización"
 msgstr "Opzioni di visualizzazione"
+
+msgid "Orientación, rotación y sombreado"
+msgstr "Orientamento, rotazione e tratteggio"
+
+msgid "Para cambiar la orientación de toda la línea usa la opción \"Dirección\" del bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear un signo concreto, los modificadores van DESPUÉS del signo (sufijo):"
+msgstr "Per cambiare l'orientamento dell'intera riga, usa l'opzione «Direzione» del blocco (destra → sinistra, come l'egiziano classico). Per ruotare o tratteggiare un singolo segno, i modificatori vanno DOPO il segno (suffisso):"
 
 msgid "Patrón de sombreado de los signos dañados."
 msgstr "Motivo di tratteggio per i segni danneggiati."
@@ -225,8 +258,14 @@ msgstr "Riferimento della sintassi (tag)"
 msgid "Resultado"
 msgstr "Risultato"
 
-msgid "Rotaciones y transposiciones del signo siguiente"
-msgstr "Rotazioni e trasposizioni del segno successivo"
+msgid "Rota el signo anterior (sufijo tras el signo)"
+msgstr "Ruota il segno precedente (suffisso dopo il segno)"
+
+msgid "Rota el signo anterior (variantes de la fuente)"
+msgstr "Ruota il segno precedente (varianti del font)"
+
+msgid "Rota el signo anterior 90°, 180° o 270°"
+msgstr "Ruota il segno precedente di 90°, 180° o 270°"
 
 msgid "Separa palabras"
 msgstr "Separa le parole"
@@ -249,6 +288,9 @@ msgstr "Se un codice MdC non è ancora codificato in Unicode, l'anteprima mostra
 msgid "Sombreado"
 msgstr "Tratteggio"
 
+msgid "Sombreado del signo anterior (1-4 = esquinas)"
+msgstr "Tratteggia il segno precedente (1-4 = angoli)"
+
 msgid "Superpone un signo sobre otro"
 msgstr "Sovrappone un segno su un altro"
 
@@ -264,6 +306,9 @@ msgstr "Dimensione dei segni (predefinita: quella delle impostazioni)."
 msgid "Tamaño en píxeles de la altura de los signos (8–200)."
 msgstr "Altezza dei segni in pixel (8–200)."
 
+msgid "También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final del texto."
+msgstr "Puoi anche marcare un frammento in rosso (papiri) scrivendo %s alla fine del testo."
+
 msgid "Termina el fragmento actual"
 msgstr "Termina il frammento corrente"
 
@@ -275,6 +320,9 @@ msgstr "Testo in MdC"
 
 msgid "Texto en notación MdC"
 msgstr "Testo in notazione MdC"
+
+msgid "Transposiciones horizontal, vertical y de reordenación"
+msgstr "Trasposizioni orizzontale, verticale e di riordino"
 
 msgid "Uniforme"
 msgstr "Uniforme"

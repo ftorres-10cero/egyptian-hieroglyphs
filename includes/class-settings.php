@@ -312,14 +312,14 @@ class Settings {
 					<td><code>A1&amp;A2</code></td>
 				</tr>
 				<tr>
-					<td><code>\r1</code>, <code>\r2</code>, <code>\t1</code>…</td>
-					<td><?php esc_html_e( 'Rotaciones y transposiciones del signo siguiente', $td ); ?></td>
-					<td><code>\r2-nTr</code></td>
+					<td><code>nTr\r1</code>, <code>nTr\R90</code>…</td>
+					<td><?php esc_html_e( 'Rota el signo anterior (sufijo tras el signo)', $td ); ?></td>
+					<td><code>nTr\r2</code></td>
 				</tr>
 				<tr>
-					<td><code>\red</code></td>
-					<td><?php esc_html_e( 'Marca el texto en rojo (papiros)', $td ); ?></td>
-					<td><code>\red-anx</code></td>
+					<td><code>anx\red</code></td>
+					<td><?php esc_html_e( 'Marca el texto en rojo (papiros; sufijo)', $td ); ?></td>
+					<td><code>anx\red</code></td>
 				</tr>
 				<tr>
 					<td><code>[&amp; … &amp;]</code></td>
@@ -329,16 +329,123 @@ class Settings {
 			</tbody>
 		</table>
 
-		<h3><?php esc_html_e( 'Cartuchos', $td ); ?></h3>
+		<h3><?php esc_html_e( 'Cartuchos (todas las variantes)', $td ); ?></h3>
+		<p>
+			<?php
+			esc_html_e(
+				'Los cartuchos (nombres reales dentro de un óvalo) se escriben con los cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con ":", el cartucho se vuelve vertical.',
+				$td
+			);
+			?>
+		</p>
+		<table class="widefat striped" style="max-width:760px;">
+			<thead>
+				<tr>
+					<th><?php esc_html_e( 'Tag', $td ); ?></th>
+					<th><?php esc_html_e( 'Qué hace', $td ); ?></th>
+					<th><?php esc_html_e( 'Resultado', $td ); ?></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>&lt;- anx -&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho simple', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓋹𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;- mn-xpr-ra -&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho con un nombre real (Menkheperre)', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;- nTr:r -&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho con una cuadratura (más alto)', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊹𓐰𓂋𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;- nTr:r:x:t -&gt;</code></td>
+					<td><?php esc_html_e( 'CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊹𓐰𓂋𓐰𓐍𓐰𓏏𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;- Htp-di -&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho con dos palabras yuxtapuestas', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊵𓏙𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;S- anx -&gt;</code></td>
+					<td><?php esc_html_e( 'Anillo shen', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓉘𓐼𓋹𓐽𓊂</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;F- anx -&gt;</code></td>
+					<td><?php esc_html_e( 'Cerramiento amurallado', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓊈𓐾𓋹𓐿𓊉</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;H- anx -&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho, variante H', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓉘𓐼𓋹𓐽𓉜</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;-s-anx-&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓋴𓋹𓐽𓍺</span></td>
+				</tr>
+				<tr>
+					<td><code>&lt;-b-anx-&gt;</code></td>
+					<td><?php esc_html_e( 'Cartucho con b inicial', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓃀𓋹𓐽𓍺</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3><?php esc_html_e( 'Orientación, rotación y sombreado', $td ); ?></h3>
+		<p>
+			<?php
+			esc_html_e(
+				'Para cambiar la orientación de toda la línea usa la opción "Dirección" del bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear un signo concreto, los modificadores van DESPUÉS del signo (sufijo):',
+				$td
+			);
+			?>
+		</p>
+		<table class="widefat striped" style="max-width:760px;">
+			<thead>
+				<tr>
+					<th><?php esc_html_e( 'Tag', $td ); ?></th>
+					<th><?php esc_html_e( 'Qué hace', $td ); ?></th>
+					<th><?php esc_html_e( 'Resultado', $td ); ?></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>nTr\r1</code>, <code>\r2</code>, <code>\r3</code></td>
+					<td><?php esc_html_e( 'Rota el signo anterior (variantes de la fuente)', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓊹︂</span></td>
+				</tr>
+				<tr>
+					<td><code>nTr\R90</code>, <code>\R180</code>, <code>\R270</code></td>
+					<td><?php esc_html_e( 'Rota el signo anterior 90°, 180° o 270°', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓊹︁</span></td>
+				</tr>
+				<tr>
+					<td><code>nTr\h</code>, <code>nTr\v</code>, <code>nTr\t1</code></td>
+					<td><?php esc_html_e( 'Transposiciones horizontal, vertical y de reordenación', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓊹𓑀</span></td>
+				</tr>
+				<tr>
+					<td><code>nTr\shading1234</code></td>
+					<td><?php esc_html_e( 'Sombreado del signo anterior (1-4 = esquinas)', $td ); ?></td>
+					<td><span class="hierojax" style="font-size:32px;">𓊹𓑕</span></td>
+				</tr>
+			</tbody>
+		</table>
 		<p>
 			<?php
 			printf(
-				/* translators: %1$s and %2$s are MdC examples, %3$s is the rendered cartouche. */
-				esc_html__( 'Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen.', $td ),
-				'<code>&lt;…&gt;</code>',
-				'<code>&lt;- mn-xpr-ra -&gt;</code>',
-				'<span class="hierojax" style="font-size:32px;">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span>',
-				'<code>&lt;S- anx -&gt;</code>'
+				/* translators: %s is an example. */
+				esc_html__( 'También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final del texto.', $td ),
+				'<code>\\red</code>'
 			);
 			?>
 		</p>
