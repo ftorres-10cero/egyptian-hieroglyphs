@@ -1,8 +1,11 @@
 # Egyptian Hieroglyphs (MdC) — WordPress plugin
 
+<img src="assets/logo_hiero_150.png" alt="Egyptian Hieroglyphs (MdC) logo" width="150" height="150" align="left" style="margin-right: 16px;">
+
 Render Egyptian hieroglyphs from [Manuel de Codage (MdC)](https://es.wikipedia.org/wiki/Manuel_de_Codage) transliteration as crisp SVG, with a Gutenberg block and a shortcode.
 
 Built on [HieroJax](https://nederhof.github.io/hierojax/) (GPL-3.0) and the [NewGardiner](https://github.com/nederhof/newgardiner) font (SIL OFL 1.1) by Mark-Jan Nederhof (University of St Andrews).
+
 
 ## Features
 
