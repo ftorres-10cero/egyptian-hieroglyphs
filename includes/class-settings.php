@@ -32,6 +32,27 @@ class Settings {
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
 		// Las peticiones REST no lanzan admin_init; necesario para /wp/v2/settings.
 		add_action( 'rest_api_init', array( __CLASS__, 'register_settings' ) );
+		// Carga la fuente NewGardiner para que los ejemplos de la ayuda se vean bien.
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_assets' ) );
+	}
+
+	/**
+	 * Encola la fuente y el estilo de los ejemplos solo en la página de ajustes.
+	 *
+	 * @param string $hook Hook de la pantalla admin.
+	 */
+	public static function enqueue_assets( $hook ) {
+		if ( 'settings_page_ftorres-hiero-settings' !== $hook ) {
+			return;
+		}
+		if ( ! wp_style_is( 'ftorres-hiero-css', 'registered' ) ) {
+			Assets::register();
+		}
+		wp_enqueue_style( 'ftorres-hiero-css' );
+		wp_add_inline_style(
+			'ftorres-hiero-css',
+			'.ft-hiero-help-glyph{font-family:"Hieroglyphic",serif;font-size:1.15em;}'
+		);
 	}
 
 	/**
@@ -261,7 +282,7 @@ class Settings {
 				esc_html__( 'Los cartuchos (nombres reales dentro de un óvalo) se escriben con %1$s. Ejemplo: %2$s renderiza %3$s. Usa %4$s para el anillo shen.', $td ),
 				'<code>&lt;…&gt;</code>',
 				'<code>&lt;- mn-xpr-ra -&gt;</code>',
-				'<strong>𓍹𓐼𓏠𓆣𓇳𓐽𓍺</strong>',
+				'<strong class="ft-hiero-help-glyph">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</strong>',
 				'<code>&lt;S- anx -&gt;</code>'
 			);
 			?>
@@ -276,12 +297,12 @@ class Settings {
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td><code>nTr:r</code></td><td><?php echo esc_html( '𓊹𓐰𓂋' ); ?></td></tr>
-				<tr><td><code>ra:Z1*t:Z1</code></td><td><?php echo esc_html( '𓇳𓐰𓏤𓐱𓏏𓐰𓏤' ); ?></td></tr>
-				<tr><td><code>&lt;- mn-xpr-ra -&gt;</code></td><td><?php echo esc_html( '𓍹𓐼𓏠𓆣𓇳𓐽𓍺' ); ?></td></tr>
-				<tr><td><code>&lt;- ra-ms-sw -&gt;</code></td><td><?php echo esc_html( '𓍹𓐼𓇳𓄟𓇓𓐽𓍺' ); ?></td></tr>
-				<tr><td><code>&lt;S- anx -&gt;</code></td><td><?php echo esc_html( '𓉘𓐼𓋹𓐽𓊂' ); ?></td></tr>
-				<tr><td><code>i*w</code></td><td><?php echo esc_html( '𓇋𓐱𓅱' ); ?></td></tr>
+				<tr><td><code>nTr:r</code></td><td><span class="ft-hiero-help-glyph">𓊹𓐰𓂋</span></td></tr>
+				<tr><td><code>ra:Z1*t:Z1</code></td><td><span class="ft-hiero-help-glyph">𓇳𓐰𓏤𓐱𓏏𓐰𓏤</span></td></tr>
+				<tr><td><code>&lt;- mn-xpr-ra -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span></td></tr>
+				<tr><td><code>&lt;- ra-ms-sw -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓍹𓐼𓇳𓄟𓇓𓐽𓍺</span></td></tr>
+				<tr><td><code>&lt;S- anx -&gt;</code></td><td><span class="ft-hiero-help-glyph">𓉘𓐼𓋹𓐽𓊂</span></td></tr>
+				<tr><td><code>i*w</code></td><td><span class="ft-hiero-help-glyph">𓇋𓐱𓅱</span></td></tr>
 			</tbody>
 		</table>
 		<p>
