@@ -1,36 +1,3 @@
-# Dependencies
-/node_modules/
-
-# Build output
-/build/
-
-# Logs
-*.log
-npm-debug.log*
-
-# OS / editor
-.DS_Store
-Thumbs.db
-*.swp
-.idea/
-.vscode/
-
-# Environment
-.env
-.env.*
-.npm-cache/
-
-# PHPCS local (requiere extensiones xml del sistema)
-/.phpcs-tools
-*.zip
-
-# temporales de pruebas
-*.html.tmp
-up*.html
-post-page*.html
-plugins*.html
-.shots/
-.hd/
-.shots-local/
-.hd/
-.potwork/
+tools/post712-contenido.json
+tools/post712-tablas-final.txt
+tools/revision-740-tablas.txt
