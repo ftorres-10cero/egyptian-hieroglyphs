@@ -67,9 +67,37 @@ Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el
 
 1. Bloque de Gutenberg con vista previa en vivo del MdC.
 2. Opciones del bloque (tamaño, dirección, color, sombreado).
-3. Herramienta de conversión MdC → Unicode.
+3. Constructor de textos MdC en Ajustes → Jeroglíficos Egipcios (paleta de signos y vista previa).
+
+== Upgrade Notice ==
+
+= 1.5.8 =
+Constructor de textos y corrección de conflicto de scripts en la página de ajustes.
 
 == Changelog ==
+
+= 1.5.8 =
+
+* Se corrige el constructor de textos MdC de la página de ajustes (cargaba dos scripts del core de hierojax que entraban en conflicto): ahora solo se carga mdcconversion.js.
+* El conversor MdC pasa a ser una página oculta (accesible por URL directa `admin.php?page=ftorres-hiero-converter`), sin ítem en el menú Herramientas.
+* Enlaces de acción en la lista de plugins: «Configuración» y «Página web» del plugin.
+
+= 1.5.7 =
+
+* Enlaces de acción en la lista de plugins («Configuración» y «Página web»).
+
+= 1.5.6 =
+
+* Se retira el menú «Herramientas → Conversor MdC»; la conversión se hace desde el Constructor de textos MdC de los ajustes (el conversor sigue accesible por URL directa).
+
+= 1.5.5 =
+
+* Constructor de textos MdC en Ajustes → Jeroglíficos Egipcios: paleta de signos de la lista de Gardiner, botones para cartuchos, cuadraturas y grupos, vista previa en vivo y copia del resultado.
+* i18n actualizado (español, inglés, francés, alemán e italiano).
+
+= 1.5.4 =
+
+* El shortcode `[hiero]` acepta ahora transliteración MdC directamente (la convierte al vuelo en el navegador), además de la codificación Unicode jeroglífica, y se integra en el texto sin romperlo.
 
 = 1.5.3 =
 * Nueva dirección VERTICAL (vlr/vrl) en el bloque: los cartuchos se dibujan en vertical (óvalo alto) con el texto apilado.
