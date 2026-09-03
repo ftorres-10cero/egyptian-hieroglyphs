@@ -2,7 +2,7 @@
 Contributors: ftorresalva
 Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode, wordpress, plugin
 Requires at least: 6.6
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.5.8
 License: GPLv2 or later

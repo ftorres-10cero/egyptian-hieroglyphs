@@ -15,7 +15,7 @@
     "mdc",
     "transliteración"
   ],
-  "textdomain": "egyptian-hieroglyphs",
+  "textdomain": "egyptian-hieroglyphs-mdc",
   "attributes": {
     "mdc": {
       "type": "string",

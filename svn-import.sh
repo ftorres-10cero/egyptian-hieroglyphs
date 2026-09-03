@@ -15,7 +15,7 @@
 # (debe coincidir con el slug en WordPress.org).
 set -euo pipefail
 
-SLUG="${SLUG:-egyptian-hieroglyphs}"
+SLUG="${SLUG:-egyptian-hieroglyphs-mdc}"
 VERSION="1.5.8"
 PLUGIN_DIR="$(cd "$(dirname "$0")/.." && pwd)"   # raíz del plugin
 TMP="$(mktemp -d)"
@@ -30,7 +30,7 @@ svn co "https://plugins.svn.wordpress.org/$SLUG" "$TMP/svn" || {
 
 echo "==> Limpiando trunk y copiando el contenido del plugin"
 rm -rf "$TMP/svn/trunk"/*
-cp -r "$PLUGIN_DIR"/{assets,build,includes,languages,licenses,egyptian-hieroglyphs.php,readme.txt,README.md,VENDOR-NOTES.md} "$TMP/svn/trunk/"
+cp -r "$PLUGIN_DIR"/{assets,build,includes,languages,licenses,egyptian-hieroglyphs.php,readme.txt,README.md} "$TMP/svn/trunk/"
 rm -rf "$TMP/svn/trunk/assets/fonts/NewGardiner.otf"   # la fuente se gestiona igual en SVN; se sube con svn add
 
 echo "==> Tag de la versión"

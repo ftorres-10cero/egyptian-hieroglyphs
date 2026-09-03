@@ -10,3 +10,6 @@
 # WP.org generated
 
 /.phpcs-tools
+
+# Docs (no van en el zip de producción)
+/docs

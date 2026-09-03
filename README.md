@@ -85,7 +85,7 @@ npm run plugin-zip   # create the installable zip (uses .distignore)
 
 ### Vendor components
 
-`assets/` contains patched copies of HieroJax (`hierojax.js`, `mdcconversion.js`, `hierojax.css`) and the `NewGardiner.otf` font. The only patch is the font URL (relative → configurable via `window.ftorresHieroFontUrl`), required because WordPress pages live at URLs where a relative `url()` in `FontFace` cannot resolve. See `VENDOR-NOTES.md` for details and re-apply instructions.
+`assets/` contains patched copies of HieroJax (`hierojax.js`, `mdcconversion.js`, `hierojax.css`) and the `NewGardiner.otf` font. The only patch is the font URL (relative → configurable via `window.ftorresHieroFontUrl`), required because WordPress pages live at URLs where a relative `url()` in `FontFace` cannot resolve. See `docs/VENDOR-NOTES.md` for details and re-apply instructions.
 
 ### Known upstream quirks
 

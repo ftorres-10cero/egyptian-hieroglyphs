@@ -18,7 +18,7 @@
  * Author URI:        https://www.ftorres.es
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       egyptian-hieroglyphs
+ * Text Domain:       egyptian-hieroglyphs-mdc
  * Domain Path:       /languages
  */
 
@@ -45,7 +45,7 @@ add_action( 'init', 'ft_hiero_register_assets' );
  * Carga el dominio de traducción.
  */
 function ft_hiero_load_textdomain() {
-	load_plugin_textdomain( 'egyptian-hieroglyphs', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'egyptian-hieroglyphs-mdc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'ft_hiero_load_textdomain' );
 
@@ -147,12 +147,12 @@ function ft_hiero_plugin_action_links( $links ) {
 	$settings = sprintf(
 		'<a href="%s">%s</a>',
 		esc_url( admin_url( 'options-general.php?page=ftorres-hiero-settings' ) ),
-		esc_html__( 'Configuración', 'egyptian-hieroglyphs' )
+		esc_html__( 'Configuración', 'egyptian-hieroglyphs-mdc' )
 	);
 	$website  = sprintf(
 		'<a href="%s" target="_blank" rel="noopener">%s</a>',
 		esc_url( 'https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/' ),
-		esc_html__( 'Página web', 'egyptian-hieroglyphs' )
+		esc_html__( 'Página web', 'egyptian-hieroglyphs-mdc' )
 	);
 
 	array_unshift( $links, $settings );
