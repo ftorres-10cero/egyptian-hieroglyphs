@@ -98,4 +98,8 @@ npm run plugin-zip   # create the installable zip (uses .distignore)
 - HieroJax (JS/CSS): GPL-3.0 (see `licenses/hierojax-GPL-3.0.txt`).
 - NewGardiner font: SIL OFL 1.1 (see `licenses/NewGardiner-OFL-1.1.txt`).
 
+## Contact
+
+Author: ftorres.es · [ftorres@10cero.es](mailto:ftorres@10cero.es)
+
 © ftorres.es
