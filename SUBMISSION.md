@@ -4,7 +4,7 @@ El plugin está preparado para el [directorio de plugins de WordPress.org](https
 
 ## 1. Requisitos previos
 
-- Cuenta en [wordpress.org](https://login.wordpress.org/) (distinta de la del blog; es la cuenta del autor del plugin). El usuario de `readme.txt` (`Contributors: ftorres`) debe coincidir con tu nombre de usuario en wordpress.org.
+- Cuenta en [wordpress.org](https://login.wordpress.org/) (distinta de la del blog; es la cuenta del autor del plugin). El usuario de `readme.txt` (`Contributors: ftorresalva`) debe coincidir con tu nombre de usuario en wordpress.org.
 - El zip final: `egyptian-hieroglyphs.zip` (se genera con `npm run plugin-zip` o se descarga del release de GitHub). **Versión actual: 1.5.8.**
 
 ## 2. Envío

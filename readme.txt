@@ -1,5 +1,5 @@
 === Egyptian Hieroglyphs (MdC) ===
-Contributors: ftorres
+Contributors: ftorresalva
 Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode, wordpress, plugin
 Requires at least: 6.6
 Tested up to: 6.8
