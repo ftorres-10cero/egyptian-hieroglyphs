@@ -18,33 +18,8 @@
 	}
 
 	var signs = window.ftHieroSigns;
-	var CATS = {
-		A: 'Hombre y ocupaciones',
-		B: 'Mujer y ocupaciones',
-		C: 'Deidades y seres',
-		D: 'Partes del cuerpo humano',
-		E: 'Mamíferos',
-		F: 'Partes de mamíferos',
-		G: 'Aves',
-		H: 'Partes de aves',
-		I: 'Anfibios y reptiles',
-		K: 'Peces y partes',
-		L: 'Invertebrados',
-		M: 'Árboles y plantas',
-		N: 'Cielo, tierra y agua',
-		O: 'Edificios y partes',
-		P: 'Barcos y partes',
-		Q: 'Mobiliario y utensilios',
-		R: 'Templos y objetos sagrados',
-		S: 'Coronas, vestidos y armas',
-		T: 'Armas de guerra y caza',
-		U: 'Agricultura, artesanía y oficios',
-		V: 'Cuerdas, fibras, cestas y vasijas',
-		W: 'Vasijas de piedra y barro',
-		X: 'Panes y pasteles',
-		Y: 'Escritura, juegos y música',
-		Z: 'Trazo y figuras geométricas',
-	};
+	// Nombres de las categorías de Gardiner, traducidos en PHP (class-settings.php).
+	var CATS = ( window.ftHieroI18n && window.ftHieroI18n.cats ) || {};
 
 	var $ = function ( id ) {
 		return document.getElementById( id );

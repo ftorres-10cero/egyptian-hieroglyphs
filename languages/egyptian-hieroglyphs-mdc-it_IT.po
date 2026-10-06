@@ -1,684 +1,759 @@
-# Translation of Egyptian Hieroglyphs (MdC) to it_IT.
-# Copyright (C) 2026 ftorres.es
-# This file is distributed under the GPL-2.0-or-later license.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: egyptian-hieroglyphs-mdc Hieroglyphs (MdC) 1.5.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-30 15:25+0200\n"
-"PO-Revision-Date: 2026-08-30 13:15+0200\n"
-"Last-Translator: ftorres.es <ftorres.es@gmail.com>\n"
-"Language-Team: Italian (Italy) <it@li.org>\n"
+"Project-Id-Version: Egyptian Hieroglyphs (MdC) 1.5.9\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/egyptian-hieroglyphs\n"
+"POT-Creation-Date: 2026-10-06T10:43:22+00:00\n"
+"PO-Revision-Date: 2026-10-06T10:43:22+00:00\n"
+"Last-Translator: ftorres.es\n"
+"Language-Team: Italian\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.x\n"
-"X-Domain: egyptian-hieroglyphs\n"
+"X-Domain: egyptian-hieroglyphs-mdc\n"
+"X-Generator: WP-CLI 2.12.0\n"
 
-#: egyptian-hieroglyphs.php:145
-msgid "Configuración"
-msgstr "Impostazioni"
-
-#: egyptian-hieroglyphs.php:150
-msgid "Página web"
-msgstr "Sito web"
-
-#: includes/class-admin-tool.php:66
-msgid "Conversor de Manuel de Codage (MdC) a Unicode jeroglífico"
-msgstr "Convertitore da Manuel de Codage (MdC) a Unicode geroglifico"
-
-#: includes/class-admin-tool.php:70
-msgid ""
-"Escribe una frase en notación MdC (una línea por fragmento) y conviértela a "
-"la codificación Unicode que renderiza hierojax. Usa el resultado en el "
-"shortcode [hiero] o como referencia para el bloque."
-msgstr ""
-"Inserisci una frase in notazione MdC (una riga per frammento) e convertila "
-"nella codifica Unicode renderizzata da hierojax. Usa il risultato nello "
-"shortcode [hiero] o come riferimento per il blocco."
-
-#: includes/class-admin-tool.php:77
-msgid "Texto en MdC"
-msgstr "Testo in MdC"
-
-#: includes/class-admin-tool.php:81
-msgid "Convertir"
-msgstr "Converti"
-
-#: includes/class-admin-tool.php:88
-msgid "Vista previa"
-msgstr "Anteprima"
-
-#: includes/class-admin-tool.php:91
-msgid "Codificación Unicode"
-msgstr "Codifica Unicode"
-
-#: includes/class-admin-tool.php:95
-msgid "Copiar al portapapeles"
-msgstr "Copia negli appunti"
-
-#: includes/class-settings.php:80
-msgid "Sin signos en esta categoría."
-msgstr "Nessun segno in questa categoria."
-
-#: includes/class-settings.php:81
-msgid "La vista previa aparecerá aquí…"
-msgstr "L'anteprima apparirà qui…"
-
-#: includes/class-settings.php:82
-msgid "El conversor MdC no está disponible."
-msgstr "Il convertitore MdC non è disponibile."
-
-#: includes/class-settings.php:98
-msgid "Jeroglíficos egipcios (MdC)"
+#. Plugin Name of the plugin
+#: egyptian-hieroglyphs.php includes/class-settings.php:129 includes/class-settings.php:340
+msgid "Egyptian Hieroglyphs (MdC)"
 msgstr "Geroglifici egizi (MdC)"
 
+#. Plugin URI of the plugin
+#: egyptian-hieroglyphs.php
+msgid "https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/"
+msgstr ""
+
+#. Description of the plugin
+#: egyptian-hieroglyphs.php
+msgid "Renders Egyptian hieroglyphs from Manuel de Codage (MdC) transliteration as SVG, using HieroJax and the NewGardiner font. Includes a Gutenberg block and a shortcode."
+msgstr "Visualizza geroglifici egizi in SVG a partire dalla traslitterazione in Manuel de Codage (MdC), con HieroJax e il font NewGardiner. Include un blocco Gutenberg e uno shortcode."
+
+#. Author of the plugin
+#: egyptian-hieroglyphs.php
+msgid "ftorres.es"
+msgstr ""
+
+#. Author URI of the plugin
+#: egyptian-hieroglyphs.php
+msgid "https://www.ftorres.es"
+msgstr ""
+
+#: egyptian-hieroglyphs.php:150
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: egyptian-hieroglyphs.php:155
+msgid "Website"
+msgstr "Sito web"
+
+#: includes/class-admin-tool.php:43
+msgid "MdC Converter (hieroglyphs)"
+msgstr "Convertitore MdC (geroglifici)"
+
+#: includes/class-admin-tool.php:44
+msgid "MdC Converter"
+msgstr "Convertitore MdC"
+
+#: includes/class-admin-tool.php:85
+msgid "Manuel de Codage (MdC) to hieroglyphic Unicode converter"
+msgstr "Convertitore da Manuel de Codage (MdC) a Unicode geroglifico"
+
+#: includes/class-admin-tool.php:88
+msgid "Type a phrase in MdC notation (one fragment per line) and convert it to the Unicode encoding rendered by hierojax. Use the result in the [hiero] shortcode or as a reference for the block."
+msgstr "Inserisci una frase in notazione MdC (una riga per frammento) e convertila nella codifica Unicode renderizzata da hierojax. Usa il risultato nello shortcode [hiero] o come riferimento per il blocco."
+
+#: includes/class-admin-tool.php:96
+msgid "Text in MdC"
+msgstr "Testo in MdC"
+
+#: includes/class-admin-tool.php:100
+msgid "Convert"
+msgstr "Converti"
+
+#: includes/class-admin-tool.php:107
+msgid "Preview"
+msgstr "Anteprima"
+
+#: includes/class-admin-tool.php:110
+msgid "Unicode encoding"
+msgstr "Codifica Unicode"
+
+#: includes/class-admin-tool.php:114 assets/admin-converter.js:95
+msgid "Copy to clipboard"
+msgstr "Copia negli appunti"
+
+#: includes/class-settings.php:83
+msgid "No signs in this category."
+msgstr "Nessun segno in questa categoria."
+
+#: includes/class-settings.php:84
+msgid "The preview will appear here…"
+msgstr "L'anteprima apparirà qui…"
+
+#: includes/class-settings.php:85
+msgid "The MdC converter is not available."
+msgstr "Il convertitore MdC non è disponibile."
+
+#: includes/class-settings.php:88
+msgid "Man and his occupations"
+msgstr "L'uomo e le sue occupazioni"
+
+#: includes/class-settings.php:89
+msgid "Woman and her occupations"
+msgstr "La donna e le sue occupazioni"
+
+#: includes/class-settings.php:90
+msgid "Deities and beings"
+msgstr "Divinità ed esseri"
+
+#: includes/class-settings.php:91
+msgid "Parts of the human body"
+msgstr "Parti del corpo umano"
+
+#: includes/class-settings.php:92
+msgid "Mammals"
+msgstr "Mammiferi"
+
+#: includes/class-settings.php:93
+msgid "Parts of mammals"
+msgstr "Parti di mammiferi"
+
+#: includes/class-settings.php:94
+msgid "Birds"
+msgstr "Uccelli"
+
+#: includes/class-settings.php:95
+msgid "Parts of birds"
+msgstr "Parti di uccelli"
+
+#: includes/class-settings.php:96
+msgid "Amphibians and reptiles"
+msgstr "Anfibi e rettili"
+
+#: includes/class-settings.php:97
+msgid "Fishes and parts of fishes"
+msgstr "Pesci e parti di pesci"
+
+#: includes/class-settings.php:98
+msgid "Invertebrates"
+msgstr "Invertebrati"
+
 #: includes/class-settings.php:99
-msgid "Jeroglíficos Egipcios"
+msgid "Trees and plants"
+msgstr "Alberi e piante"
+
+#: includes/class-settings.php:100
+msgid "Sky, earth and water"
+msgstr "Cielo, terra e acqua"
+
+#: includes/class-settings.php:101
+msgid "Buildings and parts of buildings"
+msgstr "Edifici e parti di edifici"
+
+#: includes/class-settings.php:102
+msgid "Ships and parts of ships"
+msgstr "Navi e parti di navi"
+
+#: includes/class-settings.php:103
+msgid "Furniture and utensils"
+msgstr "Mobili e utensili"
+
+#: includes/class-settings.php:104
+msgid "Temple furniture and sacred emblems"
+msgstr "Arredi templari ed emblemi sacri"
+
+#: includes/class-settings.php:105
+msgid "Crowns, dress and weapons"
+msgstr "Corone, vesti e armi"
+
+#: includes/class-settings.php:106
+msgid "Warfare and hunting"
+msgstr "Guerra e caccia"
+
+#: includes/class-settings.php:107
+msgid "Agriculture, crafts and professions"
+msgstr "Agricoltura, artigianato e mestieri"
+
+#: includes/class-settings.php:108
+msgid "Rope, fibre, baskets and vessels"
+msgstr "Corde, fibre, cesti e recipienti"
+
+#: includes/class-settings.php:109
+msgid "Vessels of stone and earthenware"
+msgstr "Vasi di pietra e terracotta"
+
+#: includes/class-settings.php:110
+msgid "Loaves and cakes"
+msgstr "Pani e focacce"
+
+#: includes/class-settings.php:111
+msgid "Writing, games and music"
+msgstr "Scrittura, giochi e musica"
+
+#: includes/class-settings.php:112
+msgid "Strokes and geometrical figures"
+msgstr "Tratti e figure geometriche"
+
+#: includes/class-settings.php:130
+msgid "Egyptian Hieroglyphs"
 msgstr "Geroglifici Egizi"
 
-#: includes/class-settings.php:181
-msgid "Jeroglíficos egipcios (MdC) — ajustes"
+#: includes/class-settings.php:212
+msgid "Egyptian Hieroglyphs (MdC) — settings"
 msgstr "Geroglifici egizi (MdC) — impostazioni"
 
-#: includes/class-settings.php:185
-msgid ""
-"Valores por defecto aplicados a los bloques nuevos y al shortcode [hiero]. "
-"Cada bloque puede personalizar tamaño y color individualmente."
-msgstr ""
-"Valori predefiniti applicati ai nuovi blocchi e allo shortcode [hiero]. Ogni "
-"blocco può personalizzare dimensione e colore singolarmente."
+#: includes/class-settings.php:215
+msgid "Defaults applied to new blocks and the [hiero] shortcode. Each block can customize size and color individually."
+msgstr "Valori predefiniti applicati ai nuovi blocchi e allo shortcode [hiero]. Ogni blocco può personalizzare dimensione e colore singolarmente."
 
-#: includes/class-settings.php:196
-msgid "Tamaño de los signos"
+#: includes/class-settings.php:227 build/index.js:1
+msgid "Sign size"
 msgstr "Dimensione dei segni"
 
-#: includes/class-settings.php:205
-msgid "Tamaño en píxeles de la altura de los signos (8–200)."
+#: includes/class-settings.php:236
+msgid "Height of the signs in pixels (8–200)."
 msgstr "Altezza dei segni in pixel (8–200)."
 
-#: includes/class-settings.php:212
-msgid "Color de los signos"
+#: includes/class-settings.php:243 build/index.js:1
+msgid "Sign color"
 msgstr "Colore dei segni"
 
-#: includes/class-settings.php:222
-msgid "Color en formato hexadecimal. Vacío = hereda el color del tema."
+#: includes/class-settings.php:253
+msgid "Color in hexadecimal format. Empty = inherits the theme color."
 msgstr "Colore in formato esadecimale. Vuoto = eredita il colore del tema."
 
-#: includes/class-settings.php:247 includes/class-settings.php:565
-msgid "Constructor de textos MdC"
+#: includes/class-settings.php:277 includes/class-settings.php:594
+msgid "MdC text composer"
 msgstr "Compositore di testi MdC"
 
-#: includes/class-settings.php:251
-msgid ""
-"Elige los signos de la paleta (lista de Gardiner) y usa los botones para "
-"insertar cartuchos, cuadraturas, grupos y separadores. El texto resultante "
-"se puede usar directamente en el bloque o en el shortcode [hiero]."
-msgstr ""
+#: includes/class-settings.php:280
+msgid "Pick signs from the palette (Gardiner list) and use the buttons to insert cartouches, quadrats, groups and separators. The resulting text can be used directly in the block or in the [hiero] shortcode."
+msgstr "Scegli i segni dalla tavolozza (lista di Gardiner) e usa i pulsanti per inserire cartigli, quadrati, gruppi e separatori. Il testo risultante si può usare direttamente nel blocco o nello shortcode [hiero]."
 
-#: includes/class-settings.php:259
-msgid "Inserta un cartucho vacío"
+#: includes/class-settings.php:289
+msgid "Insert an empty cartouche"
 msgstr "Inserisci un cartiglio vuoto"
 
-#: includes/class-settings.php:259
-msgid "Cartucho"
+#: includes/class-settings.php:289
+msgid "Cartouche"
 msgstr "Cartiglio"
 
-#: includes/class-settings.php:260
-msgid "Abre un cartucho"
+#: includes/class-settings.php:290
+msgid "Open a cartouche"
 msgstr "Apri un cartiglio"
 
-#: includes/class-settings.php:260
-msgid "Abrir cartucho"
+#: includes/class-settings.php:290
+msgid "Open cartouche"
 msgstr "Apri cartiglio"
 
-#: includes/class-settings.php:261
-msgid "Cierra un cartucho"
+#: includes/class-settings.php:291
+msgid "Close a cartouche"
 msgstr "Chiudi un cartiglio"
 
-#: includes/class-settings.php:261
-msgid "Cerrar cartucho"
+#: includes/class-settings.php:291
+msgid "Close cartouche"
 msgstr "Chiudi cartiglio"
 
-#: includes/class-settings.php:262
-msgid "Inserta un anillo shen"
+#: includes/class-settings.php:292
+msgid "Insert a shen ring"
 msgstr "Inserisci un anello shen"
 
-#: includes/class-settings.php:262
+#: includes/class-settings.php:292
 msgid "Shen"
 msgstr "Shen"
 
-#: includes/class-settings.php:263
-msgid "Cuadratura vertical (apila signos)"
+#: includes/class-settings.php:293
+msgid "Vertical quadrat (stacks signs)"
 msgstr "Quadrato verticale (impila i segni)"
 
-#: includes/class-settings.php:263
-msgid "Cuadratura «:»"
+#: includes/class-settings.php:293
+msgid "Quadrat «:»"
 msgstr "Quadrato «:»"
 
-#: includes/class-settings.php:264
-msgid "Grupo horizontal"
+#: includes/class-settings.php:294
+msgid "Horizontal group"
 msgstr "Gruppo orizzontale"
 
-#: includes/class-settings.php:264
-msgid "Grupo «*»"
+#: includes/class-settings.php:294
+msgid "Group «*»"
 msgstr "Gruppo «*»"
 
-#: includes/class-settings.php:265
-msgid "Yuxtapone signos"
+#: includes/class-settings.php:295
+msgid "Juxtaposes signs"
 msgstr "Giustappone i segni"
 
-#: includes/class-settings.php:265
-msgid "Yuxta «-»"
+#: includes/class-settings.php:295
+msgid "Juxta «-»"
 msgstr "Giustapp. «-»"
 
-#: includes/class-settings.php:266 includes/class-settings.php:381
-msgid "Separa palabras"
+#: includes/class-settings.php:296 includes/class-settings.php:410
+msgid "Separates words"
 msgstr "Separa le parole"
 
-#: includes/class-settings.php:266
-msgid "Espacio"
+#: includes/class-settings.php:296
+msgid "Space"
 msgstr "Spazio"
 
-#: includes/class-settings.php:267 includes/class-settings.php:386
-msgid "Termina el fragmento actual"
+#: includes/class-settings.php:297 includes/class-settings.php:415
+msgid "Ends the current fragment"
 msgstr "Termina il frammento corrente"
 
-#: includes/class-settings.php:267
-msgid "Fin fragm. «!»"
+#: includes/class-settings.php:297
+msgid "End frag. «!»"
 msgstr "Fine framm. «!»"
 
-#: includes/class-settings.php:268
-msgid "Marca el texto en rojo"
+#: includes/class-settings.php:298
+msgid "Marks the text red"
 msgstr "Marca il testo in rosso"
 
-#: includes/class-settings.php:268
-msgid "Rojo «\\red»"
+#: includes/class-settings.php:298
+msgid "Red «\\red»"
 msgstr "Rosso «\\red»"
 
-#: includes/class-settings.php:269
-msgid "Nueva línea (fragmento)"
+#: includes/class-settings.php:299
+msgid "New line (fragment)"
 msgstr "Nuova riga (frammento)"
 
-#: includes/class-settings.php:269
-msgid "Nueva línea"
+#: includes/class-settings.php:299
+msgid "New line"
 msgstr "Nuova riga"
 
-#: includes/class-settings.php:276
-msgid "Buscar código o transliteración…"
+#: includes/class-settings.php:306
+msgid "Search code or transliteration…"
 msgstr "Cerca codice o traslitterazione…"
 
-#: includes/class-settings.php:281
-msgid "Texto en notación MdC"
+#: includes/class-settings.php:311 build/index.js:1
+msgid "Text in MdC notation"
 msgstr "Testo in notazione MdC"
 
-#: includes/class-settings.php:283
+#: includes/class-settings.php:313
 msgid "nTr anx"
 msgstr "nTr anx"
 
-#: includes/class-settings.php:285
-msgid "Copiar MdC"
+#: includes/class-settings.php:315
+msgid "Copy MdC"
 msgstr "Copia MdC"
 
-#: includes/class-settings.php:286
-msgid "Copiar Unicode"
+#: includes/class-settings.php:316
+msgid "Copy Unicode"
 msgstr "Copia Unicode"
 
-#: includes/class-settings.php:287
-msgid "Limpiar"
+#: includes/class-settings.php:317
+msgid "Clear"
 msgstr "Pulisci"
 
-#: includes/class-settings.php:302
-msgid "Ayuda"
+#: includes/class-settings.php:331
+msgid "Help"
 msgstr "Aiuto"
 
-#: includes/class-settings.php:304
-msgid "Cómo escribir jeroglíficos"
+#: includes/class-settings.php:333
+msgid "How to write hieroglyphs"
 msgstr "Come scrivere i geroglifici"
 
-#: includes/class-settings.php:310
+#. translators: %s is the block name.
+#: includes/class-settings.php:339
 #, php-format
-msgid "En el editor de entradas, añade el bloque «%s»."
+msgid "In the post editor, add the \"%s\" block."
 msgstr "Nell'editor dei post, aggiungi il blocco «%s»."
 
-#: includes/class-settings.php:318
-msgid ""
-"Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, "
-"combinándolos con los separadores de la referencia siguiente."
-msgstr ""
-"Inserisci nel campo «Testo in notazione MdC» i codici dei segni, "
-"combinandoli con i separatori del riferimento seguente."
+#: includes/class-settings.php:346
+msgid "Type the sign codes in the \"MdC notation\" box, combining them with the separators from the reference below."
+msgstr "Inserisci nel campo «Testo in notazione MdC» i codici dei segni, combinandoli con i separatori del riferimento seguente."
 
-#: includes/class-settings.php:326
-msgid ""
-"La vista previa se genera al instante. En el panel lateral del bloque ajusta "
-"tamaño, color, dirección, separación y sombreado."
-msgstr ""
-"L'anteprima viene generata all'istante. Nel pannello laterale del blocco "
-"regola dimensione, colore, direzione, spaziatura e tratteggio."
+#: includes/class-settings.php:354
+msgid "The preview renders instantly. In the block sidebar adjust size, color, direction, separation and shading."
+msgstr "L'anteprima viene generata all'istante. Nel pannello laterale del blocco regola dimensione, colore, direzione, spaziatura e tratteggio."
 
-#: includes/class-settings.php:334
-msgid ""
-"Publica la entrada: los jeroglíficos se renderizan como SVG nítido, "
-"ampliable y copiable para tus lectores."
-msgstr ""
-"Pubblica il post: i geroglifici vengono renderizzati come SVG nitido, "
-"ingrandibile e copiabile per i tuoi lettori."
+#: includes/class-settings.php:362
+msgid "Publish the post: the hieroglyphs render as crisp, scalable, selectable SVG for your readers."
+msgstr "Pubblica il post: i geroglifici vengono renderizzati come SVG nitido, ingrandibile e copiabile per i tuoi lettori."
 
-#: includes/class-settings.php:343
-msgid ""
-"Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr "
-"= dios, ra = sol) y se combinan con separadores para formar cuadraturas, "
-"grupos y palabras."
-msgstr ""
-"I segni seguono la lista di Gardiner: ognuno ha un codice (es. nTr = dio, ra "
-"= sole) e si combina con separatori per formare quadrati, gruppi e parole."
+#: includes/class-settings.php:371
+msgid "Signs follow the Gardiner list: each has a code (e.g. nTr = god, ra = sun) combined with separators to build quadrats, groups and words."
+msgstr "I segni seguono la lista di Gardiner: ognuno ha un codice (es. nTr = dio, ra = sole) e si combina con separatori per formare quadrati, gruppi e parole."
 
-#: includes/class-settings.php:349
-msgid "Referencia de la sintaxis (tags)"
+#: includes/class-settings.php:378
+msgid "Syntax reference (tags)"
 msgstr "Riferimento della sintassi (tag)"
 
-#: includes/class-settings.php:353 includes/class-settings.php:434
-#: includes/class-settings.php:505
+#: includes/class-settings.php:382 includes/class-settings.php:463 includes/class-settings.php:534
 msgid "Tag"
 msgstr "Tag"
 
-#: includes/class-settings.php:354 includes/class-settings.php:435
-#: includes/class-settings.php:506
-msgid "Qué hace"
+#: includes/class-settings.php:383 includes/class-settings.php:464 includes/class-settings.php:535
+msgid "What it does"
 msgstr "Cosa fa"
 
-#: includes/class-settings.php:355
-msgid "Ejemplo"
+#: includes/class-settings.php:384
+msgid "Example"
 msgstr "Esempio"
 
-#: includes/class-settings.php:361
-msgid ""
-"Código de un signo (lista de Gardiner). Sin separador, los signos se suceden "
-"en la línea."
-msgstr ""
-"Codice di un segno (lista di Gardiner). Senza separatore, i segni si "
-"susseguono sulla riga."
+#: includes/class-settings.php:390
+msgid "Code of a sign (Gardiner list). Without a separator, signs follow each other on the line."
+msgstr "Codice di un segno (lista di Gardiner). Senza separatore, i segni si susseguono sulla riga."
 
-#: includes/class-settings.php:366
-msgid "Apila signos en vertical (cuadratura)"
+#: includes/class-settings.php:395
+msgid "Stacks signs vertically (quadrat)"
 msgstr "Impila i segni verticalmente (quadrato)"
 
-#: includes/class-settings.php:371
-msgid "Agrupa signos en horizontal"
+#: includes/class-settings.php:400
+msgid "Groups signs horizontally"
 msgstr "Raggruppa i segni orizzontalmente"
 
-#: includes/class-settings.php:376
-msgid "Yuxtapone signos en la misma línea"
+#: includes/class-settings.php:405
+msgid "Juxtaposes signs on the same line"
 msgstr "Giustappone i segni sulla stessa riga"
 
-#: includes/class-settings.php:380
-msgid "espacio"
+#: includes/class-settings.php:409
+msgid "space"
 msgstr "spazio"
 
-#: includes/class-settings.php:391
-msgid "Cartucho / cerramiento"
+#: includes/class-settings.php:420
+msgid "Cartouche / enclosure"
 msgstr "Cartiglio / contenitore"
 
-#: includes/class-settings.php:396 includes/class-settings.php:467
-msgid "Anillo shen"
+#: includes/class-settings.php:425 includes/class-settings.php:496
+msgid "Shen ring"
 msgstr "Anello shen"
 
-#: includes/class-settings.php:401
-msgid "Superpone un signo sobre otro"
+#: includes/class-settings.php:430
+msgid "Overlays one sign on another"
 msgstr "Sovrappone un segno su un altro"
 
-#: includes/class-settings.php:406
-msgid "Rota el signo anterior (sufijo tras el signo)"
+#: includes/class-settings.php:435
+msgid "Rotates the previous sign (suffix after the sign)"
 msgstr "Ruota il segno precedente (suffisso dopo il segno)"
 
-#: includes/class-settings.php:411
-msgid "Marca el texto en rojo (papiros; sufijo)"
+#: includes/class-settings.php:440
+msgid "Marks the text red (papyri; suffix)"
 msgstr "Marca il testo in rosso (papiri; suffisso)"
 
-#: includes/class-settings.php:416
-msgid "Corchetes literales (no es un cartucho)"
+#: includes/class-settings.php:445
+msgid "Literal brackets (not a cartouche)"
 msgstr "Parentesi letterali (non un cartiglio)"
 
-#: includes/class-settings.php:422
-msgid "Cartuchos (todas las variantes)"
+#: includes/class-settings.php:451
+msgid "Cartouches (all variants)"
 msgstr "Cartigli (tutte le varianti)"
 
-#: includes/class-settings.php:426
-msgid ""
-"Los cartuchos (nombres reales dentro de un óvalo) se escriben con los "
-"cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con \":"
-"\", el cartucho se vuelve vertical."
-msgstr ""
-"I cartigli (nomi reali dentro un ovale) si scrivono con i contenitori < e >. "
-"L'ovale si adatta al contenuto: se impili i segni con \":\", il cartiglio "
-"diventa verticale."
+#: includes/class-settings.php:454
+msgid "Cartouches (royal names inside an oval) are written with the < and > enclosures. The oval adapts to the content: if you stack signs with \":\", the cartouche becomes vertical."
+msgstr "I cartigli (nomi reali dentro un ovale) si scrivono con i contenitori < e >. L'ovale si adatta al contenuto: se impili i segni con \":\", il cartiglio diventa verticale."
 
-#: includes/class-settings.php:436 includes/class-settings.php:507
-#: includes/class-settings.php:548
-msgid "Resultado"
+#: includes/class-settings.php:465 includes/class-settings.php:536 includes/class-settings.php:577
+msgid "Result"
 msgstr "Risultato"
 
-#: includes/class-settings.php:442
-msgid "Cartucho simple"
+#: includes/class-settings.php:471
+msgid "Simple cartouche"
 msgstr "Cartiglio semplice"
 
-#: includes/class-settings.php:447
-msgid "Cartucho con un nombre real (Menkheperre)"
+#: includes/class-settings.php:476
+msgid "Cartouche with a royal name (Menkheperre)"
 msgstr "Cartiglio con un nome reale (Menkheperre)"
 
-#: includes/class-settings.php:452
-msgid "Cartucho con una cuadratura (más alto)"
+#: includes/class-settings.php:481
+msgid "Cartouche with a quadrat (taller)"
 msgstr "Cartiglio con un quadrato (più alto)"
 
-#: includes/class-settings.php:457
-msgid "CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura"
+#: includes/class-settings.php:486
+msgid "VERTICAL CARTOUCHE: stacked signs; the oval grows taller"
 msgstr "CARTIGLIO VERTICALE: segni impilati; l'ovale cresce in altezza"
 
-#: includes/class-settings.php:462
-msgid "Cartucho con dos palabras yuxtapuestas"
+#: includes/class-settings.php:491
+msgid "Cartouche with two juxtaposed words"
 msgstr "Cartiglio con due parole giustapposte"
 
-#: includes/class-settings.php:472
-msgid "Cerramiento amurallado"
+#: includes/class-settings.php:501
+msgid "Walled enclosure"
 msgstr "Contenitore fortificato"
 
-#: includes/class-settings.php:477
-msgid "Cartucho, variante H"
+#: includes/class-settings.php:506
+msgid "Cartouche, H variant"
 msgstr "Cartiglio, variante H"
 
-#: includes/class-settings.php:482
-msgid ""
-"Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)"
-msgstr ""
-"Cartiglio con un segno iniziale dentro (complemento fonetico: s, b, h, 1…)"
+#: includes/class-settings.php:511
+msgid "Cartouche with an initial sign inside (phonetic complement: s, b, h, 1…)"
+msgstr "Cartiglio con un segno iniziale dentro (complemento fonetico: s, b, h, 1…)"
 
-#: includes/class-settings.php:487
-msgid "Cartucho con b inicial"
+#: includes/class-settings.php:516
+msgid "Cartouche with initial b"
 msgstr "Cartiglio con b iniziale"
 
-#: includes/class-settings.php:493
-msgid "Orientación, rotación y sombreado"
+#: includes/class-settings.php:522
+msgid "Orientation, rotation and shading"
 msgstr "Orientamento, rotazione e tratteggio"
 
-#: includes/class-settings.php:497
-msgid ""
-"Para cambiar la orientación de toda la línea usa la opción \"Dirección\" del "
-"bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear "
-"un signo concreto, los modificadores van DESPUÉS del signo (sufijo):"
-msgstr ""
-"Per cambiare l'orientamento dell'intera riga, usa l'opzione «Direzione» del "
-"blocco (destra → sinistra, come l'egiziano classico). Per ruotare o "
-"tratteggiare un singolo segno, i modificatori vanno DOPO il segno (suffisso):"
+#: includes/class-settings.php:525
+msgid "To change the orientation of the whole line, use the block's \"Direction\" option (right to left, like classical Egyptian). To rotate or shade a single sign, the modifiers go AFTER the sign (suffix):"
+msgstr "Per cambiare l'orientamento dell'intera riga, usa l'opzione «Direzione» del blocco (destra → sinistra, come l'egiziano classico). Per ruotare o tratteggiare un singolo segno, i modificatori vanno DOPO il segno (suffisso):"
 
-#: includes/class-settings.php:513
-msgid "Rota el signo anterior (variantes de la fuente)"
+#: includes/class-settings.php:542
+msgid "Rotates the previous sign (font variants)"
 msgstr "Ruota il segno precedente (varianti del font)"
 
-#: includes/class-settings.php:518
-msgid "Rota el signo anterior 90°, 180° o 270°"
+#: includes/class-settings.php:547
+msgid "Rotates the previous sign 90°, 180° or 270°"
 msgstr "Ruota il segno precedente di 90°, 180° o 270°"
 
-#: includes/class-settings.php:523
-msgid "Transposiciones horizontal, vertical y de reordenación"
+#: includes/class-settings.php:552
+msgid "Horizontal, vertical and reordering transpositions"
 msgstr "Trasposizioni orizzontale, verticale e di riordino"
 
-#: includes/class-settings.php:528
-msgid "Sombreado del signo anterior (1-4 = esquinas)"
+#: includes/class-settings.php:557
+msgid "Shades the previous sign (1-4 = corners)"
 msgstr "Tratteggia il segno precedente (1-4 = angoli)"
 
-#: includes/class-settings.php:537
+#. translators: %s is an example.
+#: includes/class-settings.php:566
 #, php-format
-msgid ""
-"También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final "
-"del texto."
-msgstr ""
-"Puoi anche marcare un frammento in rosso (papiri) scrivendo %s alla fine del "
-"testo."
+msgid "You can also mark a fragment in red (papyri) by typing %s at the end of the text."
+msgstr "Puoi anche marcare un frammento in rosso (papiri) scrivendo %s alla fine del testo."
 
-#: includes/class-settings.php:543
-msgid "Ejemplos completos"
+#: includes/class-settings.php:572
+msgid "Complete examples"
 msgstr "Esempi completi"
 
-#: includes/class-settings.php:547
-msgid "Texto MdC"
+#: includes/class-settings.php:576
+msgid "MdC text"
 msgstr "Testo MdC"
 
-#: includes/class-settings.php:564
+#. translators: %s is the composer tool name.
+#: includes/class-settings.php:593
 #, php-format
-msgid ""
-"Si no recuerdas la codificación Unicode de un fragmento, usa el %s de esta "
-"misma página para componer el texto y copiarlo."
-msgstr ""
+msgid "If you don't remember the Unicode encoding of a fragment, use the %s on this same page to compose the text and copy it."
+msgstr "Se non ricordi la codifica Unicode di un frammento, usa il %s di questa stessa pagina per comporre il testo e copiarlo."
 
-#: includes/class-settings.php:570
+#: includes/class-settings.php:599
 msgid "Shortcode [hiero]"
 msgstr "Shortcode [hiero]"
 
-#: includes/class-settings.php:574
-msgid ""
-"El shortcode se usa en el editor clásico. Acepta la transliteración MdC "
-"directamente (se convierte al vuelo) o la codificación Unicode jeroglífica, "
-"y se integra en el texto sin romperlo:"
-msgstr ""
+#: includes/class-settings.php:602
+msgid "The shortcode is used in the classic editor. It accepts MdC transliteration directly (converted on the fly) or Unicode hieroglyphic encoding, and flows inline with the text:"
+msgstr "Lo shortcode si usa nell'editor classico. Accetta direttamente la traslitterazione MdC (convertita al volo) o la codifica Unicode geroglifica, e si integra nel testo senza interromperlo:"
 
-#: includes/class-settings.php:584
-msgid "Atributo"
+#: includes/class-settings.php:608
+msgid "The king [hiero]ra-ms-sw[/hiero] built a temple.   ← MdC, converted automatically"
+msgstr "Il re [hiero]ra-ms-sw[/hiero] eresse un tempio.   ← MdC, convertito automaticamente"
+
+#: includes/class-settings.php:613
+msgid "Attribute"
 msgstr "Attributo"
 
-#: includes/class-settings.php:585
-msgid "Valores"
+#: includes/class-settings.php:614
+msgid "Values"
 msgstr "Valori"
 
-#: includes/class-settings.php:586
-msgid "Descripción"
+#: includes/class-settings.php:615
+msgid "Description"
 msgstr "Descrizione"
 
-#: includes/class-settings.php:590
-msgid "Tamaño de los signos (por defecto: el de los ajustes)."
+#: includes/class-settings.php:619
+msgid "Sign size (default: the one from settings)."
 msgstr "Dimensione dei segni (predefinita: quella delle impostazioni)."
 
-#: includes/class-settings.php:591
-msgid "Color de los signos (vacío = hereda el tema)."
+#: includes/class-settings.php:620
+msgid "Sign color (empty = inherits the theme)."
 msgstr "Colore dei segni (vuoto = eredita il tema)."
 
-#: includes/class-settings.php:592
-msgid "Alineación del bloque."
+#: includes/class-settings.php:621
+msgid "Block alignment."
 msgstr "Allineamento del blocco."
 
-#: includes/class-settings.php:593
-msgid "Dirección: izquierda→derecha o derecha→izquierda."
+#: includes/class-settings.php:622
+msgid "Direction: left to right or right to left."
 msgstr "Direzione: sinistra→destra o destra→sinistra."
 
-#: includes/class-settings.php:594
-msgid "Separación entre signos."
+#: includes/class-settings.php:623
+msgid "Sign separation."
 msgstr "Spaziatura dei segni."
 
-#: includes/class-settings.php:595
-msgid "Patrón de sombreado de los signos dañados."
+#: includes/class-settings.php:624
+msgid "Shading pattern for damaged signs."
 msgstr "Motivo di tratteggio per i segni danneggiati."
 
-#: includes/class-settings.php:596
-msgid "Altura de línea (multiplicador)."
+#: includes/class-settings.php:625
+msgid "Line height (multiplier)."
 msgstr "Altezza della riga (moltiplicatore)."
 
-#: includes/class-settings.php:597
-msgid "Permitir saltos de línea en fragmentos largos."
+#: includes/class-settings.php:626
+msgid "Allow line breaks in long fragments."
 msgstr "Consenti interruzioni di riga nei frammenti lunghi."
 
-#: includes/class-settings.php:601
-msgid "Consejos y preguntas frecuentes"
+#: includes/class-settings.php:630
+msgid "Tips and FAQ"
 msgstr "Consigli e domande frequenti"
 
-#: includes/class-settings.php:607
+#. translators: %s is a path.
+#: includes/class-settings.php:636
 #, php-format
-msgid ""
-"La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no "
-"permitió incluirla (límite de subida), el plugin la carga automáticamente "
-"desde la CDN oficial de HieroJax (%s)."
-msgstr ""
-"Il font NewGardiner viene servito dal plugin stesso. Se l'hosting non ha "
-"permesso di includerlo (limite di upload), il plugin lo carica "
-"automaticamente dalla CDN ufficiale di HieroJax (%s)."
+msgid "The NewGardiner font is served from the plugin itself. If the host prevented including it (upload limit), the plugin loads it automatically from the official HieroJax CDN (%s)."
+msgstr "Il font NewGardiner viene servito dal plugin stesso. Se l'hosting non ha permesso di includerlo (limite di upload), il plugin lo carica automaticamente dalla CDN ufficiale di HieroJax (%s)."
 
-#: includes/class-settings.php:615
-msgid ""
-"Si un código MdC no está aún codificado en Unicode, la vista previa muestra "
-"el carácter � y el editor avisa. Revisa el código o usa la codificación "
-"Unicode manual."
-msgstr ""
-"Se un codice MdC non è ancora codificato in Unicode, l'anteprima mostra il "
-"carattere � e l'editor avvisa. Controlla il codice o usa la codifica Unicode "
-"manuale."
+#: includes/class-settings.php:643
+msgid "If an MdC code is not yet encoded in Unicode, the preview shows the � character and the editor warns. Check the code or use the manual Unicode encoding."
+msgstr "Se un codice MdC non è ancora codificato in Unicode, l'anteprima mostra il carattere � e l'editor avvisa. Controlla il codice o usa la codifica Unicode manuale."
 
-#: includes/class-settings.php:623
-msgid ""
-"Los scripts y la fuente solo se cargan en páginas que contienen "
-"jeroglíficos, para no ralentizar el resto del sitio."
-msgstr ""
-"Script e font vengono caricati solo nelle pagine che contengono geroglifici, "
-"per non rallentare il resto del sito."
+#: includes/class-settings.php:651
+msgid "Scripts and the font are only loaded on pages containing hieroglyphs, so the rest of the site stays fast."
+msgstr "Script e font vengono caricati solo nelle pagine che contengono geroglifici, per non rallentare il resto del sito."
 
-#: includes/class-settings.php:632
-msgid ""
-"El bloque se personaliza por cada inserción desde su panel de opciones; los "
-"valores por defecto de esta página solo afectan a bloques nuevos y al "
-"shortcode."
-msgstr ""
-"Ogni blocco si personalizza singolarmente dal suo pannello di opzioni; i "
-"valori predefiniti di questa pagina valgono solo per i nuovi blocchi e per "
-"lo shortcode."
+#. translators: %s is a menu path.
+#: includes/class-settings.php:661
+msgid "Each block can be customized individually from its options panel; the defaults on this page only affect new blocks and the shortcode."
+msgstr "Ogni blocco si personalizza singolarmente dal suo pannello di opzioni; i valori predefiniti di questa pagina valgono solo per i nuovi blocchi e per lo shortcode."
 
-#: includes/class-settings.php:639
-msgid "Créditos"
+#: includes/class-settings.php:668
+msgid "Credits"
 msgstr "Crediti"
 
-#: includes/class-settings.php:644
+#. translators: %1$s and %2$s are project names with links.
+#: includes/class-settings.php:673
 #, php-format
-msgid ""
-"Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). "
-"Ambos de Mark-Jan Nederhof (Universidad de St Andrews)."
+msgid "Rendering engine and converter: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). Both by Mark-Jan Nederhof (University of St Andrews)."
+msgstr "Motore di rendering e convertitore: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). Entrambi di Mark-Jan Nederhof (Università di St Andrews)."
+
+#: assets/admin-converter.js:64
+msgid "The conversion contains signs not yet available in Unicode (�). Check the MdC codes."
+msgstr "La conversione contiene segni non disponibili in Unicode (�). Controlla i codici MdC."
+
+#: build/index.js:1
+msgid "Uniform"
+msgstr "Uniforme"
+
+#: build/index.js:1
+msgid "Hatching"
+msgstr "Tratteggio (hatching)"
+
+#: build/index.js:1
+msgid "Left to right"
+msgstr "Sinistra → destra"
+
+#: build/index.js:1
+msgid "Right to left (hieroglyphic)"
+msgstr "Destra → sinistra (geroglifico)"
+
+#: build/index.js:1
+msgid "Vertical (top → bottom)"
+msgstr "Verticale (alto → basso)"
+
+#: build/index.js:1
+msgid "Vertical (bottom → top)"
+msgstr "Verticale (basso → alto)"
+
+#: build/index.js:1
+msgid "Left"
+msgstr "Sinistra"
+
+#: build/index.js:1
+msgid "Center"
+msgstr "Centro"
+
+#: build/index.js:1
+msgid "Right"
+msgstr "Destra"
+
+#: build/index.js:1
+msgid "Display options"
+msgstr "Opzioni di visualizzazione"
+
+#: build/index.js:1
+msgid "Alignment"
+msgstr "Allineamento"
+
+#: build/index.js:1
+msgid "Direction"
+msgstr "Direzione"
+
+#: build/index.js:1
+msgid "Classical Egyptian is read from right to left; the vertical direction (vlr) draws cartouches vertically."
+msgstr "L'egiziano classico si legge da destra a sinistra; la direzione verticale (vlr) disegna i cartigli in verticale."
+
+#: build/index.js:1
+msgid "Sign separation"
+msgstr "Spaziatura dei segni"
+
+#: build/index.js:1
+msgid "Line height"
+msgstr "Altezza della riga"
+
+#: build/index.js:1
+msgid "Shading"
+msgstr "Tratteggio"
+
+#: build/index.js:1
+msgid "Allow long lines to break"
+msgstr "Consenti interruzioni di riga lunghe"
+
+#: build/index.js:1
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: build/index.js:1
+msgid "Edit the Unicode encoding directly"
+msgstr "Modifica direttamente la codifica Unicode"
+
+#: build/index.js:1
+msgid "Useful for cartouches or other details the automatic conversion does not preserve."
+msgstr "Utile per cartigli o altri dettagli che la conversione automatica non conserva."
+
+#: build/index.js:1
+msgid "View Unicode encoding"
+msgstr "Vedi codifica Unicode"
+
+#: build/index.js:1
+msgid "Generated Unicode encoding"
+msgstr "Codifica Unicode generata"
+
+#: build/index.js:1
+msgid "Unicode encoding (advanced)"
+msgstr "Codifica Unicode (avanzata)"
+
+#: build/index.js:1
+msgid "Type the hieroglyphic Unicode encoding directly (U+13000+ characters and quadrat controls)."
+msgstr "Inserisci direttamente la codifica Unicode geroglifica (caratteri U+13000+ e controlli di quadrato)."
+
+#: build/index.js:1
+msgid "Sign codes (nTr, ra, anx…) with separators: \":\" (vertical), \"*\" (horizontal), \"-\" (juxtaposition). Cartouches with \"<\" and \">\" (e.g. <- mn-xpr-ra ->). Full guide in Settings → Egyptian Hieroglyphs."
+msgstr "Codici di segni (nTr, ra, anx…) con separatori: \":\" (verticale), \"*\" (orizzontale), \"-\" (giustapposizione). Cartigli con \"<\" e \">\" (es.: <- mn-xpr-ra ->). Guida completa in Impostazioni → Geroglifici Egizi."
+
+#: build/index.js:1
+msgid "The preview will appear here. Type an MdC phrase above."
+msgstr "L'anteprima apparirà qui. Inserisci sopra una frase in MdC."
+
+#: build/block.json
+msgctxt "block title"
+msgid "Egyptian Hieroglyphs (MdC)"
+msgstr "Geroglifici egizi (MdC)"
+
+#: build/block.json
+msgctxt "block description"
+msgid "Renders Egyptian hieroglyphs from Manuel de Codage (MdC) notation, using HieroJax and the NewGardiner font."
+msgstr "Visualizza geroglifici egizi dalla notazione Manuel de Codage (MdC), con HieroJax e il font NewGardiner."
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "hieroglyph"
+msgstr "geroglifico"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "egyptian"
+msgstr "egizio"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "egyptology"
+msgstr "egittologia"
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "mdc"
 msgstr ""
-"Motore di rendering e convertitore: %1$s (GPL-3.0). Font: %2$s (SIL OFL "
-"1.1). Entrambi di Mark-Jan Nederhof (Università di St Andrews)."
 
-#~ msgid "Conversor MdC (jeroglíficos)"
-#~ msgstr "Convertitore MdC (geroglifici)"
-
-#~ msgid "Conversor MdC"
-#~ msgstr "Convertitore MdC"
-
-#, php-format
-#~ msgid ""
-#~ "Si no recuerdas la codificación Unicode de un fragmento, usa la "
-#~ "herramienta %s para convertir MdC a Unicode con un clic y copiarlo."
-#~ msgstr ""
-#~ "Se non ricordi la codifica Unicode di un frammento, usa lo strumento %s "
-#~ "per convertire il MdC in Unicode con un clic e copiarlo."
-
-#~ msgid "Herramientas → Conversor MdC"
-#~ msgstr "Strumenti → Convertitore MdC"
-
-#~ msgid "Alineación"
-#~ msgstr "Allineamento"
-
-#~ msgid "Altura de línea"
-#~ msgstr "Altezza della riga"
-
-#~ msgid "Avanzado"
-#~ msgstr "Avanzate"
-
-#~ msgid "Centro"
-#~ msgstr "Centro"
-
-#~ msgid "Codificación Unicode (avanzado)"
-#~ msgstr "Codifica Unicode (avanzata)"
-
-#~ msgid "Codificación Unicode generada"
-#~ msgstr "Codifica Unicode generata"
-
-#~ msgid ""
-#~ "Códigos de signos (nTr, ra, anx…) con separadores: \":\" (vertical), "
-#~ "\"*\" (horizontal), \"-\" (yuxtaposición). Cartuchos con \"<\" y "
-#~ "\">\" (ej.: <- mn-xpr-ra ->). Guía completa en Ajustes → Jeroglíficos "
-#~ "Egipcios."
-#~ msgstr ""
-#~ "Codici di segni (nTr, ra, anx…) con separatori: \":\" (verticale), "
-#~ "\"*\" (orizzontale), \"-\" (giustapposizione). Cartigli con \"<\" e "
-#~ "\">\" (es.: <- mn-xpr-ra ->). Guida completa in Impostazioni → "
-#~ "Geroglifici Egizi."
-
-#~ msgid "Derecha"
-#~ msgstr "Destra"
-
-#~ msgid "Derecha → izquierda (jeroglífico)"
-#~ msgstr "Destra → sinistra (geroglifico)"
-
-#~ msgid "Dirección"
-#~ msgstr "Direzione"
-
-#~ msgid "Editar la codificación Unicode directamente"
-#~ msgstr "Modifica direttamente la codifica Unicode"
-
-#~ msgid "El egipcio clásico se lee de derecha a izquierda."
-#~ msgstr "L'egiziano classico si legge da destra a sinistra."
-
-#~ msgid ""
-#~ "El shortcode se usa en el editor clásico y acepta la codificación Unicode "
-#~ "jeroglífica (una línea por fragmento):"
-#~ msgstr ""
-#~ "Lo shortcode si usa nell'editor classico e accetta la codifica Unicode "
-#~ "geroglifica (una riga per frammento):"
-
-#~ msgid ""
-#~ "Escribe la codificación jeroglífica Unicode directamente (caracteres "
-#~ "U+13000+ y controles de cuadratura)."
-#~ msgstr ""
-#~ "Inserisci direttamente la codifica Unicode geroglifica (caratteri "
-#~ "U+13000+ e controlli di quadrato)."
-
-#~ msgid "Izquierda"
-#~ msgstr "Sinistra"
-
-#~ msgid "Izquierda → derecha"
-#~ msgstr "Sinistra → destra"
-
-#~ msgid ""
-#~ "La conversión contiene signos no disponibles en Unicode (�). Revisa los "
-#~ "códigos MdC."
-#~ msgstr ""
-#~ "La conversione contiene segni non disponibili in Unicode (�). Controlla i "
-#~ "codici MdC."
-
-#~ msgid "La vista previa aparecerá aquí. Escribe una frase en MdC arriba."
-#~ msgstr "L'anteprima apparirà qui. Inserisci sopra una frase in MdC."
-
-#~ msgid "Opciones de visualización"
-#~ msgstr "Opzioni di visualizzazione"
-
-#~ msgid "Permitir saltos de línea largos"
-#~ msgstr "Consenti interruzioni di riga lunghe"
-
-#~ msgid "Rayado (hatching)"
-#~ msgstr "Tratteggio (hatching)"
-
-#~ msgid "Separación entre signos"
-#~ msgstr "Spaziatura dei segni"
-
-#~ msgid "Sombreado"
-#~ msgstr "Tratteggio"
-
-#~ msgid "Uniforme"
-#~ msgstr "Uniforme"
-
-#~ msgid "Ver codificación Unicode"
-#~ msgstr "Vedi codifica Unicode"
-
-#~ msgid ""
-#~ "Útil para cartuchos u otros detalles que la conversión automática no "
-#~ "conserva."
-#~ msgstr ""
-#~ "Utile per cartigli o altri dettagli che la conversione automatica non "
-#~ "conserva."
+#: build/block.json
+msgctxt "block keyword"
+msgid "transliteration"
+msgstr "traslitterazione"

@@ -24,30 +24,30 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { getHierojax, mdcToUnicode } from './mdc-converter';
 
 const SHADE_OPTIONS = [
-	{ label: __( 'Uniforme', 'egyptian-hieroglyphs' ), value: 'uniform' },
-	{ label: __( 'Rayado (hatching)', 'egyptian-hieroglyphs' ), value: 'hatching' },
+	{ label: __( 'Uniform', 'egyptian-hieroglyphs-mdc' ), value: 'uniform' },
+	{ label: __( 'Hatching', 'egyptian-hieroglyphs-mdc' ), value: 'hatching' },
 ];
 
 const DIR_OPTIONS = [
-	{ label: __( 'Izquierda → derecha', 'egyptian-hieroglyphs' ), value: 'ltr' },
+	{ label: __( 'Left to right', 'egyptian-hieroglyphs-mdc' ), value: 'ltr' },
 	{
-		label: __( 'Derecha → izquierda (jeroglífico)', 'egyptian-hieroglyphs' ),
+		label: __( 'Right to left (hieroglyphic)', 'egyptian-hieroglyphs-mdc' ),
 		value: 'hrl',
 	},
 	{
-		label: __( 'Vertical (arriba → abajo)', 'egyptian-hieroglyphs' ),
+		label: __( 'Vertical (top → bottom)', 'egyptian-hieroglyphs-mdc' ),
 		value: 'vlr',
 	},
 	{
-		label: __( 'Vertical (abajo → arriba)', 'egyptian-hieroglyphs' ),
+		label: __( 'Vertical (bottom → top)', 'egyptian-hieroglyphs-mdc' ),
 		value: 'vrl',
 	},
 ];
 
 const ALIGN_OPTIONS = [
-	{ label: __( 'Izquierda', 'egyptian-hieroglyphs' ), value: 'left' },
-	{ label: __( 'Centro', 'egyptian-hieroglyphs' ), value: 'center' },
-	{ label: __( 'Derecha', 'egyptian-hieroglyphs' ), value: 'right' },
+	{ label: __( 'Left', 'egyptian-hieroglyphs-mdc' ), value: 'left' },
+	{ label: __( 'Center', 'egyptian-hieroglyphs-mdc' ), value: 'center' },
+	{ label: __( 'Right', 'egyptian-hieroglyphs-mdc' ), value: 'right' },
 ];
 
 const FALLBACK_DEFAULTS = { fontSize: 36, color: '' };
@@ -182,11 +182,11 @@ export default function Edit( { attributes, setAttributes } ) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={ __( 'Opciones de visualización', 'egyptian-hieroglyphs' ) }
+					title={ __( 'Display options', 'egyptian-hieroglyphs-mdc' ) }
 					initialOpen={ true }
 				>
 					<RangeControl
-						label={ __( 'Tamaño de los signos', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Sign size', 'egyptian-hieroglyphs-mdc' ) }
 						value={ fontSize ?? FALLBACK_DEFAULTS.fontSize }
 						onChange={ ( value ) => setAttributes( { fontSize: value } ) }
 						min={ 12 }
@@ -194,23 +194,23 @@ export default function Edit( { attributes, setAttributes } ) {
 						step={ 1 }
 					/>
 					<SelectControl
-						label={ __( 'Alineación', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Alignment', 'egyptian-hieroglyphs-mdc' ) }
 						value={ textAlign }
 						options={ ALIGN_OPTIONS }
 						onChange={ ( value ) => setAttributes( { textAlign: value } ) }
 					/>
 					<SelectControl
-						label={ __( 'Dirección', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Direction', 'egyptian-hieroglyphs-mdc' ) }
 						help={ __(
-							'El egipcio clásico se lee de derecha a izquierda; la dirección vertical (vlr) hace que los cartuchos se dibujen en vertical.',
-							'egyptian-hieroglyphs'
+							'Classical Egyptian is read from right to left; the vertical direction (vlr) draws cartouches vertically.',
+							'egyptian-hieroglyphs-mdc'
 						) }
 						value={ dir }
 						options={ DIR_OPTIONS }
 						onChange={ ( value ) => setAttributes( { dir: value } ) }
 					/>
 					<BaseControl
-						label={ __( 'Color de los signos', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Sign color', 'egyptian-hieroglyphs-mdc' ) }
 					>
 						<ColorPalette
 							value={ color || undefined }
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						/>
 					</BaseControl>
 					<RangeControl
-						label={ __( 'Separación entre signos', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Sign separation', 'egyptian-hieroglyphs-mdc' ) }
 						value={ sep }
 						onChange={ ( value ) => setAttributes( { sep: value } ) }
 						min={ 0 }
@@ -226,7 +226,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						step={ 0.01 }
 					/>
 					<RangeControl
-						label={ __( 'Altura de línea', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Line height', 'egyptian-hieroglyphs-mdc' ) }
 						value={ linesize }
 						onChange={ ( value ) => setAttributes( { linesize: value } ) }
 						min={ 0.5 }
@@ -234,43 +234,43 @@ export default function Edit( { attributes, setAttributes } ) {
 						step={ 0.05 }
 					/>
 					<SelectControl
-						label={ __( 'Sombreado', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Shading', 'egyptian-hieroglyphs-mdc' ) }
 						value={ shade }
 						options={ SHADE_OPTIONS }
 						onChange={ ( value ) => setAttributes( { shade: value } ) }
 					/>
 					<ToggleControl
-						label={ __( 'Permitir saltos de línea largos', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Allow long lines to break', 'egyptian-hieroglyphs-mdc' ) }
 						checked={ separated }
 						onChange={ ( value ) => setAttributes( { separated: value } ) }
 					/>
 				</PanelBody>
 
 				<PanelBody
-					title={ __( 'Avanzado', 'egyptian-hieroglyphs' ) }
+					title={ __( 'Advanced', 'egyptian-hieroglyphs-mdc' ) }
 					initialOpen={ false }
 				>
 					<ToggleControl
 						label={ __(
-							'Editar la codificación Unicode directamente',
-							'egyptian-hieroglyphs'
+							'Edit the Unicode encoding directly',
+							'egyptian-hieroglyphs-mdc'
 						) }
 						help={ __(
-							'Útil para cartuchos u otros detalles que la conversión automática no conserva.',
-							'egyptian-hieroglyphs'
+							'Useful for cartouches or other details the automatic conversion does not preserve.',
+							'egyptian-hieroglyphs-mdc'
 						) }
 						checked={ showSource }
 						onChange={ ( value ) => setAttributes( { showSource: value } ) }
 					/>
 					<ToggleControl
-						label={ __( 'Ver codificación Unicode', 'egyptian-hieroglyphs' ) }
+						label={ __( 'View Unicode encoding', 'egyptian-hieroglyphs-mdc' ) }
 						checked={ showUnicode }
 						onChange={ setShowUnicode }
 					/>
 					{ showUnicode && (
 						<TextareaControl
 							className="ft-hiero-unicode-input"
-							label={ __( 'Codificación Unicode generada', 'egyptian-hieroglyphs' ) }
+							label={ __( 'Generated Unicode encoding', 'egyptian-hieroglyphs-mdc' ) }
 							readOnly
 							value={ unicode }
 							rows={ 6 }
@@ -283,10 +283,10 @@ export default function Edit( { attributes, setAttributes } ) {
 				{ showSource ? (
 					<TextareaControl
 						className="ft-hiero-unicode-input"
-						label={ __( 'Codificación Unicode (avanzado)', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Unicode encoding (advanced)', 'egyptian-hieroglyphs-mdc' ) }
 						help={ __(
-							'Escribe la codificación jeroglífica Unicode directamente (caracteres U+13000+ y controles de cuadratura).',
-							'egyptian-hieroglyphs'
+							'Type the hieroglyphic Unicode encoding directly (U+13000+ characters and quadrat controls).',
+							'egyptian-hieroglyphs-mdc'
 						) }
 						value={ unicode }
 						onChange={ ( value ) => setAttributes( { unicode: value } ) }
@@ -294,10 +294,10 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				) : (
 					<TextareaControl
-						label={ __( 'Texto en notación MdC', 'egyptian-hieroglyphs' ) }
+						label={ __( 'Text in MdC notation', 'egyptian-hieroglyphs-mdc' ) }
 						help={ __(
-							'Códigos de signos (nTr, ra, anx…) con separadores: ":" (vertical), "*" (horizontal), "-" (yuxtaposición). Cartuchos con "<" y ">" (ej.: <- mn-xpr-ra ->). Guía completa en Ajustes → Jeroglíficos Egipcios.',
-							'egyptian-hieroglyphs'
+							'Sign codes (nTr, ra, anx…) with separators: ":" (vertical), "*" (horizontal), "-" (juxtaposition). Cartouches with "<" and ">" (e.g. <- mn-xpr-ra ->). Full guide in Settings → Egyptian Hieroglyphs.',
+							'egyptian-hieroglyphs-mdc'
 						) }
 						value={ mdc }
 						onChange={ ( value ) => setAttributes( { mdc: value } ) }
@@ -325,8 +325,8 @@ export default function Edit( { attributes, setAttributes } ) {
 					{ lines.length === 0 ? (
 						<p className="ftorres-hiero-placeholder">
 							{ __(
-								'La vista previa aparecerá aquí. Escribe una frase en MdC arriba.',
-								'egyptian-hieroglyphs'
+								'The preview will appear here. Type an MdC phrase above.',
+								'egyptian-hieroglyphs-mdc'
 							) }
 						</p>
 					) : (

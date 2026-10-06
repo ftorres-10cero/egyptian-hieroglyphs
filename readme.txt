@@ -1,151 +1,160 @@
 === Egyptian Hieroglyphs (MdC) ===
 Contributors: ftorresalva
-Tags: hieroglyphs, egyptian, egyptology, mdc, transliteration, block, shortcode, wordpress, plugin
+Tags: hieroglyphs, egyptian, egyptology, transliteration, shortcode
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.5.8
+Stable tag: 1.5.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Renderiza jeroglíficos egipcios desde transliteración en notación Manuel de Codage (MdC) como SVG, con un bloque de Gutenberg y un shortcode.
+Render Egyptian hieroglyphs from Manuel de Codage (MdC) transliteration as SVG, with a Gutenberg block and a shortcode.
 
 == Description ==
 
-Escribe una frase en [Manuel de Codage (MdC)](https://es.wikipedia.org/wiki/Manuel_de_Codage) — el estándar usado por egiptólogos para codificar jeroglíficos — y el plugin la renderiza como jeroglíficos reales (SVG) usando [HieroJax](https://nederhof.github.io/hierojax/) y la fuente [NewGardiner](https://github.com/nederhof/newgardiner) (SIL OFL 1.1).
+Type a phrase in [Manuel de Codage (MdC)](https://en.wikipedia.org/wiki/Manuel_de_Codage), the standard Egyptologists use to encode hieroglyphs, and the plugin renders it as real hieroglyphs (SVG) using [HieroJax](https://nederhof.github.io/hierojax/) and the [NewGardiner](https://github.com/nederhof/newgardiner) font (SIL OFL 1.1).
 
-**Características:**
+**Features:**
 
-* **Bloque de Gutenberg** "Jeroglíficos egipcios (MdC)" con vista previa en vivo mientras escribes el MdC.
-* Conversión automática **MdC → Unicode** en el editor (soporta cuadraturas con `:` y `*`, yuxtaposición, signos perdidos, sombreado, rojo/negro, etc.).
-* Opciones por bloque: tamaño de los signos, alineación, color, dirección (derecha→izquierda para egipcio clásico), separación entre signos, sombreado y altura de línea.
-* **Shortcode `[hiero]`** para el editor clásico: acepta transliteración MdC o codificación Unicode jeroglífica: `[hiero]ra-ms-sw[/hiero]` o `[hiero]𓂋𓄿[/hiero]`; se integra en el texto sin romperlo.
-* **Constructor de textos MdC** en Ajustes → Jeroglíficos Egipcios: paleta de signos (lista de Gardiner), botones para cartuchos, cuadraturas y grupos, con vista previa en vivo y copia del resultado.
-* Solo se cargan los scripts en páginas que contienen jeroglíficos; el parser MdC (1,2 MB) se carga únicamente en el editor.
-* Los signos se renderizan como SVG: nítidos a cualquier tamaño y copiables/pegables.
+* **Gutenberg block** "Egyptian Hieroglyphs (MdC)" with a live preview while you type MdC.
+* Automatic **MdC → Unicode** conversion in the editor (supports quadrats with `:` and `*`, juxtaposition, lost signs, shading, red/black, etc.).
+* Per-block options: sign size, alignment, color, direction (right-to-left for classical Egyptian), sign spacing, shading and line height.
+* **`[hiero]` shortcode** for the classic editor: accepts MdC transliteration or Unicode hieroglyphic encoding, e.g. `[hiero]ra-ms-sw[/hiero]` or `[hiero]𓂋𓄿[/hiero]`, and flows inline with the surrounding text.
+* **MdC text composer** in Settings → Egyptian Hieroglyphs: sign palette (Gardiner list), buttons for cartouches, quadrats and groups, live preview and copy of the result.
+* Scripts are only loaded on pages that contain hieroglyphs; the MdC parser (1.2 MB) is only loaded in the editor.
+* Signs are rendered as SVG: sharp at any size, and they can be copied and pasted.
 
-**Ejemplo de MdC:** `nTr:r` renderiza el signo "dios" (𓊹) sobre la "r" (𓂋) en un cuadro vertical; `ra:Z1*t:Z1` combina cuadros con separadores vertical y horizontal.
+**MdC example:** `nTr:r` renders the "god" sign (𓊹) above the "r" (𓂋) in a vertical quadrat; `ra:Z1*t:Z1` combines quadrats with vertical and horizontal separators.
 
-**Créditos:** motor de render y conversor de [HieroJax](https://github.com/nederhof/hierojax) (GPL-3.0) y fuente [NewGardiner](https://github.com/nederhof/newgardiner) (SIL OFL 1.1), ambos de Mark-Jan Nederhof (Universidad de St Andrews). Ver `licenses/` para los textos completos.
+**Credits:** rendering engine and converter by [HieroJax](https://github.com/nederhof/hierojax) (GPL-3.0) and the [NewGardiner](https://github.com/nederhof/newgardiner) font (SIL OFL 1.1), both by Mark-Jan Nederhof (University of St Andrews). See `licenses/` for the full texts.
+
+The plugin's home page, with a live demo, is at [ftorres.es](https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/).
 
 == Installation ==
 
-1. Sube la carpeta `egyptian-hieroglyphs` a `/wp-content/plugins/` (o instala el zip desde Plugins → Añadir nuevo).
-2. Activa el plugin.
-3. En el editor de una entrada, añade el bloque "Jeroglíficos egipcios (MdC)" y escribe tu texto en MdC.
-4. Para el editor clásico, usa `[hiero]` con transliteración MdC o codificación Unicode jeroglífica (compón el texto con el Constructor de textos MdC de los ajustes).
+1. Upload the `egyptian-hieroglyphs` folder to `/wp-content/plugins/` (or install the zip from Plugins → Add New).
+2. Activate the plugin.
+3. In the post editor, add the "Egyptian Hieroglyphs (MdC)" block and type your text in MdC.
+4. In the classic editor, use `[hiero]` with MdC transliteration or Unicode hieroglyphic encoding (you can compose the text with the MdC text composer in the settings).
 
 == Frequently Asked Questions ==
 
-= ¿Qué es Manuel de Codage (MdC)? =
+= What is Manuel de Codage (MdC)? =
 
-Es un estándar de codificación de jeroglíficos egipcios basado en la lista de signos de Gardiner, muy usado en egiptología. Cada signo se identifica por un código (p. ej. `nTr` = dios, `ra` = sol) y se combina con separadores: `:` agrupa en vertical, `*` en horizontal, `-` yuxtapone.
+It is an encoding standard for Egyptian hieroglyphs based on Gardiner's sign list, widely used in Egyptology. Each sign is identified by a code (e.g. `nTr` = god, `ra` = sun) and signs are combined with separators: `:` stacks vertically, `*` groups horizontally, `-` juxtaposes.
 
-= ¿Cómo escribo un cartucho? =
+= How do I write a cartouche? =
 
-Usa la sintaxis de cerramiento del conversor: `<` … `>`. Ejemplos:
+Use the converter's enclosure syntax: `<` … `>`. Examples:
 
-* `<- mn-xpr-ra ->` → cartucho de Menkheperre (𓍹…𓍺)
-* `<- ra-ms-sw ->` → cartucho de Ramsés
-* `<S- anx ->` → anillo shen
+* `<- mn-xpr-ra ->` → cartouche of Menkheperre (𓍹…𓍺)
+* `<- ra-ms-sw ->` → cartouche of Ramesses
+* `<S- anx ->` → shen ring
 
-Los corchetes `[& … &]` son signos de corchete literales, no cartuchos.
+The brackets `[& … &]` are literal bracket signs, not cartouches.
 
-= ¿El shortcode acepta MdC? =
+= Does the shortcode accept MdC? =
 
-Sí: el shortcode acepta transliteración MdC directamente (la convierte al vuelo en el navegador) o codificación Unicode jeroglífica. Compón el texto con el Constructor de textos MdC de los ajustes.
+Yes. The shortcode accepts MdC transliteration directly (it is converted on the fly in the browser) or Unicode hieroglyphic encoding. You can compose the text with the MdC text composer in the settings.
 
-= ¿Por qué veo el carácter � en la vista previa? =
+= Why do I see the � character in the preview? =
 
-Algunos códigos MdC corresponden a signos que Unicode aún no ha codificado; se muestran como �. Revisa el código o usa la codificación Unicode manual.
+Some MdC codes correspond to signs that Unicode has not encoded yet; they are shown as �. Check the code or use manual Unicode encoding.
 
-= ¿En qué páginas se cargan los scripts? =
+= On which pages are the scripts loaded? =
 
-Solo en páginas que contienen el bloque o el shortcode. La fuente (2,6 MB) y el runtime (885 KB) no se cargan en el resto del sitio.
+Only on pages that contain the block or the shortcode. The font (2.6 MB) and the runtime (885 KB) are not loaded anywhere else on the site.
 
 == Screenshots ==
 
-1. Bloque de Gutenberg con vista previa en vivo del MdC.
-2. Opciones del bloque (tamaño, dirección, color, sombreado).
-3. Constructor de textos MdC en Ajustes → Jeroglíficos Egipcios (paleta de signos y vista previa).
+1. Gutenberg block with a live MdC preview.
+2. Block options (size, direction, color, shading).
+3. MdC text composer in Settings → Egyptian Hieroglyphs (sign palette and preview).
 
 == Upgrade Notice ==
 
-= 1.5.8 =
-Constructor de textos y corrección de conflicto de scripts en la página de ajustes.
+= 1.5.9 =
+English is now the source language; Spanish, French, German and Italian translations included.
 
 == Changelog ==
 
+= 1.5.9 =
+
+* English is now the source language of all strings (PHP, JavaScript and block.json); Spanish is shipped as a translation (es_ES), alongside French, German and Italian.
+* Fixed the text domain of the block editor and converter scripts (`egyptian-hieroglyphs-mdc`) and load their JavaScript translations.
+* Gardiner sign categories in the MdC text composer are now translatable.
+* readme.txt translated into English.
+
 = 1.5.8 =
 
-* Se corrige el constructor de textos MdC de la página de ajustes (cargaba dos scripts del core de hierojax que entraban en conflicto): ahora solo se carga mdcconversion.js.
-* El conversor MdC pasa a ser una página oculta (accesible por URL directa `admin.php?page=ftorres-hiero-converter`), sin ítem en el menú Herramientas.
-* Enlaces de acción en la lista de plugins: «Configuración» y «Página web» del plugin.
+* Fixed the MdC text composer on the settings page (it loaded two conflicting hierojax core scripts): now only mdcconversion.js is loaded.
+* The MdC converter is now a hidden page (reachable through the direct URL `admin.php?page=ftorres-hiero-converter`), with no item in the Tools menu.
+* Action links in the plugin list: "Settings" and the plugin's "Website".
 
 = 1.5.7 =
 
-* Enlaces de acción en la lista de plugins («Configuración» y «Página web»).
+* Action links in the plugin list ("Settings" and "Website").
 
 = 1.5.6 =
 
-* Se retira el menú «Herramientas → Conversor MdC»; la conversión se hace desde el Constructor de textos MdC de los ajustes (el conversor sigue accesible por URL directa).
+* Removed the "Tools → MdC converter" menu; conversion is done from the MdC text composer in the settings (the converter is still reachable through its direct URL).
 
 = 1.5.5 =
 
-* Constructor de textos MdC en Ajustes → Jeroglíficos Egipcios: paleta de signos de la lista de Gardiner, botones para cartuchos, cuadraturas y grupos, vista previa en vivo y copia del resultado.
-* i18n actualizado (español, inglés, francés, alemán e italiano).
+* MdC text composer in Settings → Egyptian Hieroglyphs: Gardiner sign palette, buttons for cartouches, quadrats and groups, live preview and copy of the result.
+* Updated i18n (Spanish, English, French, German and Italian).
 
 = 1.5.4 =
 
-* El shortcode `[hiero]` acepta ahora transliteración MdC directamente (la convierte al vuelo en el navegador), además de la codificación Unicode jeroglífica, y se integra en el texto sin romperlo.
+* The `[hiero]` shortcode now accepts MdC transliteration directly (converted on the fly in the browser), in addition to Unicode hieroglyphic encoding, and flows inline with the text.
 
 = 1.5.3 =
-* Nueva dirección VERTICAL (vlr/vrl) en el bloque: los cartuchos se dibujan en vertical (óvalo alto) con el texto apilado.
+* New VERTICAL direction (vlr/vrl) in the block: cartouches are drawn vertically (tall oval) with the text stacked.
 
 = 1.5.2 =
-* Corrección: la URL de la fuente NewGardiner ahora se fija también en el editor y en el conversor (antes solo en el frontend), de modo que las vistas previas del admin renderizan SVG correctamente (rotaciones, cartuchos, sombreado).
+* Fix: the NewGardiner font URL is now also set in the editor and the converter (previously only on the front end), so admin previews render SVG correctly (rotations, cartouches, shading).
 
 = 1.5.1 =
-* Los assets se cargan también cuando el contenido usa jeroglíficos sin el bloque (HTML con spans .hierojax).
-* El editor de bloques renderiza los jeroglíficos del contenido (bloque Classic) como SVG.
+* Assets are also loaded when the content uses hieroglyphs without the block (HTML with .hierojax spans).
+* The block editor renders hieroglyphs in the content (Classic block) as SVG.
 
 = 1.5.0 =
-* Ayuda exhaustiva: cartuchos en todas sus variantes (incluido el cartucho vertical) y orientación/rotación/sombreado de signos.
+* Comprehensive help: cartouches in all their variants (including the vertical cartouche) and sign orientation/rotation/shading.
 
 = 1.4.0 =
-* Nuevos idiomas: francés (fr_FR), alemán (de_DE) e italiano (it_IT), además del inglés (en_US). El plugin se muestra en el idioma del panel de WordPress.
+* New languages: French (fr_FR), German (de_DE) and Italian (it_IT), in addition to English (en_US). The plugin is shown in the language of the WordPress dashboard.
 
 = 1.3.1 =
-* Corrección: los ejemplos de jeroglíficos de la ayuda se renderizan ahora como SVG (hierojax) a tamaño legible, en lugar de texto pequeño.
+* Fix: hieroglyph examples in the help are now rendered as SVG (hierojax) at a readable size instead of small text.
 
 = 1.3.0 =
-* Ayuda ampliada: guía paso a paso «Cómo escribir jeroglíficos» y referencia completa de la sintaxis (tags).
-* El editor muestra los textareas de codificación Unicode con la fuente NewGardiner.
+* Extended help: step-by-step guide "How to write hieroglyphs" and full syntax reference (tags).
+* The editor shows the Unicode encoding textareas with the NewGardiner font.
 
 = 1.2.1 =
-* Corrección: los ejemplos de jeroglíficos de la ayuda (Ajustes → Jeroglíficos Egipcios) ahora cargan la fuente NewGardiner y se muestran correctamente.
+* Fix: hieroglyph examples in the help (Settings → Egyptian Hieroglyphs) now load the NewGardiner font and display correctly.
 
 = 1.2.0 =
-* Ayuda extensa en Ajustes → Jeroglíficos Egipcios (sintaxis MdC, cartuchos, ejemplos, shortcode, FAQ).
-* Preparado para multidioma: plantilla POT y traducción al inglés (en_US) incluidas; todas las cadenas (incluido el JS) son traducibles.
+* Extensive help in Settings → Egyptian Hieroglyphs (MdC syntax, cartouches, examples, shortcode, FAQ).
+* Ready for translation: POT template and English (en_US) translation included; all strings (including JS) are translatable.
 
 = 1.1.1 =
-* Corrección: las opciones por defecto se registran también para REST (/wp/v2/settings), necesario para que el editor de bloques las lea.
+* Fix: default options are also registered for REST (/wp/v2/settings), which the block editor needs to read them.
 
 = 1.1.0 =
-* Ajustes del plugin (Ajustes → Jeroglíficos (MdC)): tamaño y color por defecto para bloques nuevos y shortcode; cada bloque se sigue personalizando individualmente.
+* Plugin settings (Settings → Egyptian Hieroglyphs): default size and color for new blocks and the shortcode; each block can still be customized individually.
 
 = 1.0.3 =
-* Ejemplos completos con cartuchos: sintaxis `<…>` documentada en el bloque, el conversor y el readme.
+* Full examples with cartouches: `<…>` syntax documented in the block, the converter and the readme.
 
 = 1.0.2 =
-* Corrección: el editor y el conversor cargaban dos veces el core de hierojax (hierojax.js + mdcconversion.js), lo que rompía la conversión MdC. Ahora solo se carga mdcconversion.js (incluye renderer y parser).
+* Fix: the editor and the converter loaded the hierojax core twice (hierojax.js + mdcconversion.js), which broke MdC conversion. Now only mdcconversion.js is loaded (it includes the renderer and the parser).
 
 = 1.0.1 =
-* El conversor del panel arranca con un ejemplo de MdC y vista previa generada.
+* The dashboard converter starts with an MdC example and a generated preview.
 
 = 1.0.0 =
-* Primera versión en producción: instalada y verificada en ftorres.es (bloque + shortcode + render SVG).
+* First production release: installed and verified on ftorres.es (block + shortcode + SVG rendering).
 
 = 0.1.0 =
-* Primera versión: bloque Gutenberg, shortcode [hiero], herramienta de conversión, i18n, licencias.
+* First version: Gutenberg block, [hiero] shortcode, conversion tool, i18n, licenses.

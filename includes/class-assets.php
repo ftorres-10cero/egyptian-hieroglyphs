@@ -98,6 +98,7 @@ class Assets {
 			$asset['version'],
 			true
 		);
+		wp_set_script_translations( 'ftorres-hiero-block', 'egyptian-hieroglyphs-mdc', FT_HIERO_PLUGIN_DIR . 'languages' );
 
 		wp_enqueue_style(
 			'ftorres-hiero-block-editor',

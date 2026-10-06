@@ -50,6 +50,10 @@ win.ftHieroI18n = {
 	noSigns: 'sin signos',
 	previewHint: 'preview',
 	converterMissing: 'falta',
+	// Las 25 categorías de Gardiner llegan traducidas desde PHP (class-settings.php).
+	cats: Object.fromEntries(
+		'ABCDEFGHIKLMNOPQRSTUVWXYZ'.split( '' ).map( ( k ) => [ k, `Categoría ${ k }` ] )
+	),
 };
 win.addEventListener = ( ev, fn ) => { if ( ev === 'DOMContentLoaded' ) fn(); };
 doc.addEventListener = ( ev, fn ) => { if ( ev === 'DOMContentLoaded' ) fn(); };

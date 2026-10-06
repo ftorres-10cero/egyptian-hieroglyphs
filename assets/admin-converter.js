@@ -62,8 +62,8 @@
 		}
 		if ( /\uFFFD/.test( joined ) ) {
 			warnings.textContent = wp.i18n.__(
-				'La conversión contiene signos no disponibles en Unicode (�). Revisa los códigos MdC.',
-				'egyptian-hieroglyphs'
+				'The conversion contains signs not yet available in Unicode (�). Check the MdC codes.',
+				'egyptian-hieroglyphs-mdc'
 			);
 			warnings.hidden = false;
 		}
@@ -93,8 +93,8 @@
 
 	copyBtn.addEventListener( 'click', function () {
 		var label = wp.i18n.__(
-			'Copiar al portapapeles',
-			'egyptian-hieroglyphs'
+			'Copy to clipboard',
+			'egyptian-hieroglyphs-mdc'
 		);
 		var done = function () {
 			copyBtn.textContent = '\u2713';

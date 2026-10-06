@@ -2,18 +2,17 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "egyptian-hieroglyphs/hiero",
-  "version": "1.5.8",
-  "title": "Jeroglíficos egipcios (MdC)",
+  "version": "1.5.9",
+  "title": "Egyptian Hieroglyphs (MdC)",
   "category": "widgets",
   "icon": "translation",
-  "description": "Renderiza jeroglíficos egipcios desde texto en notación Manuel de Codage (MdC), usando HieroJax y la fuente NewGardiner.",
+  "description": "Renders Egyptian hieroglyphs from Manuel de Codage (MdC) notation, using HieroJax and the NewGardiner font.",
   "keywords": [
-    "jeroglífico",
-    "egipcio",
-    "egiptología",
     "hieroglyph",
+    "egyptian",
+    "egyptology",
     "mdc",
-    "transliteración"
+    "transliteration"
   ],
   "textdomain": "egyptian-hieroglyphs-mdc",
   "attributes": {

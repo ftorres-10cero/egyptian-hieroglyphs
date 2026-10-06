@@ -80,9 +80,37 @@ class Settings {
 		$catalog_path = FT_HIERO_PLUGIN_DIR . 'assets/sign-catalog.json';
 		$catalog      = file_exists( $catalog_path ) ? file_get_contents( $catalog_path ) : '[]';
 		$i18n         = array(
-			'noSigns'         => __( 'Sin signos en esta categoría.', 'egyptian-hieroglyphs-mdc' ),
-			'previewHint'     => __( 'La vista previa aparecerá aquí…', 'egyptian-hieroglyphs-mdc' ),
-			'converterMissing' => __( 'El conversor MdC no está disponible.', 'egyptian-hieroglyphs-mdc' ),
+			'noSigns'         => __( 'No signs in this category.', 'egyptian-hieroglyphs-mdc' ),
+			'previewHint'     => __( 'The preview will appear here…', 'egyptian-hieroglyphs-mdc' ),
+			'converterMissing' => __( 'The MdC converter is not available.', 'egyptian-hieroglyphs-mdc' ),
+			// Categorías de la lista de signos de Gardiner.
+			'cats'             => array(
+				'A' => __( 'Man and his occupations', 'egyptian-hieroglyphs-mdc' ),
+				'B' => __( 'Woman and her occupations', 'egyptian-hieroglyphs-mdc' ),
+				'C' => __( 'Deities and beings', 'egyptian-hieroglyphs-mdc' ),
+				'D' => __( 'Parts of the human body', 'egyptian-hieroglyphs-mdc' ),
+				'E' => __( 'Mammals', 'egyptian-hieroglyphs-mdc' ),
+				'F' => __( 'Parts of mammals', 'egyptian-hieroglyphs-mdc' ),
+				'G' => __( 'Birds', 'egyptian-hieroglyphs-mdc' ),
+				'H' => __( 'Parts of birds', 'egyptian-hieroglyphs-mdc' ),
+				'I' => __( 'Amphibians and reptiles', 'egyptian-hieroglyphs-mdc' ),
+				'K' => __( 'Fishes and parts of fishes', 'egyptian-hieroglyphs-mdc' ),
+				'L' => __( 'Invertebrates', 'egyptian-hieroglyphs-mdc' ),
+				'M' => __( 'Trees and plants', 'egyptian-hieroglyphs-mdc' ),
+				'N' => __( 'Sky, earth and water', 'egyptian-hieroglyphs-mdc' ),
+				'O' => __( 'Buildings and parts of buildings', 'egyptian-hieroglyphs-mdc' ),
+				'P' => __( 'Ships and parts of ships', 'egyptian-hieroglyphs-mdc' ),
+				'Q' => __( 'Furniture and utensils', 'egyptian-hieroglyphs-mdc' ),
+				'R' => __( 'Temple furniture and sacred emblems', 'egyptian-hieroglyphs-mdc' ),
+				'S' => __( 'Crowns, dress and weapons', 'egyptian-hieroglyphs-mdc' ),
+				'T' => __( 'Warfare and hunting', 'egyptian-hieroglyphs-mdc' ),
+				'U' => __( 'Agriculture, crafts and professions', 'egyptian-hieroglyphs-mdc' ),
+				'V' => __( 'Rope, fibre, baskets and vessels', 'egyptian-hieroglyphs-mdc' ),
+				'W' => __( 'Vessels of stone and earthenware', 'egyptian-hieroglyphs-mdc' ),
+				'X' => __( 'Loaves and cakes', 'egyptian-hieroglyphs-mdc' ),
+				'Y' => __( 'Writing, games and music', 'egyptian-hieroglyphs-mdc' ),
+				'Z' => __( 'Strokes and geometrical figures', 'egyptian-hieroglyphs-mdc' ),
+			),
 		);
 		wp_add_inline_script(
 			'ftorres-hiero-composer',
@@ -98,8 +126,8 @@ class Settings {
 	public static function add_menu() {
 		add_submenu_page(
 			'options-general.php',
-			__( 'Jeroglíficos egipcios (MdC)', 'egyptian-hieroglyphs-mdc' ),
-			__( 'Jeroglíficos Egipcios', 'egyptian-hieroglyphs-mdc' ),
+			__( 'Egyptian Hieroglyphs (MdC)', 'egyptian-hieroglyphs-mdc' ),
+			__( 'Egyptian Hieroglyphs', 'egyptian-hieroglyphs-mdc' ),
 			'manage_options',
 			'ftorres-hiero-settings',
 			array( __CLASS__, 'render_page' )
@@ -181,11 +209,11 @@ class Settings {
 		}
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Jeroglíficos egipcios (MdC) — ajustes', 'egyptian-hieroglyphs-mdc' ); ?></h1>
+			<h1><?php esc_html_e( 'Egyptian Hieroglyphs (MdC) — settings', 'egyptian-hieroglyphs-mdc' ); ?></h1>
 			<p>
 				<?php
 				esc_html_e(
-					'Valores por defecto aplicados a los bloques nuevos y al shortcode [hiero]. Cada bloque puede personalizar tamaño y color individualmente.',
+					'Defaults applied to new blocks and the [hiero] shortcode. Each block can customize size and color individually.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -196,7 +224,7 @@ class Settings {
 					<tr>
 						<th scope="row">
 							<label for="<?php echo esc_attr( self::OPT_FONT_SIZE ); ?>">
-								<?php esc_html_e( 'Tamaño de los signos', 'egyptian-hieroglyphs-mdc' ); ?>
+								<?php esc_html_e( 'Sign size', 'egyptian-hieroglyphs-mdc' ); ?>
 							</label>
 						</th>
 						<td>
@@ -205,14 +233,14 @@ class Settings {
 								id="<?php echo esc_attr( self::OPT_FONT_SIZE ); ?>"
 								value="<?php echo esc_attr( (string) self::default_font_size() ); ?>" class="small-text" />
 							<p class="description">
-								<?php esc_html_e( 'Tamaño en píxeles de la altura de los signos (8–200).', 'egyptian-hieroglyphs-mdc' ); ?>
+								<?php esc_html_e( 'Height of the signs in pixels (8–200).', 'egyptian-hieroglyphs-mdc' ); ?>
 							</p>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row">
 							<label for="<?php echo esc_attr( self::OPT_COLOR ); ?>">
-								<?php esc_html_e( 'Color de los signos', 'egyptian-hieroglyphs-mdc' ); ?>
+								<?php esc_html_e( 'Sign color', 'egyptian-hieroglyphs-mdc' ); ?>
 							</label>
 						</th>
 						<td>
@@ -222,7 +250,7 @@ class Settings {
 								value="<?php echo esc_attr( self::default_color() ); ?>"
 								class="regular-text" placeholder="#000000" />
 							<p class="description">
-								<?php esc_html_e( 'Color en formato hexadecimal. Vacío = hereda el color del tema.', 'egyptian-hieroglyphs-mdc' ); ?>
+								<?php esc_html_e( 'Color in hexadecimal format. Empty = inherits the theme color.', 'egyptian-hieroglyphs-mdc' ); ?>
 							</p>
 						</td>
 					</tr>
@@ -246,11 +274,11 @@ class Settings {
 	 */
 	public static function render_composer() {
 		?>
-		<h2><?php esc_html_e( 'Constructor de textos MdC', 'egyptian-hieroglyphs-mdc' ); ?></h2>
+		<h2><?php esc_html_e( 'MdC text composer', 'egyptian-hieroglyphs-mdc' ); ?></h2>
 		<p>
 			<?php
 			esc_html_e(
-				'Elige los signos de la paleta (lista de Gardiner) y usa los botones para insertar cartuchos, cuadraturas, grupos y separadores. El texto resultante se puede usar directamente en el bloque o en el shortcode [hiero].',
+				'Pick signs from the palette (Gardiner list) and use the buttons to insert cartouches, quadrats, groups and separators. The resulting text can be used directly in the block or in the [hiero] shortcode.',
 				'egyptian-hieroglyphs-mdc'
 			);
 			?>
@@ -258,35 +286,35 @@ class Settings {
 
 		<div class="ft-hiero-composer">
 			<div class="composer-toolbar">
-				<button type="button" class="button button-small" id="ft-hiero-act-cartouche" title="<?php esc_attr_e( 'Inserta un cartucho vacío', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Cartucho', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-open" title="<?php esc_attr_e( 'Abre un cartucho', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Abrir cartucho', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-close" title="<?php esc_attr_e( 'Cierra un cartucho', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Cerrar cartucho', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-shen" title="<?php esc_attr_e( 'Inserta un anillo shen', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Shen', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-quadrat" title="<?php esc_attr_e( 'Cuadratura vertical (apila signos)', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Cuadratura «:»', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-group" title="<?php esc_attr_e( 'Grupo horizontal', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Grupo «*»', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-juxtapose" title="<?php esc_attr_e( 'Yuxtapone signos', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Yuxta «-»', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-space" title="<?php esc_attr_e( 'Separa palabras', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Espacio', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-fragment" title="<?php esc_attr_e( 'Termina el fragmento actual', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Fin fragm. «!»', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-red" title="<?php esc_attr_e( 'Marca el texto en rojo', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Rojo «\\red»', 'egyptian-hieroglyphs-mdc' ); ?></button>
-				<button type="button" class="button button-small" id="ft-hiero-act-newline" title="<?php esc_attr_e( 'Nueva línea (fragmento)', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Nueva línea', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche" title="<?php esc_attr_e( 'Insert an empty cartouche', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Cartouche', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-open" title="<?php esc_attr_e( 'Open a cartouche', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Open cartouche', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-cartouche-close" title="<?php esc_attr_e( 'Close a cartouche', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Close cartouche', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-shen" title="<?php esc_attr_e( 'Insert a shen ring', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Shen', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-quadrat" title="<?php esc_attr_e( 'Vertical quadrat (stacks signs)', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Quadrat «:»', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-group" title="<?php esc_attr_e( 'Horizontal group', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Group «*»', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-juxtapose" title="<?php esc_attr_e( 'Juxtaposes signs', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Juxta «-»', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-space" title="<?php esc_attr_e( 'Separates words', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Space', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-fragment" title="<?php esc_attr_e( 'Ends the current fragment', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'End frag. «!»', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-red" title="<?php esc_attr_e( 'Marks the text red', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'Red «\\red»', 'egyptian-hieroglyphs-mdc' ); ?></button>
+				<button type="button" class="button button-small" id="ft-hiero-act-newline" title="<?php esc_attr_e( 'New line (fragment)', 'egyptian-hieroglyphs-mdc' ); ?>"><?php esc_html_e( 'New line', 'egyptian-hieroglyphs-mdc' ); ?></button>
 			</div>
 
 			<div class="composer-layout">
 				<div class="composer-palette">
 					<select id="ft-hiero-composer-cats"></select>
 					<input type="search" id="ft-hiero-composer-search"
-						placeholder="<?php esc_attr_e( 'Buscar código o transliteración…', 'egyptian-hieroglyphs-mdc' ); ?>" />
+						placeholder="<?php esc_attr_e( 'Search code or transliteration…', 'egyptian-hieroglyphs-mdc' ); ?>" />
 					<div class="sign-grid" id="ft-hiero-composer-grid"></div>
 				</div>
 
 				<div class="composer-workspace">
-					<label for="ft-hiero-composer-mdc"><strong><?php esc_html_e( 'Texto en notación MdC', 'egyptian-hieroglyphs-mdc' ); ?></strong></label>
+					<label for="ft-hiero-composer-mdc"><strong><?php esc_html_e( 'Text in MdC notation', 'egyptian-hieroglyphs-mdc' ); ?></strong></label>
 					<textarea id="ft-hiero-composer-mdc" rows="5"
 						placeholder="<?php esc_attr_e( 'nTr anx', 'egyptian-hieroglyphs-mdc' ); ?>"></textarea>
 					<div class="composer-actions">
-						<button type="button" class="button" id="ft-hiero-copy-mdc"><?php esc_html_e( 'Copiar MdC', 'egyptian-hieroglyphs-mdc' ); ?></button>
-						<button type="button" class="button" id="ft-hiero-copy-uni"><?php esc_html_e( 'Copiar Unicode', 'egyptian-hieroglyphs-mdc' ); ?></button>
-						<button type="button" class="button" id="ft-hiero-composer-clear"><?php esc_html_e( 'Limpiar', 'egyptian-hieroglyphs-mdc' ); ?></button>
+						<button type="button" class="button" id="ft-hiero-copy-mdc"><?php esc_html_e( 'Copy MdC', 'egyptian-hieroglyphs-mdc' ); ?></button>
+						<button type="button" class="button" id="ft-hiero-copy-uni"><?php esc_html_e( 'Copy Unicode', 'egyptian-hieroglyphs-mdc' ); ?></button>
+						<button type="button" class="button" id="ft-hiero-composer-clear"><?php esc_html_e( 'Clear', 'egyptian-hieroglyphs-mdc' ); ?></button>
 					</div>
 					<div class="preview-box" id="ft-hiero-composer-preview"></div>
 				</div>
@@ -300,23 +328,23 @@ class Settings {
 	 */
 	public static function render_help() {
 		?>
-		<h2><?php esc_html_e( 'Ayuda', 'egyptian-hieroglyphs-mdc' ); ?></h2>
+		<h2><?php esc_html_e( 'Help', 'egyptian-hieroglyphs-mdc' ); ?></h2>
 
-		<h3><?php esc_html_e( 'Cómo escribir jeroglíficos', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'How to write hieroglyphs', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<ol style="max-width:760px; list-style: decimal; padding-left: 1.6em;">
 			<li>
 				<?php
 				printf(
 					/* translators: %s is the block name. */
-					esc_html__( 'En el editor de entradas, añade el bloque «%s».', 'egyptian-hieroglyphs-mdc' ),
-					'<strong>Jeroglíficos egipcios (MdC)</strong>'
+					esc_html__( 'In the post editor, add the "%s" block.', 'egyptian-hieroglyphs-mdc' ),
+					'<strong>' . esc_html__( 'Egyptian Hieroglyphs (MdC)', 'egyptian-hieroglyphs-mdc' ) . '</strong>'
 				);
 				?>
 			</li>
 			<li>
 				<?php
 				esc_html_e(
-					'Escribe en el cuadro «Texto en notación MdC» los códigos de los signos, combinándolos con los separadores de la referencia siguiente.',
+					'Type the sign codes in the "MdC notation" box, combining them with the separators from the reference below.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -324,7 +352,7 @@ class Settings {
 			<li>
 				<?php
 				esc_html_e(
-					'La vista previa se genera al instante. En el panel lateral del bloque ajusta tamaño, color, dirección, separación y sombreado.',
+					'The preview renders instantly. In the block sidebar adjust size, color, direction, separation and shading.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -332,7 +360,7 @@ class Settings {
 			<li>
 				<?php
 				esc_html_e(
-					'Publica la entrada: los jeroglíficos se renderizan como SVG nítido, ampliable y copiable para tus lectores.',
+					'Publish the post: the hieroglyphs render as crisp, scalable, selectable SVG for your readers.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -341,90 +369,90 @@ class Settings {
 		<p>
 			<?php
 			esc_html_e(
-				'Los signos siguen la lista de Gardiner: cada uno tiene un código (p. ej. nTr = dios, ra = sol) y se combinan con separadores para formar cuadraturas, grupos y palabras.',
+				'Signs follow the Gardiner list: each has a code (e.g. nTr = god, ra = sun) combined with separators to build quadrats, groups and words.',
 				'egyptian-hieroglyphs-mdc'
 			);
 			?>
 		</p>
 
-		<h3><?php esc_html_e( 'Referencia de la sintaxis (tags)', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Syntax reference (tags)', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
 					<th><?php esc_html_e( 'Tag', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Qué hace', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Ejemplo', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'What it does', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Example', 'egyptian-hieroglyphs-mdc' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td><code>A1</code>, <code>nTr</code>, <code>ra</code>…</td>
-					<td><?php esc_html_e( 'Código de un signo (lista de Gardiner). Sin separador, los signos se suceden en la línea.', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Code of a sign (Gardiner list). Without a separator, signs follow each other on the line.', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>nTr anx</code></td>
 				</tr>
 				<tr>
 					<td><code>:</code></td>
-					<td><?php esc_html_e( 'Apila signos en vertical (cuadratura)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Stacks signs vertically (quadrat)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>nTr:r</code></td>
 				</tr>
 				<tr>
 					<td><code>*</code></td>
-					<td><?php esc_html_e( 'Agrupa signos en horizontal', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Groups signs horizontally', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>ra:Z1*t:Z1</code></td>
 				</tr>
 				<tr>
 					<td><code>-</code></td>
-					<td><?php esc_html_e( 'Yuxtapone signos en la misma línea', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Juxtaposes signs on the same line', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>Htp-di</code></td>
 				</tr>
 				<tr>
-					<td><?php esc_html_e( 'espacio', 'egyptian-hieroglyphs-mdc' ); ?></td>
-					<td><?php esc_html_e( 'Separa palabras', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'space', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Separates words', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>nTr anx</code></td>
 				</tr>
 				<tr>
 					<td><code>!</code></td>
-					<td><?php esc_html_e( 'Termina el fragmento actual', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Ends the current fragment', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>nTr:r!anx</code></td>
 				</tr>
 				<tr>
 					<td><code>&lt;</code> … <code>&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho / cerramiento', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche / enclosure', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>&lt;- mn-xpr-ra -&gt;</code></td>
 				</tr>
 				<tr>
 					<td><code>&lt;S- … -&gt;</code></td>
-					<td><?php esc_html_e( 'Anillo shen', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Shen ring', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>&lt;S- anx -&gt;</code></td>
 				</tr>
 				<tr>
 					<td><code>&amp;</code></td>
-					<td><?php esc_html_e( 'Superpone un signo sobre otro', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Overlays one sign on another', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>A1&amp;A2</code></td>
 				</tr>
 				<tr>
 					<td><code>nTr\r1</code>, <code>nTr\R90</code>…</td>
-					<td><?php esc_html_e( 'Rota el signo anterior (sufijo tras el signo)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Rotates the previous sign (suffix after the sign)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>nTr\r2</code></td>
 				</tr>
 				<tr>
 					<td><code>anx\red</code></td>
-					<td><?php esc_html_e( 'Marca el texto en rojo (papiros; sufijo)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Marks the text red (papyri; suffix)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>anx\red</code></td>
 				</tr>
 				<tr>
 					<td><code>[&amp; … &amp;]</code></td>
-					<td><?php esc_html_e( 'Corchetes literales (no es un cartucho)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Literal brackets (not a cartouche)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><code>[&amp;nTr&amp;]</code></td>
 				</tr>
 			</tbody>
 		</table>
 
-		<h3><?php esc_html_e( 'Cartuchos (todas las variantes)', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Cartouches (all variants)', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<p>
 			<?php
 			esc_html_e(
-				'Los cartuchos (nombres reales dentro de un óvalo) se escriben con los cerramientos < y >. El óvalo se adapta al contenido: si apilas signos con ":", el cartucho se vuelve vertical.',
+				'Cartouches (royal names inside an oval) are written with the < and > enclosures. The oval adapts to the content: if you stack signs with ":", the cartouche becomes vertical.',
 				'egyptian-hieroglyphs-mdc'
 			);
 			?>
@@ -433,69 +461,69 @@ class Settings {
 			<thead>
 				<tr>
 					<th><?php esc_html_e( 'Tag', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Qué hace', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Resultado', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'What it does', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Result', 'egyptian-hieroglyphs-mdc' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td><code>&lt;- anx -&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho simple', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Simple cartouche', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓋹𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;- mn-xpr-ra -&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho con un nombre real (Menkheperre)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche with a royal name (Menkheperre)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓏠𓆣𓇳𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;- nTr:r -&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho con una cuadratura (más alto)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche with a quadrat (taller)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊹𓐰𓂋𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;- nTr:r:x:t -&gt;</code></td>
-					<td><?php esc_html_e( 'CARTUCHO VERTICAL: signos apilados; el óvalo crece en altura', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'VERTICAL CARTOUCHE: stacked signs; the oval grows taller', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊹𓐰𓂋𓐰𓐍𓐰𓏏𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;- Htp-di -&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho con dos palabras yuxtapuestas', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche with two juxtaposed words', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓊵𓏙𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;S- anx -&gt;</code></td>
-					<td><?php esc_html_e( 'Anillo shen', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Shen ring', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓉘𓐼𓋹𓐽𓊂</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;F- anx -&gt;</code></td>
-					<td><?php esc_html_e( 'Cerramiento amurallado', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Walled enclosure', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓊈𓐾𓋹𓐿𓊉</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;H- anx -&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho, variante H', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche, H variant', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓉘𓐼𓋹𓐽𓉜</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;-s-anx-&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho con un signo inicial dentro (complemento fonético: s, b, h, 1…)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche with an initial sign inside (phonetic complement: s, b, h, 1…)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓋴𓋹𓐽𓍺</span></td>
 				</tr>
 				<tr>
 					<td><code>&lt;-b-anx-&gt;</code></td>
-					<td><?php esc_html_e( 'Cartucho con b inicial', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Cartouche with initial b', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓍹𓐼𓃀𓋹𓐽𓍺</span></td>
 				</tr>
 			</tbody>
 		</table>
 
-		<h3><?php esc_html_e( 'Orientación, rotación y sombreado', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Orientation, rotation and shading', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<p>
 			<?php
 			esc_html_e(
-				'Para cambiar la orientación de toda la línea usa la opción "Dirección" del bloque (derecha → izquierda, como el egipcio clásico). Para rotar o sombrear un signo concreto, los modificadores van DESPUÉS del signo (sufijo):',
+				'To change the orientation of the whole line, use the block\'s "Direction" option (right to left, like classical Egyptian). To rotate or shade a single sign, the modifiers go AFTER the sign (suffix):',
 				'egyptian-hieroglyphs-mdc'
 			);
 			?>
@@ -504,29 +532,29 @@ class Settings {
 			<thead>
 				<tr>
 					<th><?php esc_html_e( 'Tag', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Qué hace', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Resultado', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'What it does', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Result', 'egyptian-hieroglyphs-mdc' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td><code>nTr\r1</code>, <code>\r2</code>, <code>\r3</code></td>
-					<td><?php esc_html_e( 'Rota el signo anterior (variantes de la fuente)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Rotates the previous sign (font variants)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓊹︂</span></td>
 				</tr>
 				<tr>
 					<td><code>nTr\R90</code>, <code>\R180</code>, <code>\R270</code></td>
-					<td><?php esc_html_e( 'Rota el signo anterior 90°, 180° o 270°', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Rotates the previous sign 90°, 180° or 270°', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓊹︁</span></td>
 				</tr>
 				<tr>
 					<td><code>nTr\h</code>, <code>nTr\v</code>, <code>nTr\t1</code></td>
-					<td><?php esc_html_e( 'Transposiciones horizontal, vertical y de reordenación', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Horizontal, vertical and reordering transpositions', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓊹𓑀</span></td>
 				</tr>
 				<tr>
 					<td><code>nTr\shading1234</code></td>
-					<td><?php esc_html_e( 'Sombreado del signo anterior (1-4 = esquinas)', 'egyptian-hieroglyphs-mdc' ); ?></td>
+					<td><?php esc_html_e( 'Shades the previous sign (1-4 = corners)', 'egyptian-hieroglyphs-mdc' ); ?></td>
 					<td><span class="hierojax" style="font-size:32px;">𓊹𓑕</span></td>
 				</tr>
 			</tbody>
@@ -535,18 +563,18 @@ class Settings {
 			<?php
 			printf(
 				/* translators: %s is an example. */
-				esc_html__( 'También puedes marcar un fragmento en rojo (papiros) escribiendo %s al final del texto.', 'egyptian-hieroglyphs-mdc' ),
+				esc_html__( 'You can also mark a fragment in red (papyri) by typing %s at the end of the text.', 'egyptian-hieroglyphs-mdc' ),
 				'<code>\\red</code>'
 			);
 			?>
 		</p>
 
-		<h3><?php esc_html_e( 'Ejemplos completos', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Complete examples', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
-					<th><?php esc_html_e( 'Texto MdC', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Resultado', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'MdC text', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Result', 'egyptian-hieroglyphs-mdc' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -562,8 +590,8 @@ class Settings {
 			<?php
 			printf(
 				/* translators: %s is the composer tool name. */
-				esc_html__( 'Si no recuerdas la codificación Unicode de un fragmento, usa el %s de esta misma página para componer el texto y copiarlo.', 'egyptian-hieroglyphs-mdc' ),
-				'<strong>' . esc_html__( 'Constructor de textos MdC', 'egyptian-hieroglyphs-mdc' ) . '</strong>'
+				esc_html__( 'If you don\'t remember the Unicode encoding of a fragment, use the %s on this same page to compose the text and copy it.', 'egyptian-hieroglyphs-mdc' ),
+				'<strong>' . esc_html__( 'MdC text composer', 'egyptian-hieroglyphs-mdc' ) . '</strong>'
 			);
 			?>
 		</p>
@@ -572,40 +600,40 @@ class Settings {
 		<p>
 			<?php
 			esc_html_e(
-				'El shortcode se usa en el editor clásico. Acepta la transliteración MdC directamente (se convierte al vuelo) o la codificación Unicode jeroglífica, y se integra en el texto sin romperlo:',
+				'The shortcode is used in the classic editor. It accepts MdC transliteration directly (converted on the fly) or Unicode hieroglyphic encoding, and flows inline with the text:',
 				'egyptian-hieroglyphs-mdc'
 			);
 			?>
 		</p>
-		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">El rey [hiero]ra-ms-sw[/hiero] erigió un templo.   ← MdC, se convierte solo</pre>
+		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;"><?php esc_html_e( 'The king [hiero]ra-ms-sw[/hiero] built a temple.   ← MdC, converted automatically', 'egyptian-hieroglyphs-mdc' ); ?></pre>
 		<pre style="max-width:760px; background:#f6f7f7; padding:10px; border:1px solid #ccd0d4; overflow:auto;">[hiero fontsize="42" align="center" color="#8B0000"]anx[/hiero]</pre>
 		<table class="widefat striped" style="max-width:760px;">
 			<thead>
 				<tr>
-					<th><?php esc_html_e( 'Atributo', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Valores', 'egyptian-hieroglyphs-mdc' ); ?></th>
-					<th><?php esc_html_e( 'Descripción', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Attribute', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Values', 'egyptian-hieroglyphs-mdc' ); ?></th>
+					<th><?php esc_html_e( 'Description', 'egyptian-hieroglyphs-mdc' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td><code>fontsize</code></td><td>8–200</td><td><?php esc_html_e( 'Tamaño de los signos (por defecto: el de los ajustes).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>color</code></td><td>#rrggbb</td><td><?php esc_html_e( 'Color de los signos (vacío = hereda el tema).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>align</code></td><td>left · center · right</td><td><?php esc_html_e( 'Alineación del bloque.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>dir</code></td><td>ltr · hrl</td><td><?php esc_html_e( 'Dirección: izquierda→derecha o derecha→izquierda.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>sep</code></td><td>0 – 0.5</td><td><?php esc_html_e( 'Separación entre signos.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>shade</code></td><td>uniform · hatching</td><td><?php esc_html_e( 'Patrón de sombreado de los signos dañados.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>linesize</code></td><td>0.5 – 3</td><td><?php esc_html_e( 'Altura de línea (multiplicador).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
-				<tr><td><code>separated</code></td><td>true · false</td><td><?php esc_html_e( 'Permitir saltos de línea en fragmentos largos.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>fontsize</code></td><td>8–200</td><td><?php esc_html_e( 'Sign size (default: the one from settings).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>color</code></td><td>#rrggbb</td><td><?php esc_html_e( 'Sign color (empty = inherits the theme).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>align</code></td><td>left · center · right</td><td><?php esc_html_e( 'Block alignment.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>dir</code></td><td>ltr · hrl</td><td><?php esc_html_e( 'Direction: left to right or right to left.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>sep</code></td><td>0 – 0.5</td><td><?php esc_html_e( 'Sign separation.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>shade</code></td><td>uniform · hatching</td><td><?php esc_html_e( 'Shading pattern for damaged signs.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>linesize</code></td><td>0.5 – 3</td><td><?php esc_html_e( 'Line height (multiplier).', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
+				<tr><td><code>separated</code></td><td>true · false</td><td><?php esc_html_e( 'Allow line breaks in long fragments.', 'egyptian-hieroglyphs-mdc' ); ?></td></tr>
 			</tbody>
 		</table>
 
-		<h3><?php esc_html_e( 'Consejos y preguntas frecuentes', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Tips and FAQ', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<ul style="max-width:760px; list-style: disc; padding-left: 1.4em;">
 			<li>
 				<?php
 				printf(
 					/* translators: %s is a path. */
-					esc_html__( 'La fuente NewGardiner se sirve desde el propio plugin. Si el hosting no permitió incluirla (límite de subida), el plugin la carga automáticamente desde la CDN oficial de HieroJax (%s).', 'egyptian-hieroglyphs-mdc' ),
+					esc_html__( 'The NewGardiner font is served from the plugin itself. If the host prevented including it (upload limit), the plugin loads it automatically from the official HieroJax CDN (%s).', 'egyptian-hieroglyphs-mdc' ),
 					'<code>nederhof.github.io/hierojax</code>'
 				);
 				?>
@@ -613,7 +641,7 @@ class Settings {
 			<li>
 				<?php
 				esc_html_e(
-					'Si un código MdC no está aún codificado en Unicode, la vista previa muestra el carácter � y el editor avisa. Revisa el código o usa la codificación Unicode manual.',
+					'If an MdC code is not yet encoded in Unicode, the preview shows the � character and the editor warns. Check the code or use the manual Unicode encoding.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -621,7 +649,7 @@ class Settings {
 			<li>
 				<?php
 				esc_html_e(
-					'Los scripts y la fuente solo se cargan en páginas que contienen jeroglíficos, para no ralentizar el resto del sitio.',
+					'Scripts and the font are only loaded on pages containing hieroglyphs, so the rest of the site stays fast.',
 					'egyptian-hieroglyphs-mdc'
 				);
 				?>
@@ -630,19 +658,19 @@ class Settings {
 				<?php
 				printf(
 					/* translators: %s is a menu path. */
-					esc_html__( 'El bloque se personaliza por cada inserción desde su panel de opciones; los valores por defecto de esta página solo afectan a bloques nuevos y al shortcode.', 'egyptian-hieroglyphs-mdc' ),
+					esc_html__( 'Each block can be customized individually from its options panel; the defaults on this page only affect new blocks and the shortcode.', 'egyptian-hieroglyphs-mdc' ),
 					''
 				);
 				?>
 			</li>
 		</ul>
 
-		<h3><?php esc_html_e( 'Créditos', 'egyptian-hieroglyphs-mdc' ); ?></h3>
+		<h3><?php esc_html_e( 'Credits', 'egyptian-hieroglyphs-mdc' ); ?></h3>
 		<p>
 			<?php
 			printf(
 				/* translators: %1$s and %2$s are project names with links. */
-				esc_html__( 'Motor de render y conversor: %1$s (GPL-3.0). Fuente: %2$s (SIL OFL 1.1). Ambos de Mark-Jan Nederhof (Universidad de St Andrews).', 'egyptian-hieroglyphs-mdc' ),
+				esc_html__( 'Rendering engine and converter: %1$s (GPL-3.0). Font: %2$s (SIL OFL 1.1). Both by Mark-Jan Nederhof (University of St Andrews).', 'egyptian-hieroglyphs-mdc' ),
 				'<a href="https://github.com/nederhof/hierojax" target="_blank" rel="noopener">HieroJax</a>',
 				'<a href="https://github.com/nederhof/newgardiner" target="_blank" rel="noopener">NewGardiner</a>'
 			);
