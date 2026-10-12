@@ -29,6 +29,7 @@
 	"files": [
 		"assets",
 		"build",
+		"src",
 		"includes",
 		"licenses",
 		"languages",

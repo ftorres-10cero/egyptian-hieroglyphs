@@ -62,8 +62,8 @@ mkdir -p "$TMP/svn/assets"
 [ -f "$PLUGIN_DIR/screenshots/screenshot-3-converter.png" ] && cp "$PLUGIN_DIR/screenshots/screenshot-3-converter.png" "$TMP/svn/assets/screenshot-3.png"
 
 # Icono y banner (nombres que exige WordPress.org)
-[ -f "$PLUGIN_DIR/assets/icon-256x256.png" ] && cp "$PLUGIN_DIR/assets/icon-256x256.png" "$TMP/svn/assets/icon-256x256.png"
-[ -f "$PLUGIN_DIR/assets/banner-772x250.png" ] && cp "$PLUGIN_DIR/assets/banner-772x250.png" "$TMP/svn/assets/banner-772x250.png"
+[ -f "$PLUGIN_DIR/.wordpress-org/icon-256x256.png" ] && cp "$PLUGIN_DIR/.wordpress-org/icon-256x256.png" "$TMP/svn/assets/icon-256x256.png"
+[ -f "$PLUGIN_DIR/.wordpress-org/banner-772x250.png" ] && cp "$PLUGIN_DIR/.wordpress-org/banner-772x250.png" "$TMP/svn/assets/banner-772x250.png"
 
 echo "==> Añadiendo ficheros nuevos (svn add) y subiendo"
 cd "$TMP/svn"

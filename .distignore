@@ -1,6 +1,6 @@
 # Source files (not shipped in the plugin zip)
 /node_modules
-/src
+/.wordpress-org
 /package.json
 /package-lock.json
 .gitignore

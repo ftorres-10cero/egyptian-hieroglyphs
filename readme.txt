@@ -28,6 +28,8 @@ Type a phrase in [Manuel de Codage (MdC)](https://en.wikipedia.org/wiki/Manuel_d
 
 **Credits:** rendering engine and converter by [HieroJax](https://github.com/nederhof/hierojax) (GPL-3.0) and the [NewGardiner](https://github.com/nederhof/newgardiner) font (SIL OFL 1.1), both by Mark-Jan Nederhof (University of St Andrews). See `licenses/` for the full texts.
 
+**Source code and build:** the block editor script in `build/` is compiled from the human-readable sources in `src/` (included in this plugin) with [@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts). The full source, including the build tooling, is publicly available at [github.com/ftorres-10cero/egyptian-hieroglyphs](https://github.com/ftorres-10cero/egyptian-hieroglyphs). To rebuild: `npm install && npm run build`. Third-party files in `assets/` (`hierojax.js`, `hierojax.css`, `mdcconversion.js`, NewGardiner font) are unminified upstream files from [HieroJax](https://github.com/nederhof/hierojax) and [NewGardiner](https://github.com/nederhof/newgardiner).
+
 The plugin's home page, with a live demo, is at [ftorres.es](https://www.ftorres.es/miscelanea/jeroglificos-egipcios-prueba-del-plugin-mdc/).
 
 == Installation ==
