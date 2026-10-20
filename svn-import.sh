@@ -19,14 +19,15 @@
 set -euo pipefail
 
 SLUG="${SLUG:-egyptian-hieroglyphs-mdc}"
-VERSION="1.5.8"
-PLUGIN_DIR="$(cd "$(dirname "$0")/.." && pwd)"   # raíz del plugin
-TMP="$(mktemp -d)"
-trap 'rm -rf "$TMP"' EXIT
+PLUGIN_DIR="$(cd "$(dirname "$0")" && pwd)"   # raíz del plugin (el script vive en ella)
+VERSION="$(grep -m1 '^Stable tag:' "$PLUGIN_DIR/readme.txt" | awk '{print $3}')"
+# Checkout persistente: se conserva para revisar y hacer svn commit después.
+TMP="${SVN_DIR:-$HOME/svn-$SLUG}"
+mkdir -p "$TMP"
 
 echo "==> Slug: $SLUG | Versión: $VERSION"
 echo "==> Obteniendo el repositorio SVN de $SLUG"
-svn co "https://plugins.svn.wordpress.org/$SLUG" "$TMP/svn" || {
+[ -d "$TMP/svn/.svn" ] && svn up "$TMP/svn" || svn co "https://plugins.svn.wordpress.org/$SLUG" "$TMP/svn" || {
   echo "ERROR: no se pudo hacer checkout. ¿El plugin ya fue aceptado y el slug es correcto?" >&2
   exit 1
 }
@@ -39,6 +40,8 @@ cp -r "$PLUGIN_DIR"/build "$TMP/svn/trunk/"
 cp -r "$PLUGIN_DIR"/includes "$TMP/svn/trunk/"
 cp -r "$PLUGIN_DIR"/languages "$TMP/svn/trunk/"
 cp -r "$PLUGIN_DIR"/licenses "$TMP/svn/trunk/"
+cp -r "$PLUGIN_DIR"/src "$TMP/svn/trunk/"
+cp "$PLUGIN_DIR"/package.json "$TMP/svn/trunk/"
 cp "$PLUGIN_DIR"/egyptian-hieroglyphs.php "$TMP/svn/trunk/"
 cp "$PLUGIN_DIR"/readme.txt "$TMP/svn/trunk/"
 cp "$PLUGIN_DIR"/README.md "$TMP/svn/trunk/"
@@ -70,6 +73,8 @@ cd "$TMP/svn"
 svn add --force trunk tags assets >/dev/null || true
 svn status
 echo ""
+echo "Checkout en: $TMP/svn"
 echo "Comprueba el estado y sube con:"
+echo "  cd $TMP/svn"
 echo "  svn commit -m 'Import $SLUG $VERSION'"
 echo "  (pedirá usuario ftorresalva y contraseña de wordpress.org)"
